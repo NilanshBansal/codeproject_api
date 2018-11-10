@@ -1,0 +1,1586 @@
+<!DOCTYPE HTML>\r\n\r\n\r\n
+<html>\r\n
+
+<head>\r\n\t
+    <title>Etherdrop: DAPP Lottery on Ethereum Blockchain - CodeProject</title> \r\n\t
+    <link type="text/css" rel="stylesheet" href="https://codeproject.global.ssl.fastly.net/App_Themes/CodeProject/Css/Main.min.css?dt=2.8.180920.1">\r\n\r\n\t\r\n
+    <meta http-equiv="content-language" content="en-US">\r\n
+    <meta charset="UTF-8">\r\n
+    <meta name="Description" content="Your Ethereum Giveaway Smart Contract Lottery; Author: Fady Aro; Updated: 10 Aug 2018; Section: Blockchain; Chapter: General Programming; Updated: 10 Aug 2018">\r\n
+    <meta name="Keywords" content="Javascript, CSS, HTML, JSON, Web, NPM, Markdown, blockchain, Ethereum, Solidity, Truffle,Blockchain,General Programming,Free source code, tutorials">\r\n
+    <meta name="Author" content="Fady Aro">\r\n
+    <meta name="Rating" content="General">\r\n
+    <meta name="Revisit-After" content="1 days">\r\n
+    <meta name="application-name" content="CodeProject">\r\n
+    <meta name="google-translate-customization" content="d908bb7ce7aff658-4c2f3a504525c916-g629383f736781a8a-13">\r\n\r\n
+    <link rel="dns-prefetch" href="//ajax.googleapis.com"> \r\n\r\n\r\n\r\n
+    <link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - All Topics" href="https://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=1"
+    />\n
+    <link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - Artificial Intelligence" href="https://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=31"
+    />\n
+    <link rel="alternate" type="application/rss+xml" title="CodeProject Lounge Postings" href="https://www.codeproject.com/webservices/LoungeRSS.aspx"
+    />\r\n
+    <meta name="robots" content="index, follow" />\r\n
+    <link rel="search" type="application/opensearchdescription+xml" title="CodeProject" href="https://www.codeproject.com/info/OpenSearch.xml">\r\n
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\r\n\r\n
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-touch-icon.png"> \r\n
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"> \r\n
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"> \r\n
+    <link rel="manifest" href="/favicon/manifest.json"> \r\n
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#ff9900">\r\n\t\r\n
+    <script type="application/ld+json">\r\n{\n  "@context": "http://schema.org",\r\n  "@type": "TechArticle",\r\n  "headline": "Etherdrop: DAPP Lottery on Ethereum Blockchain",\r\n  "url": "https://www.codeproject.com/Articles/1256008/Etherdrop-DAPP-Lottery-on-Ethereum-Blockchain",\r\n  "discussionUrl": "https://www.codeproject.com/Articles/1256008/Etherdrop-DAPP-Lottery-on-Ethereum-Blockchain",\r\n  "isFamilyFriendly": "true",\r\n  "image": "https://www.codeproject.com/KB/blockchain/1256008/Thumbnail.png",\r\n  "keywords": "Javascript, CSS, HTML, Markdown, JSON, Web, NPM, blockchain, Ethereum, Solidity, Truffle",\r\n  "commentCount": "1",\r\n  "editor" : {\r\n    "@type" : "Person",\r\n    "name" : "Deeksha Shenoy",\r\n    "url" : "https://www.codeproject.com/script/Membership/View.aspx?mid=3866010"\r\n  },\r\n  "license": "http://www.codeproject.com/info/cpol10.aspx",\r\n  "publisher" : {\r\n    "@type" : "Organization",\r\n    "name" : "CodeProject"\r\n  }\r\n  "description": "Your Ethereum Giveaway Smart Contract Lottery",\r\n  "upvoteCount": "3",\r\n  "articleSection": "Blockchain",\r\n  "author" : [{\r\n      "@type" : "Person",\r\n      "name" : "Fady Aro",\r\n      "url" : "https://www.codeproject.com/script/Membership/View.aspx?mid=7667955"\r\n    }],\r\n  "datePublished": "2018-08-10",\r\n  "dateCreated": "2018-08-10",\r\n  "dateModified": "2018-08-10",\r\n  "aggregateRating" : {\r\n    "@type" : "aggregateRating",\r\n    "ratingValue" : 4.82,\r\n    "ratingCount" : 3,\r\n    "bestRating" : 5,\r\n    "worstRating" : 1\r\n  },\r\n}\r\n</script>\r\n
+    <script type="application/ld+json">\r\n{\r\n  "@context": "http://schema.org",\r\n  "@type": "BreadcrumbList",\r\n  "itemListElement": [{\r\n    "@type": "ListItem",\r\n    "position": 1,\r\n    "item" : {\r\n      "@id" : "/Chapters/6/General-Programming.aspx",\r\n      "name" : "General Programming"\r\n    }\r\n  },{\r\n    "@type": "ListItem",\r\n    "position": 2,\r\n    "item" : {\r\n      "@id" : "/KB/blockchain/",\r\n      "name" : "Blockchain"\r\n    }\r\n  }]\r\n}\r\n</script>\r\n\t
+    <base target="_top" />\r\n\t
+    <script type="text/javascript" language="Javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type=\ 'text/javascript\'>//<![CDATA[\nif (typeof jQuery == \'undefined\') {\n    document.write(unescape("%3Cscript src=\'%2fscript%2fJS%2fjquery-2.2.4.min.js\' type=\'text/javascript\' %3E%3C/script%3E"));\n}//]]></script>\r\n
+    <script type="text/javascript" language="Javascript">//<![CDATA[\r\nfunction defrm () { /* thanks twitter */ document.write = \'\'; window.top.location = window.self.location;  setTimeout(function() { document.body.innerHTML = \'\'; }, 0);  window.self.onload = function(evt) { document.body.innerHTML = \'\'; }; }if (window.top !== window.self) {  try {  if (window.top.location.host) { /* will throw */ } else { defrm(); /* chrome */ }  } catch (ex) { defrm(); /* everyone else */ } }if (typeof(DemoUrl)!=\'undefined\')   document.write(unescape(\'%3Cme\')+\'ta http\'+\'-equiv="re\'+\'fresh"                  con\'+\'tent="1;url=\'+DemoUrl+unescape(\'"%3CE\'));\r\n\r\n//]]>\r\n</script>\r\n\r\n\t\r\n\r\n\r\n\r\n\r\n
+    <script type="text/javascript">\r\n\tvar _gaq = _gaq || []; \r\n\t_gaq.push([\'_setAccount\', \'UA-1735123-1\']);\r\n\t_gaq.push([\'_trackPageview\']);\r\n\t_gaq.push([\'_setDomainName\', \'www.codeproject.com\']);\r\n\t_gaq.push([\'_setSessionTimeout\', \'1200\']); \r\n\r\n\t(function () {\r\n\t\tvar ga = document.createElement(\'script\'); ga.type = \'text/javascript\'; ga.async = true;\r\n\t\tga.src = (\'https:\' == document.location.protocol ? \'https://ssl\' : \'http://www\') + \'.google-analytics.com/ga.js\';\r\n\t\t(document.getElementsByTagName(\'head\')[0] || document.getElementsByTagName(\'body\')[0]).appendChild(ga);\r\n\t})(); \r\n</script>\r\n\r\n\r\n</head>\t\r\n\r\n
+
+<body class="mozilla mozilla5">\r\n\r\n
+    <a class="access-link" href="#Main">
+        <img alt="Click here to Skip to main content" src="https://codeproject.global.ssl.fastly.net/images/t.gif" />
+    </a>\r\n\r\n\r\n\r\n\r\n\r\n
+    <div class="page-background">\r\n\r\n\t\r\n\t\r\n\r\n\t\r\n
+        <div class="alert-bar  overlay " style="display: none;">\r\n\t
+            <a href="#" class="close-notify">×</a>\r\n\t
+            <div>Sign up for our free weekly
+                <a href=\ '/feature/web-newsletter\'>Web Dev Newsletter</a>.</div>\r\n</div>\r\n\r\n\t\r\n
+        <div id="ctl00_STM" class="site-top-menu fixed">\r\n
+            <div class="main-content">\r\n \r\n\r\n
+                <div class="container memberbar clearfix">\r\n\r\n\t
+                    <div id="ctl00_MemberMenu_GenInfo" class="float-left">13,759,109 members</div>\r\n\r\n\t
+                    <div class="float-left">\r\n\t\t\r\n\t</div>\r\n\r\n\t
+                    <div class="float-right">\r\n\r\n\t\t\r\n\r\n\t\t\r\n\r\n\t\t\r\n\r\n\t\t\t
+                        <script type="text/javascript">//<!--\r\n\t\t\tfunction doSubmit(secure)\r\n\t\t\t{\r\n\t\t\t\tif (secure)\r\n\t\t\t\t\tdocument.subForm.action = "https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f1256008%2fEtherdrop-DAPP-Lottery-on-Ethereum-Blockchain"\r\n\t\t\t\telse\r\n\t\t\t\t\tdocument.subForm.action = "https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f1256008%2fEtherdrop-DAPP-Lottery-on-Ethereum-Blockchain"\r\n\t\t\t\tdocument.subForm.submit();\r\n\t\t\t\treturn true;\r\n\t\t\t}//-->\r\n\t\t\t</script>\r\n\r\n\t\t\t
+                        <a name="SignUp"></a>\r\n\t\t\t
+                        <span class="member-signin tooltip openable">\r\n\t\t\t\t
+                            <span>
+                                <a href="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f1256008%2fEtherdrop-DAPP-Lottery-on-Ethereum-Blockchain">Sign in</a>\r\n
+                                <img src="https://codeproject.global.ssl.fastly.net/App_Themes/CodeProject/Img/login32.png"
+                                    \r\n width="16px" height="16px" style="vertical-align:middle;" />\r\n\t\t\t\t</span>\r\n\r\n\t\t\t\t
+                            <div class="tooltip-flyout">\r\n\t\t\t\t\t
+                                <form name="subForm" id="subForm" action="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f1256008%2fEtherdrop-DAPP-Lottery-on-Ethereum-Blockchain"
+                                    method="post" \r\n\t\t\t\t\t\tclass="tight">\r\n\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t
+                                    <input id="FormName" name="FormName" value="MenuBarForm"
+                                        type="hidden" />\r\n\r\n\t\t\t\t\t\t
+                                    <div>Email</div>\r\n\t\t\t\t\t\t
+                                    <div>
+                                        <input class="small-text" type="email" name="Email" id="Email" />
+                                    </div>\r\n\t\t\t\t\t\t
+                                    <div>Password</div>\r\n\t\t\t\t\t\t
+                                    <div>
+                                        <input class="small-text" type="password" name="Password" id="Password" />
+                                    </div>\r\n\t\t\t\t\t\t
+                                    <div class="action">\r\n\t\t\t\t\t\t\t\r\n
+                                        <input id=\ 'joinBtn\' type=\ 'button\' class=\
+                                            'create hidden\' onclick=\ 'return Join();\' value=\ 'Join\' />\r\n
+                                        <input type=\ 'hidden\' name=\ 'fld_quicksign\' value=\ 'true\' />\r\n
+                                        <script type="text/javascript">\r\n                                  function simpleMask(str, key) { \r\n                                      var result = \'\';\r\n                                      for (var i = 0; i < str.length; ++i)\r\n                                          result += String.fromCharCode(key ^ str.charCodeAt(i));\r\n                                      return result;\r\n                                  }\r\n                                  function Join() {\r\n                                      var url = \'https://www.codeproject.com/script/Membership/Modify.aspx\';\ndocument.location.href=url;\r\n                                      return false;\r\n                                  }\r\n                                  $(\'#joinBtn\').css(\'visibility\', \'visible\');\r\n                                  </script>\r\n\t\t\t\t\t\t\t
+                                        <input type="submit" value="Sign in" class="signin" \r\n\t\t\t\t\t\t\t\tonclick="return doSubmit(false);"
+                                        />\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t
+                                    <div class="container">\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t&nbsp;\r\n\t\t\t\t\t\t\t
+                                        <a id="ctl00_MemberMenu_SendPassword"
+                                            class="forgot float-right" href="/script/Membership/SendPassword.aspx?rp=/Articles/1256008/Etherdrop-DAPP-Lottery-on-Ethereum-Blockchain">Forgot your password?</a>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</form>\r\n\r\n\t\t\t\t\t
+                                <hr
+                                    class="divider-dark" />\r\n\r\n\t\t\t\t\tSign in with
+                                <a class="oauth" title="Sign in using Github" href="/script/Membership/OAuthLogOn.aspx?auth=GitHub">
+                                    <img src="/script/Membership/Images/octicons_github.png" style="vertical-align:middle;padding-right:3px;border:0;"
+                                    />
+                                </a>\r\n
+                                <a class="oauth" title="Sign in using Linkedin" href="/script/Membership/OAuthLogOn.aspx?auth=LinkedIn">
+                                    <img src="/script/Membership/Images/linkedin.png" style="vertical-align:middle;padding-right:3px;border:0;"
+                                    />
+                                </a>\r\n
+                                <a class="oauth" title="Sign in using Facebook" href="/script/Membership/OAuthLogOn.aspx?auth=Facebook">
+                                    <img src="/script/Membership/Images/facebook.png" style="vertical-align:middle;padding-right:3px;border:0;"
+                                    />
+                                </a>\r\n
+                                <a class="oauth" title="Sign in using Google" href="/script/Membership/OAuthLogOn.aspx?auth=Google">
+                                    <img src="/script/Membership/Images/google-plus.png" style="vertical-align:middle;padding-right:3px;border:0;"
+                                    />
+                                </a>\r\n
+                                <a class="oauth" title="Sign in using Microsoft" href="/script/Membership/OAuthLogOn.aspx?auth=Microsoft">
+                                    <img src="/script/Membership/Images/microsoft.png" style="vertical-align:middle;padding-right:3px;border:0;"
+                                    />
+                                </a>\r\n\r\n\t\t\t\t</div>\r\n </span>\r\n\t\t\r\n\t</div>\r\n</div>\r\n </div>\r\n </div>\r\n\r\n\t\r\n
+        <div id="ctl00_SH" class="site-header fixed">\r\n
+            <div class="main-content">\r\n
+                <div class="logo">
+                    <a href="/">
+                        <img id="ctl00_Logo" tabindex="1" title="CodeProject" src="https://codeproject.global.ssl.fastly.net/App_Themes/CodeProject/Img/logo250x135.gif"
+                            alt="Home" style="height:135px;width:250px;border-width:0px;" />
+                    </a>
+                </div>\r\n
+                <div class="promo">
+                    <div class="msg-728x90" data-format="728x90" data-type="ad" data-publisher="lqm.codeproject.site" data-zone="General-Programming/Blockchain/General"
+                        data-tags=\
+                        'Javascript, CSS, HTML, JSON, Web, NPM, Markdown, blockchain, Ethereum, Solidity, Truffle,rating4.5\'>
+                        <noscript>
+                            <a href="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/General-Programming/Blockchain/General&sz=728x90&c=321501">
+                                <img src="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/General-Programming/Blockchain/General&sz=728x90&c=321501"
+                                    width="728px" height="90px" target="_blank" />
+                            </a>
+                        </noscript>
+                    </div>
+                </div>\r\n </div>\r\n </div>\r\n\r\n\t
+        <a href="#Main">
+            <img alt="Click here to Skip to main content" class="access-link" \r\n src="https://codeproject.global.ssl.fastly.net/images/t.gif"
+            />
+        </a>\r\n\r\n\t\r\n\t
+        <div id="ctl00_TPR" class="sub-headerbar clearfix fixed">\r\n
+            <div class="float-right">\r\n\t\t\r\n\r\n
+                <div class="searchbar">\r\n\r\n
+                    <form method="get" action="/search.aspx?sbo=kw" name="Search" class="tight">\r\n\r\n\r\n
+                        <table border="0" cellspacing="0" cellpadding="0" class="search">
+                            <tr>
+                                <td>
+                                    <input TabIndex="2" class="search " id="sb_tb" value="" name="q" />
+                                </td>
+                                <td>
+                                    <input type="image" src="https://codeproject.global.ssl.fastly.net/images/search.gif" />
+                                </td>
+                            </tr>
+                        </table>\r\n\r\n
+                        <div class="hover-container">\r\n\t
+                            <div id="SearchFilter" class="search-advanced popup small-text align-left">\r\n\t
+                                <b>Search within:
+                                    <br />
+                                </b>\r\n\t\t\r\n\t\t
+                                <input type="radio" id="sb_kw" name="sbo" value="kw" checked="true">
+                                <label for="sb_kw">Articles</label>
+                                <br>\r\n
+                                <input type="radio" id="sb_qa" name="sbo" value="qa">
+                                <label for="sb_qa">Quick Answers</label>
+                                <br>\r\n
+                                <input type="radio" id="sb_fm" name="sbo" value="fm">
+                                <label for="sb_fm">Messages</label>
+                                <br>\r\n\r\n\r\n\t\t\r\n\t\t\r\n\r\n\t\t\r\n\t\t\r\n\t</div>\r\n</div>\r\n</form>\r\n\r\n</div>\r\n
+                </div>\r\n
+            <div class="float-left">\r\n\t\t\r\n\r\n
+                <div class="navbar clearfix">\r\n
+                    <ul class="navmenu openable">\r\n\r\n
+                        <li class="desktop-only">
+                            <a id="ctl00_TopNavBar_Home" href="https://www.codeproject.com">home</a>\r\n\r\n\r\n
+                            <li class="openable">
+                                <a id="ctl00_TopNavBar_Art" class="down selected" href="/script/Articles/Latest.aspx">articles</a>\r\n\r\n\t
+                                <ul>\r\n\t\t
+                                    <li class="openable">
+                                        <a id="ctl00_TopNavBar_ArtTopicList" class="fly" onmouseover="navBarMenu.ShowMap(this, &#39;ctl00_TopNavBar_MapFlyout&#39;);"
+                                            href="/script/Content/SiteMap.aspx">Chapters and Sections
+                                            <span class="has-submenu">&gt;</span>
+                                        </a>
+                                        <ul id="ctl00_TopNavBar_MapFlyout" class="taxonomy">\r\n\t\t\t
+                                            <li>\r\n\t\t\t\t
+                                                <div id="siteMap"></div>\r\n\t\t\t</li>\r\n\t\t\t</ul>\r\n\t\t</li>\r\n\t\t\r\n\t\t
+                                    <li>
+                                        <a id="ctl00_TopNavBar_ArtLatestArts" class="fly" href="/script/Articles/Latest.aspx?at=1,3,7">Latest Articles</a>
+                                    </li>\r\n\t\t\r\n\t\t
+                                    <li>
+                                        <a id="ctl00_TopNavBar_ArtTop" class="fly" href="/script/Articles/TopArticles.aspx?ta_so=5">Top Articles</a>
+                                    </li>\r\n\t\t\r\n\t\t\r\n\t\t
+                                    <li>
+                                        <a id="ctl00_TopNavBar_ArtGuide" class="fly" href="/info/Submit.aspx">Posting/Update Guidelines</a>
+                                    </li>\r\n\t\t
+                                    <li>
+                                        <a id="ctl00_TopNavBar_ArtHelpForum" class="fly" href="/Forums/1641/Article-Writing.aspx">Article Help Forum</a>
+                                    </li>\r\n\t\t\r\n\t\t
+                                    <li>
+                                        <a id="ctl00_TopNavBar_ArtPostArticle" class="fly highlight1" href="/script/Articles/Submit.aspx">\r\n\t\t\t
+                                            <img src="https://codeproject.global.ssl.fastly.net/images/write13.png"
+                                                width="13px" height="13px" /> Submit an article or tip\r\n\t\t\t</a>
+                                    </li>\r\n\t\t
+                                    <li>
+                                        <a id="ctl00_TopNavBar_ArtPostBlog" class="fly highlight2" href="/script/Articles/BlogFeed.aspx">\r\n\t\t\t
+                                            <img src="https://codeproject.global.ssl.fastly.net/images/write13.png"
+                                                width="13px" height="13px" /> Post your Blog\r\n\t\t\t</a>
+                                    </li>\t\t
+                                    <li class="last"></li>\r\n\t</ul>\r\n\r\n</li>\r\n\r\n\r\n\r\n
+                            <li class="openable">\r\n
+                                <a id="ctl00_TopNavBar_Answers" href="/script/Answers/List.aspx?tab=active">\r\n
+                                    <span class="desktop-only tablet-only">quick answers</span>
+                                    <span class="mobile-only">Q&amp;A</span>\r\n</a>\r\n\t
+                                <ul>\r\n\t\t
+                                    <li id="ctl00_TopNavBar_AQL">
+                                        <a id="ctl00_TopNavBar_ArticleQuestion" class="fly highlight1" href="#_comments">\r\n\t\t\t
+                                            <img src="https://codeproject.global.ssl.fastly.net/images/write13.png"
+                                                width="13px" height="13px" /> Ask a Question about this \r\n\t\t\tarticle</a>\r\n\t\t</li>\r\n\r\n\t\t
+                                    <li>
+                                        <a id="ctl00_TopNavBar_QAAsk" class="fly highlight2" href="/Questions/ask.aspx">
+                                            <img \r\n\t\t\tsrc="https://codeproject.global.ssl.fastly.net/images/write13.png"
+                                                width="13px" height="13px" /> Ask a Question</a>
+                                    </li>\r\n\r\n\t\t
+                                    <li>
+                                        <a id="ctl00_TopNavBar_QAUnanswered" class="fly" href="/script/Answers/List.aspx?tab=unanswered">View Unanswered Questions</a>
+                                    </li>\r\n\t\t
+                                    <li>
+                                        <a id="ctl00_TopNavBar_QALatest" class="fly" href="/script/Answers/List.aspx?tab=active">View All Questions</a>
+                                    </li>\r\n \r\n\t\t\t\t
+                                    <li>
+                                        <a id="ctl00_TopNavBar_QATR_ctl00_Tag" class="fly" href="/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=81"
+                                            style="padding-left:30px">View C# questions</a>
+                                    </li>\r\n\t\t\t\r\n\t\t\t\t
+                                    <li>
+                                        <a id="ctl00_TopNavBar_QATR_ctl01_Tag" class="fly" href="/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=85"
+                                            style="padding-left:30px">View ASP.NET questions</a>
+                                    </li>\r\n\t\t\t\r\n\t\t\t\t
+                                    <li>
+                                        <a id="ctl00_TopNavBar_QATR_ctl02_Tag" class="fly" href="/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=842"
+                                            style="padding-left:30px">View VB.NET questions</a>
+                                    </li>\r\n\t\t\t\r\n\t\t\t\t
+                                    <li>
+                                        <a id="ctl00_TopNavBar_QATR_ctl03_Tag" class="fly" href="/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=91"
+                                            style="padding-left:30px">View Java questions</a>
+                                    </li>\r\n\t\t\t\r\n\t\t\t\t
+                                    <li>
+                                        <a id="ctl00_TopNavBar_QATR_ctl04_Tag" class="fly" href="/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=93"
+                                            style="padding-left:30px">View SQL questions</a>
+                                    </li>\r\n\t\t\t\r\n \r\n\t\t
+                                    <li class="last"></li>\r\n\t</ul>\r\n\r\n</li>\r\n\r\n\r\n\r\n
+                            <li class="openable">
+                                <a id="ctl00_TopNavBar_Forums" href="/script/Forums/List.aspx">\r\n
+                                    <span class="desktop-only tablet-only">discussions</span>
+                                    <span class="mobile-only">forums</span>\r\n</a>\r\n\r\n\t
+                                <ul>\r\n\t\t
+                                    <li>
+                                        <a id="ctl00_TopNavBar_MessageBoardsAll" class="fly" href="/script/Forums/List.aspx">All Message Boards...</a>
+                                    </li>\r\n\t\t
+                                    <li class="openable">
+                                        <a class="fly" style="padding-left:30px" href="/Forums/1580997/Application-Lifecycle.aspx">Application Lifecycle
+                                            <span class="has-submenu">&gt;</span>
+                                        </a>\r\n
+                                        <ul class="openable">
+                                            <li>
+                                                <a class="fly" href="/Forums/1533717/Running-a-Business.aspx">Running a Business</a>
+                                            </li>\r\n
+                                            <li>
+                                                <a class="fly" href="/Forums/1533716/Sales-Marketing.aspx">Sales / Marketing</a>
+                                            </li>\r\n
+                                            <li>
+                                                <a class="fly" href="/Forums/1651/Collaboration-Beta-Testing.aspx">Collaboration / Beta Testing</a>
+                                            </li>\r\n
+                                            <li>
+                                                <a class="fly" href="/Forums/3304/Work-Issues.aspx">Work Issues</a>
+                                            </li>\r\n</ul>
+                                    </li>\r\n
+                                    <li>
+                                        <a class="fly" style="padding-left:30px" href="/Forums/369270/Design-and-Architecture.aspx">Design and Architecture</a>\r\n</li>\r\n
+                                    <li>
+                                        <a class="fly" style="padding-left:30px" href="/Forums/12076/ASP-NET.aspx">ASP.NET</a>\r\n</li>\r\n
+                                    <li>
+                                        <a class="fly" style="padding-left:30px" href="/Forums/1580226/JavaScript.aspx">JavaScript</a>\r\n</li>\r\n
+                                    <li class="openable">
+                                        <a class="fly" style="padding-left:30px" href="/Forums/1647/C-Cplusplus-MFC.aspx">C / C++ / MFC
+                                            <span class="has-submenu">&gt;</span>
+                                        </a>\r\n
+                                        <ul class="openable">
+                                            <li>
+                                                <a class="fly" href="/Forums/4486/ATL-WTL-STL.aspx">ATL / WTL / STL</a>
+                                            </li>\r\n
+                                            <li>
+                                                <a class="fly" href="/Forums/3785/Managed-Cplusplus-CLI.aspx">Managed C++/CLI</a>
+                                            </li>\r\n</ul>
+                                    </li>\r\n
+                                    <li>
+                                        <a class="fly" style="padding-left:30px" href="/Forums/1649/Csharp.aspx">C#</a>\r\n</li>\r\n
+                                    <li>
+                                        <a class="fly" style="padding-left:30px" href="/Forums/1627782/Free-Tools.aspx">Free Tools</a>\r\n</li>\r\n
+                                    <li>
+                                        <a class="fly" style="padding-left:30px" href="/Forums/1827460/Objective-C-and-Swift.aspx">Objective-C and Swift</a>\r\n</li>\r\n
+                                    <li>
+                                        <a class="fly" style="padding-left:30px" href="/Forums/1725/Database.aspx">Database</a>\r\n</li>\r\n
+                                    <li class="openable">
+                                        <a class="fly" style="padding-left:30px" href="/Forums/186301/Hardware-Devices.aspx">Hardware &amp; Devices
+                                            <span class="has-submenu">&gt;</span>
+                                        </a>\r\n
+                                        <ul class="openable">
+                                            <li>
+                                                <a class="fly" href="/Forums/1644/System-Admin.aspx">System Admin</a>
+                                            </li>\r\n</ul>
+                                    </li>\r\n
+                                    <li>
+                                        <a class="fly" style="padding-left:30px" href="/Forums/1606152/Hosting-and-Servers.aspx">Hosting and Servers</a>\r\n</li>\r\n
+                                    <li>
+                                        <a class="fly" style="padding-left:30px" href="/Forums/1643/Java.aspx">Java</a>\r\n</li>\r\n
+                                    <li>
+                                        <a class="fly" style="padding-left:30px" href="/Forums/1650/NET-Framework.aspx">.NET Framework</a>\r\n</li>\r\n
+                                    <li>
+                                        <a class="fly" style="padding-left:30px" href="/Forums/1848626/Android.aspx">Android</a>\r\n</li>\r\n
+                                    <li>
+                                        <a class="fly" style="padding-left:30px" href="/Forums/1876716/iOS.aspx">iOS</a>\r\n</li>\r\n
+                                    <li>
+                                        <a class="fly" style="padding-left:30px" href="/Forums/13695/Mobile.aspx">Mobile</a>\r\n</li>\r\n
+                                    <li>
+                                        <a class="fly" style="padding-left:30px" href="/Forums/1540733/SharePoint.aspx">SharePoint</a>\r\n</li>\r\n
+                                    <li>
+                                        <a class="fly" style="padding-left:30px" href="/Forums/1004257/Silverlight-WPF.aspx">Silverlight / WPF</a>\r\n</li>\r\n
+                                    <li>
+                                        <a class="fly" style="padding-left:30px" href="/Forums/1646/Visual-Basic.aspx">Visual Basic</a>\r\n</li>\r\n
+                                    <li>
+                                        <a class="fly" style="padding-left:30px" href="/Forums/1640/Web-Development.aspx">Web Development</a>\r\n</li>\r\n
+                                    <li>
+                                        <a class="fly" style="padding-left:30px" href="/suggestions.aspx">Site Bugs / Suggestions</a>\r\n</li>\r\n
+                                    <li>
+                                        <a class="fly" style="padding-left:30px" href="/Forums/1652005/Spam-and-Abuse-Watch.aspx">Spam and Abuse Watch</a>\r\n</li>\r\n\r\n\t\t
+                                    <li class="last"></li>\r\n\t</ul>\r\n\r\n</li>\r\n\r\n
+                            <li class="openable">
+                                <a id="ctl00_TopNavBar_Features" href="/Feature/">\r\n
+                                    <span class="desktop-only tablet-only">features</span>
+                                    <span class="mobile-only">stuff</span>\r\n</a>\r\n\r\n\t
+                                <ul>\r\n\t\t
+                                    <li>
+                                        <a id="ctl00_TopNavBar_Comps" class="fly" href="/script/Contests/CurrentCompetitions.aspx?cmpTpId=3&amp;awsac=true">Competitions</a>
+                                    </li>\r\n\t\t
+                                    <li>
+                                        <a id="ctl00_TopNavBar_News" class="fly" href="/script/News/List.aspx">News</a>
+                                    </li>\r\n\t\t
+                                    <li>
+                                        <a id="ctl00_TopNavBar_Insider" class="fly" href="/Feature/Insider/">The Insider Newsletter</a>
+                                    </li>\r\n \t
+                                    <li>
+                                        <a id="ctl00_TopNavBar_DailyBuild" class="fly" href="/Feature/DailyBuild">The Daily Build Newsletter</a>
+                                    </li>\r\n\t\t
+                                    <li>
+                                        <a id="ctl00_TopNavBar_Newsletters" class="fly" href="/script/Mailouts/Archive.aspx?mtpid=1">Newsletter archive</a>
+                                    </li>\r\n\t\t
+                                    <li>
+                                        <a id="ctl00_TopNavBar_Surveys" class="fly" href="/script/Surveys/List.aspx">Surveys</a>
+                                    </li>\r\n\t\t
+                                    <li>
+                                        <a id="ctl00_TopNavBar_Showcase" class="fly" href="/KB/showcase/">Product Showcase</a>
+                                    </li>\r\n\t\t
+                                    <li>
+                                        <a id="ctl00_TopNavBar_Research" class="fly" href="/script/ResearchLibrary/Index.aspx">Research Library</a>
+                                    </li>\r\n\r\n\t\t
+                                    <li>
+                                        <a id="ctl00_TopNavBar_Stuff" class="fly" href="/Info/Stuff.aspx">CodeProject Stuff</a>
+                                    </li>\r\n\t\t
+                                    <li class="last"></li>\r\n\t</ul>\r\n\r\n</li>\r\n\r\n\r\n
+                            <li class="openable">
+                                <a id="ctl00_TopNavBar_Lounge" href="/Lounge.aspx">\r\n
+                                    <span class="desktop-only tablet-only">community</span>
+                                    <span class="mobile-only">lounge</span>\r\n</a>\r\n\r\n\t
+                                <ul>\r\n\t\t
+                                    <li>
+                                        <a id="ctl00_TopNavBar_WhosWho" class="fly" href="/script/Membership/Profiles.aspx">Who\'s Who</a>
+                                    </li>\r\n\t\t
+                                    <li>
+                                        <a id="ctl00_TopNavBar_MVPs" class="fly break" href="/script/Contests/Winners.aspx?obtid=1&amp;cmpTpId=2&amp;cid=0">Most Valuable Professionals</a>
+                                    </li>\r\n\t\t\r\n\r\n\t\t
+                                    <li>
+                                        <a id="ctl00_TopNavBar_LoungeLnk" class="fly highlight2" href="/Lounge.aspx">The Lounge \xa0</a>
+                                    </li>\r\n\t\t
+                                    <li>
+                                        <a id="ctl00_TopNavBar_WhereAmILink" class="fly" href="/Forums/1939564/Where-I-am-Member-Photos.aspx">Where I Am: Member Photos</a>
+                                    </li>\r\n\t\t
+                                    <li>
+                                        <a id="ctl00_TopNavBar_InsiderLnk" class="fly" href="/Insider.aspx">The Insider News</a>
+                                    </li>\r\n\t\t
+                                    <li>
+                                        <a id="ctl00_TopNavBar_WeirdWonderful" class="fly" href="/Feature/WeirdAndWonderful.aspx">The Weird & The Wonderful</a>
+                                    </li>\r\n\t\t
+                                    <li>
+                                        <a id="ctl00_TopNavBar_SoapBoxLnk" class="fly" href="/Forums/1536756/The-Soapbox.aspx">The Soapbox</a>
+                                    </li>\r\n\t\t
+                                    <li>
+                                        <a id="ctl00_TopNavBar_PRLnk" class="fly break" href="/Forums/1738007/Press-Releases.aspx">Press Releases</a>
+                                    </li>\r\n\r\n\t\t\r\n\t\t
+                                    <li class="openable">
+                                        <a class="fly" href="/Forums/1580229/Hindi.aspx">Non-English Language\r\n\t\t\t
+                                            <span class="has-submenu">&gt;</span>
+                                        </a>\r\n\t\t
+                                        <ul>\r\n\t\t
+                                            <li>
+                                                <a class="fly" href="/Forums/1580229/Hindi.aspx">General Indian Topics</a>
+                                            </li>\r\n\t\t
+                                            <li>
+                                                <a class="fly" href="/Forums/1580230/Chinese.aspx">General Chinese Topics</a>
+                                            </li>\r\n\t\t</ul>\r\n\t\t
+                                        <li class="last"></li>\r\n\t\t\r\n\t</ul>\r\n\r\n</li>\r\n\r\n\r\n
+                                <li class="openable" style="margin-left:20px">
+                                    <a id="ctl00_TopNavBar_Help" href="/KB/FAQs/">\r\n
+                                        <span class="desktop-only tablet-only">help</span>
+                                        <span class="mobile-only">?</span>\r\n</a>\r\n\r\n\r\n\t
+                                    <ul>\r\n\t\t
+                                        <li>
+                                            <a id="ctl00_TopNavBar_HelpWhatIs" class="fly" href="/info/guide.aspx">What is \'CodeProject\'?</a>
+                                        </li>\r\n\t\t
+                                        <li>
+                                            <a id="ctl00_TopNavBar_HelpGeneral" class="fly break" href="/KB/FAQs/">General FAQ</a>
+                                        </li>\r\n\t\t
+                                        <li>
+                                            <a id="ctl00_TopNavBar_HelpPostQuestion" class="fly break highlight2" href="/Questions/ask.aspx">Ask a Question</a>
+                                        </li>\r\n\t\t
+                                        <li>
+                                            <a id="ctl00_TopNavBar_HelpBugs" class="fly" href="/suggestions.aspx">Bugs and Suggestions</a>
+                                        </li>\r\n\t\t
+                                        <li>
+                                            <a id="ctl00_TopNavBar_HelpArticles" class="fly" href="/Forums/1641/Article-Writing.aspx">Article Help Forum</a>
+                                        </li>\r\n\t\t
+                                        <li>
+                                            <a id="ctl00_TopNavBar_HelpSiteMap" class="fly" href="/script/Content/SiteMap.aspx">Site Map</a>
+                                        </li>\r\n\t\t
+                                        <li>
+                                            <a id="ctl00_TopNavBar_HelpAdvertise" class="fly" href="http://developermedia.com/">Advertise with us</a>
+                                        </li>\r\n\t\t
+                                        <li>
+                                            <a id="ctl00_TopNavBar_HelpAboutAds" class="fly" href="/info/AboutOurAds.aspx">About our Advertising</a>
+                                        </li>\r\n\t\t
+                                        <li>
+                                            <a id="ctl00_TopNavBar_HelpJobs" class="fly" href="/info/Jobs/">Employment Opportunities</a>
+                                        </li>\r\n\t\t
+                                        <li>
+                                            <a id="ctl00_TopNavBar_HelpAboutUs" class="fly" href="/info/about.aspx">About Us</a>
+                                        </li>\r\n\t\t
+                                        <li class="last"></li>\r\n\t</ul>\r\n\r\n</li>\r\n\r\n</ul>\r\n\r\n</div>\r\n </div>\r\n\t
+            <div class="sub-headerbar-divider"></div>\r\n\t</div>\t\t\r\n\t\r\n\r\n\t
+        <div id="A" class="container-content-wrap fixed"> \r\n\t
+            <div class="container-content">\r\n\r\n\r\n\t\t
+                <div class="clearfix">\r\n\t\t\t
+                    <div class="container-breadcrumb float-left ">\r\n\t\t\t\t
+                        <div>
+                            <a href="/script/Content/SiteMap.aspx">Articles</a> &#187;
+                            <a href="/Chapters/6/General-Programming.aspx">General Programming</a> &#187;
+                            <a href="/KB/blockchain/">Blockchain</a> &#187;
+                            <a href="/KB/blockchain/#General">General</a>
+                        </div>\r\n\t\t\t</div>\r\n\r\n
+                    <div class="float-left">\r\n\t\t\t\t\r\n\t\t\t</div>\r\n\r\n\t\t\t
+                    <div class="edit-links float-right">\r\n\t\t\t\t\r\n\r\n\r\n\r\n \r\n&nbsp;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\t\t\t</div>\r\n\r\n\t\t\t
+                    <div
+                        class="article-nav float-right">\r\n \r\n\t\t\t\t\r\n\r\n
+                        <div style="display:inline-block;position:relative;top:-5px;margin-right:20px">\r\n \r\n</div>\r\n\r\n\r\n\r\n
+                        <span id="ctl00_ActionLinks_BookmarkMd_bookmark" data-type="bookmark"
+                            data-ref="2_1256008_9" data-size="medium" data-mode="bookmark"></span>
+                        <a id="ctl00_ActionLinks_PrintMd" data-tooltip="Print" data-enabletooltip="true" data-width="auto"
+                            href="/Articles/1256008/Etherdrop-DAPP-Lottery-on-Ethereum-Blockchain?display=Print">\r\n\t
+                            <img src="/App_Themes/CodeProject/Img/print48.png" \r\n\t\t width="24px" height="24px" style="border:0">\r\n </a>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t
+                <table class="extended container-article-parts"
+                    cellpadding="0" cellspacing="0">\r\n
+                    <tr valign="top">\r\n\t\t
+                        <td width="117px" class="article-wing-left">\r\n\r\n\t\t\t
+                            <div id="ctl00_Nav" class="container-article-tabs">\r\n \t\t\t\r\n\r\n
+                                <div class="tabs">\r\n\t
+                                    <div class="selected">Article</div>
+                                    <div class="unselected">
+                                        <a href="/script/Articles/ViewDownloads.aspx?aid=1256008">Browse Code</a>
+                                    </div>
+                                    <div class="unselected">
+                                        <a href="/script/Articles/Statistics.aspx?aid=1256008">Stats</a>
+                                    </div>
+                                    <div class="unselected">
+                                        <a href="/script/Articles/ListVersions.aspx?aid=1256008">Revisions (9)</a>
+                                    </div>
+                                    <div class="unselected">
+                                        <a href="/script/Articles/ListAlternatives.aspx?aid=1256008">Alternatives</a>
+                                    </div>\r\n\r\n\t
+                                    <div class="unselected">
+                                        <a href="WebControls/#_comments" id="ctl00_ArticleTabs_CommentLink" class="anchorLink">Comments \r\n
+                                            <span id="ctl00_ArticleTabs_CmtCnt">(1)</span>
+                                        </a>\r\n\t</div>\r\n</div>\t\r\n\r\n\r\n\t\t\t\t
+                                <a id="ctl00_AddAlternative" title="Write a related article about upgrades or translate this into a different language."
+                                    class="add-item" href="/script/Articles/SubmissionWizard.aspx?at=1&amp;apid=1256008">Add your own
+                                    <br />alternative version</a>\r\n\r\n\t\t\t
+                                <div>\r\n
+                                    <h4>Tagged as</h4>\r\n\t\t\t
+                                    <span id="ctl00_TagList_TagWrp" class="tags vertical">\r\n\r\n\t\r\n\t\r\n\r\n\t\r\n\t
+                                        <span id="ctl00_TagList_VisibleTags">
+                                            <div class="t">
+                                                <a rel="tag" href="/Tags/Javascript" data-id="87">Javascript</a>
+                                            </div>
+                                            <div class="t">
+                                                <a rel="tag" href="/Tags/CSS" data-id="90">CSS</a>
+                                            </div>
+                                            <div class="t">
+                                                <a rel="tag" href="/Tags/HTML" data-id="104">HTML</a>
+                                            </div>
+                                            <div class="t">
+                                                <a rel="tag" href="/Tags/JSON" data-id="997">JSON</a>
+                                            </div>
+                                            <div class="t">
+                                                <a rel="tag" href="/Tags/Web" data-id="1147">Web</a>
+                                            </div>
+                                            <div class="t">
+                                                <a rel="tag" href="/Tags/NPM" data-id="3812">NPM</a>
+                                            </div>
+                                            <div class="t">
+                                                <a rel="tag" href="/Tags/Markdown" data-id="3875">Markdown</a>
+                                            </div>
+                                            <div class="t">
+                                                <a rel="tag" href="/Tags/blockchain" data-id="4415">blockchain</a>
+                                            </div>
+                                            <div class="t">
+                                                <a rel="tag" href="/Tags/Ethereum" data-id="4512">Ethereum</a>
+                                            </div>
+                                            <div class="t">
+                                                <a rel="tag" href="/Tags/Solidity" data-id="4667">Solidity</a>
+                                            </div>
+                                            <div class="t">
+                                                <a rel="tag" href="/Tags/Truffle" data-id="4668">Truffle</a>
+                                            </div>
+                                        </span> \r\n\r\n\t\r\n\t\r\n</span>\r\n\r\n\r\n\t\t\t </div>\r\n\r\n
+                                <div class="stats">\r\n
+                                    <h4>Stats</h4>\r\n
+                                    <div id="ctl00_ArtStats">
+                                        <div class="stats">
+                                            <div>3K views</div>
+                                            <div>40 downloads</div>
+                                            <div>5 bookmarked</div>
+                                        </div>
+                                    </div>\r\n </div>\r\n\r\n
+                                <div class="subdue padded-top" title="Date First posted">Posted \r\n 10 Aug 2018</div>\r\n\r\n \r\n\r\n
+                                <div title="Licence">\r\n Licenced
+                                    <a id="ctl00_LicenseLink" title="The Code Project Open License (CPOL)" class="license"
+                                        href="http://www.codeproject.com/info/cpol10.aspx">CPOL</a>\r\n </div>\r\n\r\n \r\n\t\t\t</div>\r\n\r\n\t\t</td>\r\n\t\t
+                        <td>\r\n\t\t\t\r\n\t\t\t
+                            <div id="AT" class="container-article  fixed"> \r\n\r\n\t\t\t\t
+                                <div class="article">\r\n\r\n\t\t\t\t\t
+                                    <form name="aspnetForm" method="post" action="/Articles/1256008/Etherdrop-DAPP-Lottery-on-Ethereum-Blockchain"
+                                        id="aspnetForm" style="margin:0;padding:0">\r\n
+                                        <div>\r\n
+                                            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="t4lmN+P8iZx82guzCLvTME6SuSvuP3ewuWGbl65G8pNl5Wsn9bVhv8AyYhM7qgsJrUPio13IgRHq/TgsllNSuKNVNEClheztWJy1EQCoygYT1GIDflaSPhNFt4UXgMNeEJK17H1vo/+5bCR3Be4OHjhsS5pYRlQrc9fDzBhbsYsEnefxYYVy3V7xT6ngmcTDYmeZw9k7mk476dVEGl5TNfrOLhZn7fiflNrtpwpM5p9HSP5nUsRYiB7euKtMw+NBqRPnvF7+t0C/FKVTsI0Y46qNEgNqrsDNqJG1S+Kk+dhVnALTZ13z8Vk3HzC2ALOtbiuA3g4y4E+Ml5RhtAsgnlN95epgscEubmLTRm6MxImGHOKYI5BpIhVCBAHoisNSRy+SNT3gDCzcRAjBqos86HqW8AvMOYOXn06mmswwFFCuM87T5AsHwtLuL8xHf1mnr+dRfuBivQWrfELGJ1QrBlOcvDcz/rzA32sEjFAO3PbE3TwUSaQklZfR+jXem70cg78Op22e8Dp0S/zSSP/sgIDJrSvF+ZfV+foGk0UxvY4fRy1i5KSOxyTPDvKJOPv3qtkAWhP0KODDLyLXFb/BDomgk27p8+9QQapfRBBrq+0G+dw4j2SMHkYAK3RGNXlLSZFG1ENnqUyuu6yvsj5qjuiKTBcCf0KXrNNRVUc/hZS2t+Krk5QmMQ94vnMGvDPtamKfvhueS6clJBndZXopf/Iz+DJI9mNEp9SL11fcsXhWcdOGil0t7fBzdXjQf3kNShkl/k9QVECAApRI6okXXC5I8hc/kbbvC3d3q7bs5poInD7v3HEQfGgkepDzPAUGloHd5rsJ5ALVVyAUUSODLQAkrZR14jjvdlOM2nfNMJ8yi43gsuaPw9YsQh5ZK7j5szsbu6dQVJUfHKzwofDQrxk3z9sMXuxeRtiGROzwAhTYYWnf2s2YaNlWvGfTlwpbowKdEg0OVLV26+tMUJhgxaZWbuJRhdRuPLyooakN9S7hUqsgc//+vRWxLPboC8sMx7UNni1+hGrDBChqoGz1ejLW3XDuQPHFRbQgLR9j7V+iE54VTH9bInmTFEmEaShk3NqIrX9Ujuo4o0E4eJ6GgOT9YQZrs/RLUx8Or3E2n567Etsfn0ESI86qnYFDLAhEO/xUSWkZLf2JnupafEKKXfR8Ma/HuTAnUnOVust94SprP6Sfn+vM1Yk1/wXD4lVM4mtjoaPUvyx5I/BYa9Z0jFV20OoBHQUMRmk4lyk0ChkSJNUW0Y7SvF2RNL0m0PIf88bYtarEG345Ilq7mIm9E3/5TS9FdW9thQsPDEWTXc84S50DKz8e1dJ3CSjWqGff+LX4spEPHGf8+hOv++SvJaDRHmLFcqTGuiajUsKeX87xUFmyqlSPg6+KaBn6o9wOh9y0EGYOgg6oAjQQeqRxoijWjxq50ud7gu25HiU5gKBD5Bx8LocEPM22mJtA+x5tJXa/BTZoUmZWFi1nM/cGYzcbmY4Y6xGlawlLiAP5hw1nlB09mJSq1YRNWxw8Eth02kWHuMh2iuq4/LWhURPV7pJrb19JbJX4qViqpNzuHvcOO04mCqjbonGAAcV6BaqUmA+YwvUzqQBjJQ2XqLpzMcND3Go0AJr9kQtAyCczGFvugz4PfQuq74JkXKf4L8nXg4QBoZw82vGZoPRfYTiVC714hvz7hMOmtUE9t7P5hzj1/WjqykeTy77lNMaylH+cRzmlGDfZPDMq2WRxNBrU2P5qh263GcCD0xD1x4TRGwVGnsPvKe0LUuoMY8csMWWcHm5/lL5VQUA4MXsTHQU7HQJk/ZENvUr5sQCxau2BNbgX7cJ1hmDOD7EXUr3+ATDSqyf8cP2R67h6wd98XhlQaiBjO3dLX74xHf9iHK6IAPdNc3pSFzMg6buTphbb8YfEMzCK2PfaqeP6he/3/5YPgskafqLqj/wKKOS3kwSlXOgN88Avs82pscTGP+woloJEwEJeGxoXF/OcyM05OizwczjzoEgAgUjgyxd1xKx63QIn0lGoovCwAPaBgz0PfmZjGgPPtXo1/NTHsWfugbMPBzj0NWjaMdWklm8AJBmbOWZfcXI7m/PJRtUt8VlrxfkGDcf4ZUg0C/lRm5RNQASY0gzOVbSy+k9MqrKubnO56ovCTANsh4HfICrA+QCJvoLblORJr2SUyQHBeOeNR0SYshS/cK5QlS6ArivvkcdCpRkn+2+r/ABb0VpG/Weox7Ao0Ze5xfNL/kghB8WhZ2PCtLaCX6fyTthJXKuruW5aWXVcP0kHd04aec/YV/E8Yu96J12+ZE9c7ZxjYDKHvUvcimfbJws="
+                                            />\r\n</div>\r\n\r\n
+                                        <div>\r\n\r\n\t
+                                            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR"
+                                                value="10C1FD69" />\r\n</div>\r\n\r\n\t\t\t\t\t\r\n\t\t\t\t\t \r\n\t\t\t\t\t
+                                        <div class="header">\r\n\t\t\t\t\t
+                                            <a name="Main"></a>\r\n\r\n\t\t\t\t\t \r\n\t\t\t\t\t
+                                            <a name="_articleTop" id="_articleTop"></a>\r\n\t\t\t\t\t
+                                            <div class="title">\r\n\t\t\t\t\t
+                                                <h1 id="ctl00_ArticleTitle">Etherdrop: DAPP Lottery on Ethereum Blockchain</h1>\r\n\t\t\t\t\t </div>\r\n\r\n
+                                            <div style="height:34px">\r\n\t\t\t\t\t \r\n\t\t\t\t\t
+                                                <div class="entry float-left">\r\n\r\n
+                                                    <img src="https://www.codeproject.com/script/Membership/ProfileImages/{cf9eec9f-57ef-44e8-a45f-2c2b918c3b73}.png"
+                                                        id="ctl00_avatar" class="float-left avatar" />\r\n\r\n
+                                                    <div class="float-left">\r\n
+                                                        <div>\r\n\t\t\t\t\t\t
+                                                            <span class="author">
+                                                                <a href="/script/Membership/View.aspx?mid=7667955" rel="author">Fady Aro</a>
+                                                            </span>, \r\n\t\t\t\t\t\t
+                                                            <span class="date" title="Date last updated">\r\n\t\t\t\t\t\t\t 10 Aug 2018</span>\r\n\t\t\t </div>\r\n\r\n
+                                                        \r\n\t\t\t\t\t\t
+                                                        <div id="ctl00_RateArticleRow" class="float-left align-right"
+                                                            style="margin-top:5px">\r\n\r\n\t\t\t\t\t
+                                                            <div id="ctl00_CurRat" class="tooltip anchorLink column"
+                                                                style="cursor:pointer;margin:2px 20px 0 0" name="CurRat_1256008">\r\n\t\t\t\t\r\n\t\t\t\t\t\t\t \r\n\r\n
+                                                                <table id="ctl00_ArticleRating_RatingTable"
+                                                                    cellpadding="0" cellspacing="0" class="small-text">\r\n\t
+                                                                    <tr>\r\n\t\t
+                                                                        <td class="nowrap">\r\n\r\n\t\t
+                                                                            <span id="ctl00_ArticleRating_VI">\r\n\t\t
+                                                                                <div class="nowrap rating-stars-medium"
+                                                                                    style="height:18px;width:80px;position:relative;">\r\n\t\t\t
+                                                                                    <div class="clipped align-left float-left"
+                                                                                        style="height:16px;width:77px;">\r\n\t\t\t\t
+                                                                                        <img src="https://codeproject.global.ssl.fastly.net/script/Ratings/Images/stars-fill-md.png"
+                                                                                            style="border-width:0px;" />\r\n\t\t\t</div>
+                                                                                    <div class="clipped"
+                                                                                        style="height:16px;width:3px;position:relative;">\r\n\t\t\t\t
+                                                                                        <img src="https://codeproject.global.ssl.fastly.net/script/Ratings/Images/stars-empty-md.png"
+                                                                                            style="border-width:0px;position:absolute;top:0;right:0;"
+                                                                                        />\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t\t</span>\r\n\r\n\t\t\r\n\t</td>\r\n\t\t
+                                                                        <td
+                                                                            id="ctl00_ArticleRating_VR" class="nowrap">\r\n\t\t&nbsp;\r\n\t\t
+                                                                            <span id="ctl00_ArticleRating_VotesR">&nbsp;4.82 (3 votes)</span>\r\n\t\t\r\n\t</td>\r\n\t</tr>\r\n</table>\r\n\r\n
+                                                                <span
+                                                                    id="ctl00_ArticleRating_RatingText"></span>\r\n\r\n\r\n\t\t\t\t\t\t\t
+                                                                <div id="ctl00_RB" class="speech-bubble-container-up">\r\n\t\t\t\t\t\t\t\t
+                                                                    <div class="speech-bubble-up" style="width:150px !important">\r\n\t\t\t\t\t\t\t\t\t \r\n
+                                                                        <div>\r\n
+                                                                            <table class="feature" width="100%" height="50px"
+                                                                                title="Voting Distribution. Recent data only"
+                                                                                cellpadding="0" cellspacing="0">
+                                                                                <tr class="chart-row">
+                                                                                    <td class="chart-column">
+                                                                                        <span title="0 votes">1</span>
+                                                                                    </td>\r\n
+                                                                                    <td class="chart-column">
+                                                                                        <span title="0 votes">2</span>
+                                                                                    </td>\r\n
+                                                                                    <td class="chart-column">
+                                                                                        <span title="0 votes">3</span>
+                                                                                    </td>\r\n
+                                                                                    <td class="chart-column">
+                                                                                        <div>
+                                                                                            <img src="https://codeproject.global.ssl.fastly.net/script/Ratings/Images/pollcol.gif"
+                                                                                                width="20pxpx" height="25px"
+                                                                                                border="0px" alt="1 vote, 33.3%"
+                                                                                                title="1 vote, 33.3%" />
+                                                                                        </div>
+                                                                                        <span title="1 vote">4</span>
+                                                                                    </td>\r\n
+                                                                                    <td class="chart-column">
+                                                                                        <div>
+                                                                                            <img src="https://codeproject.global.ssl.fastly.net/script/Ratings/Images/pollcol.gif"
+                                                                                                width="20pxpx" height="50px"
+                                                                                                border="0px" alt="2 votes, 66.7%"
+                                                                                                title="2 votes, 66.7%" />
+                                                                                        </div>
+                                                                                        <span title="2 votes">5</span>
+                                                                                    </td>\r\n</tr>
+                                                                            </table>
+                                                                            <div class="small-text align-center">4.82/5 - 3 votes</div>
+                                                                            <div class="small-text align-center subdue">μ 4.82, σ
+                                                                                <sub>a</sub> 0.92 [
+                                                                                <a href="/KB/FAQs/RatingReputationFAQ.aspx#noisefilter">?</a>]</div>\r\n</div>\r\n\t\t\t\t\t\t\t\t
+                                                                        </div>\r\n\t\t\t\t\t\t\t\t
+                                                                    <div class="speech-bubble-pointer-up">\r\n\t\t\t\t\t\t\t\t\t
+                                                                        <div class="speech-bubble-pointer-up-inner"></div>\r\n\t\t\t\t\t\t\t\t </div>\r\n\t\t\t\t\t\t\t
+                                                                    </div>\r\n\r\n\t\t\t\t\t\t </div>\r\n
+                                                            <div class="column">\r\n
+                                                                <div id="ctl00_RateArticle_RateItemWrapper" class="container-rating tooltip small-text"
+                                                                    name="RateItem_1256008">\r\n\r\n\t
+                                                                    <table width="100%" cellpadding="0" cellspacing="0"
+                                                                        class="small-text">\r\n\t
+                                                                        <tr>\r\n\t\t
+                                                                            <td id="ctl00_RateArticle_VoteResultDiv"
+                                                                                class="rating-result align-right">\r\n\t\t\t
+                                                                                <span class="align-right"></span>\r\n\t\t\t
+                                                                                <img class="loading invisible"
+                                                                                    width="16px" alt="loading..." height="16px"
+                                                                                    \r\n\t\t\t\tsrc="/images/loading16.gif" /> \r\n\t\t</td>\r\n\r\n\t\r\n\t\t
+                                                                            <td class="voteTbl"
+                                                                                style="white-space:nowrap" align="right">\r\n\t\t\t
+                                                                                <table class="small-text">\r\n\t\t\t
+                                                                                    <tr>\r\n\t\t\t\t
+                                                                                        <td id="ctl00_RateArticle_RateText"
+                                                                                            class="rating-prompt">\r\n\t\t\t\t\tRate this:\r\n\t\t\t\t</td>\r\n\r\n\t\t\t\t\r\n\t\t\t\t
+                                                                                        <td
+                                                                                            id="ctl00_RateArticle_VoteFormDiv"
+                                                                                            class="nowrap rating-stars-voter-medium">\r\n\t\t\t\t\t\r\n\r\n\t\t\t\t\t
+                                                                                            <span
+                                                                                                id="ctl00_RateArticle_RB" class="tooltip ajaxHist radio voting">\r\n\t\t\t\t\t\t
+                                                                                                <span id="ctl00_RateArticle_VoteRBL">
+                                                                                                    <input id="ctl00_RateArticle_VoteRBL_0"
+                                                                                                        type="radio" name="ctl00$RateArticle$VoteRBL"
+                                                                                                        value="1" />
+                                                                                                    <input id="ctl00_RateArticle_VoteRBL_1"
+                                                                                                        type="radio" name="ctl00$RateArticle$VoteRBL"
+                                                                                                        value="2" />
+                                                                                                    <input id="ctl00_RateArticle_VoteRBL_2"
+                                                                                                        type="radio" name="ctl00$RateArticle$VoteRBL"
+                                                                                                        value="3" />
+                                                                                                    <input id="ctl00_RateArticle_VoteRBL_3"
+                                                                                                        type="radio" name="ctl00$RateArticle$VoteRBL"
+                                                                                                        value="4" />
+                                                                                                    <input id="ctl00_RateArticle_VoteRBL_4"
+                                                                                                        type="radio" name="ctl00$RateArticle$VoteRBL"
+                                                                                                        value="5" />
+                                                                                                </span> \r\n\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t</span>\r\n\r\n\t\t\t\t</td>\r\n\r\n\t\t\t\t\r\n\t\t\t\t
+                                                                                        <td
+                                                                                            style="padding-left:5px">\t\r\n\t\t\t\t\t
+                                                                                            <input type="submit"
+                                                                                                name="ctl00$RateArticle$SubmitRateBtn"
+                                                                                                value="Vote!" id="ctl00_RateArticle_SubmitRateBtn"
+                                                                                                class="button" />\r\n\t\t\t\t</td>\r\n\t\t\t</tr>\r\n\t\t\t</table>\r\n\t\t\t\r\n\t\t</td>\r\n\t</tr>\r\n\t</table>\r\n\t
+                                                                    <div
+                                                                        class="hover-container">\r\n\t\t\r\n\t</div>\r\n \r\n
+                                                                    <div id="ctl00_RateArticle_RSU"
+                                                                        class="speech-bubble-container-down">\r\n\t\t
+                                                                        <div class="speech-bubble-down">\r\n Please
+                                                                            <a id="ctl00_RateArticle_SignUp" href="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f1256008%2fEtherdrop-DAPP-Lottery-on-Ethereum-Blockchain">Sign up or sign in</a> to vote.\r\n\t\t</div>\r\n\t\t
+                                                                        <div
+                                                                            class="speech-bubble-pointer-down">\r\n\t\t\t
+                                                                            <div class="speech-bubble-pointer-down-inner"></div>\r\n\t\t</div>\r\n\t</div> \r\n\r\n</div>\r\n
+                                                                </div>\r\n \r\n </div>\r\n \t\t\t\t\t\t \t\r\n\r\n </div>\r\n\r\n
+                                                    \t \t\r\n
+                                                    <div class="float-left" style="margin: 25px 0 0 10px;">\r\n\t \r\n\t </div>\r\n \t \t\r\n \r\n\t\t\t\t\t </div>\r\n\r\n \r\n\r\n\t\t\t\t\t\t
+                                                \r\n\r\n </div>\r\n\r\n
+                                            <div id="ctl00_description" class="summary">Your Ethereum Giveaway Smart Contract Lottery</div>
+                                            <span id="ctl00_thumbnailUrl"
+                                                class="date" content="https://www.codeproject.com/KB/blockchain/1256008/Thumbnail.png"></span>\t\t\t\r\n\r\n </div>\r\n \r\n\t\t\t\t\t\r\n\t\t\t\t\t\r\n\r\n\t\t\t\t\t\r\n\r\n\t\t\t\t\t\r\n\t\t\t\t\t\r\n\t\t\t\t\t\r\n\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\r\n\r\n\t\t\t\t\t\r\n\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t
+                                        <div
+                                            id="contentdiv" class="text">\r\n\t\t\t\t\t\t\r\n\r\n\r\n\r\n
+                                            <ul class="download">\r\n\t
+                                                <li>
+                                                    <a href="/KB/blockchain/1256008/etherdrop.zip">Download source code - 1 MB</a>
+                                                </li>
+                                            </ul>\r\n\r\n
+                                            <h2>Introduction</h2>\r\n\r\n
+                                            <h1>
+                                                <a href="https://www.etherdrop.app">
+                                                    <strong>
+                                                        <em>Etherdrop.app</em>
+                                                    </strong>
+                                                </a>
+                                                <img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/etherdrop.png"
+                                                    style="width: 42px; height: 42px; float: left">
+                                            </h1>\r\n\r\n
+                                            <p>Of course, we have all heard about \'Bitcoin\' and the famous blockchain technology
+                                                brought by Satoshi Nakamoto.</p>\r\n\r\n
+                                            <p>While Bitcoin is the first form of the real internet of money, Ethereum is the
+                                                first form of \'the internet of decentralized computing trustless platform\'!</p>\r\n\r\n
+                                            <p>
+                                                <img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/unst.PNG"
+                                                    style="width: 500px; height: 173px">
+                                            </p>\r\n\r\n
+                                            <p>The Blockchain technology allowed us to communicate over a network of trust,
+                                                where there is a consensus enforced by cryptography, algorithm and power
+                                                of the nodes / miners.</p>\r\n\r\n
+                                            <p>
+                                                <img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/decent.PNG"
+                                                    style="width: 500px; height: 224px">
+                                            </p>\r\n\r\n
+                                            <p>I won\'t go a lot into explaining bitcoin, ethereum or other form of cryptocurrencies.
+                                                [Thanks to
+                                                <strong>
+                                                    <a href="https://www.google.com/search?q=bitcoin+ethereum">Google</a>
+                                                </strong>].</p>\r\n\r\n
+                                            <p>A well said sentence by the creator genius of Ethereum:</p>\r\n\r\n
+                                            <p>
+                                                <img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/vtb.PNG" style="width: 500px; height: 148px">
+                                            </p>\r\n\r\n
+                                            <p>So well, Ethereum is about a decentralized computing platform that allows users
+                                                to interact with others,
+                                                <br>\r\nusing a form of digital contract, the \'Smart Contract\' that enforces
+                                                specific behaviors between parties
+                                                <br>\r\ngiven a decentralized contract well defined on the blockchain and immutable
+                                                behavior once deployed there!</p>\r\n\r\n
+                                            <p>On Ethereum, we have 2 types of accounts (addresses):</p>\r\n\r\n
+                                            <ol>\r\n\t
+                                                <li>Users and Parties will have their \'user\' accounts (wallet addresses) holding
+                                                    the
+                                                    <strong>ETH</strong> ether balance.</li>\t
+                                                <li>Smart Contracts (\'the immutable transparent behavior programs\') address
+                                                    holding
+                                                    <strong>ETH </strong>and additional binary (EVM instruction - Contract OPCODE)
+                                                    structure and data (the contract state variables).</li>
+                                            </ol>\r\n\r\n
+                                            <p>
+                                                <img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/truffle.PNG"
+                                                    style="width: 450px; height: 340px">
+                                            </p>\r\n\r\n
+                                            <h2>Background</h2>\r\n\r\n
+                                            <p>Let us take an example of a \'Smart Contract\' of a Lottery Entertainment Service:</p>\r\n\r\n
+                                            <ol>\r\n\t
+                                                <li>A number of people who will pay a ticket to subscribe</li>\t
+                                                <li>Wait till the round closes</li>\t
+                                                <li>A winner will be randomly picked from the pool!</li>
+                                            </ol>\r\n\r\n
+                                            <p>You can see the
+                                                <strong>Etherdrop</strong> live on
+                                                <a href="http://www.etherdrop.app">
+                                                    <strong>etherdrop.app</strong>
+                                                </a>.</p>\r\n\r\n
+                                            <p>The old classic way is that you will never have access to centralized authority
+                                                (server) behind the service to know or verify how this random user is picked,
+                                                and what is happening behind the scenes, even in the presence of a human
+                                                monitoring / regulations.</p>\r\n\r\n
+                                            <p>
+                                                <strong>In this article, you will learn how to</strong>:</p>\r\n\r\n
+                                            <ol type="A">\r\n\t
+                                                <li>Develop The Lottery Service Logic [Smart Contract] using
+                                                    <strong>Solidity </strong>language</li>\t
+                                                <li>Deploy The SmartContract using NodeJs and
+                                                    <strong>
+                                                        <a href="https://truffleframework.com">Truffle</a>
+                                                    </strong>on the Local Blockchain (
+                                                    <a href="https://truffleframework.com/ganache">
+                                                        <strong>Ganache</strong>
+                                                    </a>) / or Mainnet Ethereum Blockchain</li>\t
+                                                <li>Develop the Web
+                                                    <br>\r\n\t
+                                                    <strong>FrontEnd - UI - Materialized, JS, Jquery, Web3Js, TruffleJs </strong>
+                                                    <br>\r\n\tthat supports
+                                                    <strong>Web3 (the next web generation) </strong>to interact with
+                                                    <strong>Ethereum Blockchain</strong>
+                                                </li>\t
+                                                <li>Develop the Web
+                                                    <strong>Backend - NodeJS</strong>
+                                                </li>\t
+                                                <li>Analyse and read the Blockchain Data On
+                                                    <a href="http://etherscan.io">
+                                                        <strong>Etherscan</strong>
+                                                    </a>
+                                                </li>
+                                            </ol>\r\n\r\n
+                                            <h2>Project Structure</h2>\r\n\r\n
+                                            <p>
+                                                <img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/tree.PNG"
+                                                    style="width: 180px; height: 402px">
+                                            </p>\r\n\r\n
+                                            <h2>Using the Code</h2>\r\n\r\n
+                                            <p>We will go section by section
+                                                <strong>[ A . B . C . D . E ]</strong>
+                                            </p>\r\n\r\n
+                                            <h3>[ A ]</h3>\r\n\r\n
+                                            <ul>\r\n\t
+                                                <li>Starting our Smart Contract Development, the SmartContract is a kind of a
+                                                    <strong>class (in Java, C#, OOP) </strong>holding state variables (e.g., global
+                                                    variables) as well as functions.</li>\t
+                                                <li>Please note that any execution of a smart contract function requires an onchain
+                                                    transaction from a user account address to the smart contract address
+                                                    pointing to the specific function (with its data arguments)</li>\t
+                                                <li>A transaction to be executed and confirmed needs to be added to a block,
+                                                    which should be added to the blockchain (confirmed), e.g., 3 confirmations
+                                                    means 3 blocks after the transaction\'s block are added to the blockchain
+                                                    and so on (a block contains many transactions, given the block size...)</li>\t
+                                                <li>While reading or calling a passive function (view) that does not change state
+                                                    variables or contract data is free and near instant.</li>\t
+                                                <li>The miner (or node) that will pick your transaction will broadcast it for
+                                                    other nodes, and will pick it to be executed and added into the next
+                                                    block (so in the blockchain).</li>\t
+                                                <li>The execution will take place on the miner node hardware(s) (gpu, cpu ...
+                                                    ) where the data of the contracts and its variables are on the blockchain
+                                                    which is a kind of distributed decentralized (raw file or db) including
+                                                    the whole network of users, contracts data</li>\t
+                                                <li>The execution is not free as the miner is running its hardware and consuming
+                                                    electricity, energy, internet etc...</li>\t
+                                                <li>The execution price in ethereum is about a \'
+                                                    <strong>GAS</strong>\' consumption, where each
+                                                    <strong>OPCODE </strong>on the
+                                                    <strong>EVM </strong>will cost a specific amount of GAS</li>\t
+                                                <li>The GAS price is in
+                                                    <strong>WEI</strong> (
+                                                    <strong>1 Ether</strong> =
+                                                    <strong>10^18 Wei</strong>)</li>\t
+                                                <li>A transaction will always include:\r\n\t
+                                                    <ul>\r\n\t\t
+                                                        <li>GAS Limit (which is about how much GAS Maximum you are willing to
+                                                            spend)</li>\t\t
+                                                        <li>GAS Price (which is about how much you want to pay for the miner
+                                                            of each GAS spent)</li>\t</ul>\r\n\t</li>\t
+                                                <li>Please note that the GAS Limit will guarantee that no transaction (code execution)
+                                                    will hand or take time more than it is priced, and no bad infinite loops
+                                                    may live there.</li>\t
+                                                <li>In case the miner GAS consumption reached the limit set by the transacting
+                                                    account, the transaction however will be mined, but will not be executed,
+                                                    Ethereum Amount will be reversed, but the GAS spent will not, and the
+                                                    contract state is rolled back! transaction status is Failed - Out Of
+                                                    Gas!\r\n\t
+                                                    <p>
+                                                        <strong>*</strong> Prepare your environment by installing
+                                                        <a href="https://git-scm.com/downloads">
+                                                            <strong>GIT</strong>
+                                                        </a> distributed version control system
+                                                        <br>\r\n\t
+                                                        <strong>*</strong> Install
+                                                        <strong>
+                                                            <a href="https://nodejs.org/en/download/">nodejs </a>
+                                                        </strong> and
+                                                        <a href="https://nodejs.org/en/download/package-manager">
+                                                            <strong>node package manager</strong>
+                                                        </a>
+                                                    </p>\r\n\r\n\t
+                                                    <p>
+                                                        <em>Notepad++ or any text editor is basically enough next on...</em>
+                                                    </p>\r\n\r\n\t
+                                                    <blockquote class="quote">\r\n\t
+                                                        <div class="op">Open a commnad line terminal [make sure git, npm are installed and
+                                                            set as in the system path (environment variable) ]</div>\r\n\r\n\t
+                                                        <p>
+                                                            <strong>&gt;</strong> git clone git@bitbucket.org:braingerm/cp-etherdrop.git</p>\r\n\r\n\t
+                                                        <p>
+                                                            <strong>&gt;</strong> cd &lt;project_root_folder_path&gt;</p>\r\n\r\n\t
+                                                        <p>
+                                                            <strong>&gt;</strong> npm install (this will install the dependencies
+                                                            and truffle into node_modules from the packages.json)</p>\r\n\t</blockquote>\r\n\r\n\t
+                                                    <p>
+                                                        <img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/git.PNG"
+                                                            style="width: 640px; height: 173px">
+                                                    </p>\r\n\r\n\t
+                                                    <p>
+                                                        <strong>*</strong> Install the local blockchain emulation node
+                                                        <a href="https://truffleframework.com/ganache">
+                                                            <strong>Ganache</strong>
+                                                        </a>
+                                                    </p>\r\n\r\n\t
+                                                    <p>
+                                                        <strong>*</strong> Run Ganache:</p>\r\n\t</li>\t
+                                                <li>It will listen by default on localhost port 7545</li>\t
+                                                <li>It will create 10 accounts by default with menmonic phrase (with 100 ETH
+                                                    each)</li>\t
+                                                <li>The mnemonic phrase can be imported in Metamask or other supporting wallet.
+                                                    <br>\r\n\tIt is more like your account password (private keys)\r\n\t
+                                                    <p>
+                                                        <img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/ganache.PNG"
+                                                            style="width: 500px; height: 350px">
+                                                    </p>\r\n\r\n\t
+                                                    <p>Now most of the tools are ready, it is time to explain, compile and deploy
+                                                        the EtherDrop SmartContract,
+                                                        <br>\r\n\tGiven the project structure, the EtherDrop smartcontract relies
+                                                        under
+                                                        <em>./contracts/EtherDrop.sol</em>.</p>\r\n\r\n\t
+                                                    <p>
+                                                        <strong>
+                                                            <em>*.sol</em>
+                                                        </strong>extension
+                                                        <strong> </strong>stands for solidity.</p>\r\n\r\n\t
+                                                    <pre lang="jscript">pragma solidity ^0.<span class="code-digit">4</span>.<span class="code-digit">20</span>; <span class="code-comment">//</span><span class="code-comment"> This is the Solidity Used Compiler Version</span>\r\n\r\n<span class="code-comment">/*</span><span class="code-comment">*\r\n * @author FadyAro\r\n *\r\n * 22.07.2018\r\n *\r\n\r\n/**\r\n * This contract is inherited later, to manage the owner, and use restriction for \r\n * on some functions later in next contract(s)\r\n */</span>\r\ncontract Ownable {\r\n\r\n    <span class="code-comment">//</span><span class="code-comment"> the contract state variable as mentioned before</span>\r\n    address <span class="code-keyword">public</span> owner;\r\n\r\n    <span class="code-comment">//</span><span class="code-comment"> whenever the ownership has been transferred log and event for auditing on the blockchain</span>\r\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\r\n\r\n    <span class="code-keyword">constructor</span>() <span class="code-keyword">public</span> {\r\n        owner = msg.sender;\r\n    }\r\n\r\n    <span class="code-comment">//</span><span class="code-comment"> this modifier when added to a function will make sure that the caller the owner</span>\r\n    <span class="code-comment">//</span><span class="code-comment"> of the deployed contract</span>\r\n    modifier onlyOwner() {\r\n        require(msg.sender == owner);\r\n        _;\r\n    }\r\n\r\n    <span class="code-comment">//</span><span class="code-comment"> a function to transfer the ownership to another account (address)</span>\r\n    <span class="code-comment">//</span><span class="code-comment"> trigger the event later on (emit ...)</span>\r\n    <span class="code-keyword">function</span> transferOwnership(address newOwner) <span class="code-keyword">public</span> onlyOwner {\r\n        require(newOwner != address(<span class="code-digit">0</span>));\r\n        emit OwnershipTransferred(owner, newOwner);\r\n        owner = newOwner;\r\n    }\r\n}\r\n\r\n<strong>...... <span class="code-comment">//</span><span class="code-comment"> for briefing</strong></span>\r\n\r\n<span class="code-comment">/*</span><span class="code-comment">*\r\n * This contract will run the EtherDrop logic\r\n */</span>\r\ncontract EtherDrop is Pausable {\r\n\r\n    <span class="code-comment">/*</span><span class="code-comment">\r\n     * lotto ticket price is 2e16 = 0.02 ETH\r\n     */</span>\r\n    uint constant PRICE_WEI = 2e16;\r\n\r\n<strong>    ...... <span class="code-comment">//</span><span class="code-comment"> for briefing</strong></span>\r\n\r\n    <span class="code-comment">/*</span><span class="code-comment">\r\n     * this event is when we have a new winner\r\n     * it is as well a new round start =&gt; (round + 1)\r\n     */</span>\r\n    event NewWinner(address addr, uint round, uint place, uint value, uint price);\r\n\r\n    struct <span class="code-sdkkeyword">history</span> {\r\n\r\n        <span class="code-comment">/*</span><span class="code-comment">\r\n         * user black listed comment\r\n         */</span>\r\n        uint blacklist;\r\n\r\n        <span class="code-comment">/*</span><span class="code-comment">\r\n         * user rounds subscriptions number\r\n         */</span>\r\n        uint size;\r\n\r\n        <span class="code-comment">/*</span><span class="code-comment">\r\n         * array of subscribed rounds indexes\r\n         */</span>\r\n        uint[] rounds;\r\n\r\n        <strong>...... <span class="code-comment">//</span><span class="code-comment"> for briefing</strong></span>\r\n    }\r\n\r\n    <span class="code-comment">/*</span><span class="code-comment">\r\n     * active subscription queue\r\n     */</span>\r\n    address[] <span class="code-keyword">private</span> _queue;\r\n\r\n    <span class="code-comment">/*</span><span class="code-comment">\r\n     * winners history\r\n     */</span>\r\n    address[] <span class="code-keyword">private</span> _winners;\r\n\r\n<strong>    ...... <span class="code-comment">//</span><span class="code-comment"> for briefing</strong></span>\r\n\r\n    <span class="code-comment">/*</span><span class="code-comment">\r\n     * active round queue pointer\r\n     */</span>\r\n    uint <span class="code-keyword">public</span> _counter;\r\n\r\n    <span class="code-comment">/*</span><span class="code-comment">\r\n     * allowed collectibles\r\n     */</span>\r\n    uint <span class="code-keyword">private</span> _collectibles = <span class="code-digit">0</span>;\r\n\r\n    <span class="code-comment">/*</span><span class="code-comment">\r\n     * users history mapping\r\n     */</span>\r\n    mapping(address =&gt; <span class="code-sdkkeyword">history</span>) <span class="code-keyword">private</span> _history;\r\n\r\n    <span class="code-comment">/*</span><span class="code-comment">*\r\n     * get current round details\r\n     */</span>\r\n    <span class="code-keyword">function</span> currentRound() <span class="code-keyword">public</span> view returns \r\n             (uint round, uint counter, uint round_users, uint price) {\r\n        <span class="code-keyword">return</span> (_round, _counter, QMAX, PRICE_WEI);\r\n    }\r\n\r\n    <span class="code-comment">/*</span><span class="code-comment">*\r\n     * get round stats by index\r\n     */</span>\r\n    <span class="code-keyword">function</span> roundStats(uint index) <span class="code-keyword">public</span> view returns \r\n             (uint round, address winner, uint position, uint block_no) {\r\n        <span class="code-keyword">return</span> (index, _winners[index], _positions[index], _blocks[index]);\r\n    }\r\n\r\n<strong>   ...... <span class="code-comment">//</span><span class="code-comment"> for briefing</strong></span>\r\n\r\n    <span class="code-comment">/*</span><span class="code-comment">*\r\n     * round user subscription\r\n     */</span>\r\n    <span class="code-keyword">function</span>() <span class="code-keyword">public</span> payable whenNotPaused {\r\n        <span class="code-comment">/*</span><span class="code-comment">\r\n         * check subscription price\r\n         */</span>\r\n        require(msg.value &gt;= PRICE_WEI, <span class="code-string">&#39;</span><span class="code-string">Insufficient Ether&#39;</span>);\r\n\r\n        <span class="code-comment">/*</span><span class="code-comment">\r\n         * start round ahead: on QUEUE_MAX + 1\r\n         * draw result\r\n         */</span>\r\n        <span class="code-keyword">if</span> (_counter == QMAX) {\r\n\r\n            uint r = DMAX;\r\n\r\n            uint winpos = <span class="code-digit">0</span>;\r\n\r\n            _blocks.push(block.number);\r\n\r\n            <strong><span class="code-comment">//</span><span class="code-comment"> derive a random winning position</strong></span>\r\n            bytes32 _a = blockhash(block.number - <span class="code-digit">1</span>);\r\n\r\n            <span class="code-keyword">for</span> (uint i = <span class="code-digit">31</span>; i &gt;= <span class="code-digit">1</span>; i--) {\r\n                <span class="code-keyword">if</span> (uint8(_a[i]) &gt;= <span class="code-digit">48</span> &amp;&amp; uint8(_a[i]) &lt;= <span class="code-digit">57</span>) {\r\n                    winpos = <span class="code-digit">10</span> * winpos + (uint8(_a[i]) - <span class="code-digit">48</span>);\r\n                    <span class="code-keyword">if</span> (--r == <span class="code-digit">0</span>) <span class="code-keyword">break</span>;\r\n                }\r\n            }\r\n\r\n            _positions.push(winpos);\r\n\r\n            <span class="code-comment">/*</span><span class="code-comment">\r\n             * post out winner rewards\r\n             */</span>\r\n            uint _reward = (QMAX * PRICE_WEI * <span class="code-digit">90</span>) / <span class="code-digit">100</span>;\r\n            address _winner = _queue[winpos];\r\n\r\n            _winners.push(_winner);\r\n            _winner.transfer(_reward);\r\n\r\n            <strong>...... <span class="code-comment">//</span><span class="code-comment"> for briefing</strong></span>\r\n\r\n            <span class="code-comment">/*</span><span class="code-comment">\r\n             * log the win event: winpos is the proof, history trackable\r\n             */</span>\r\n            emit NewWinner(_winner, _round, winpos, h.values[h.size - <span class="code-digit">1</span>], _reward);\r\n\r\n<strong>            ...... <span class="code-comment">//</span><span class="code-comment"> for briefing</strong></span>\r\n\r\n            <span class="code-comment">/*</span><span class="code-comment">\r\n             * reset counter\r\n             */</span>\r\n            _counter = <span class="code-digit">0</span>;\r\n\r\n            <span class="code-comment">/*</span><span class="code-comment">\r\n             * increment round\r\n             */</span>\r\n            _round++;\r\n        }\r\n\r\n        h = _history[msg.sender];\r\n\r\n        <span class="code-comment">/*</span><span class="code-comment">\r\n         * user is not allowed to subscribe twice\r\n         */</span>\r\n        require(h.size == <span class="code-digit">0</span> || h.rounds[h.size - <span class="code-digit">1</span>] != _round, <span class="code-string">&#39;</span><span class="code-string">Already In Round&#39;</span>);\r\n\r\n        <span class="code-comment">/*</span><span class="code-comment">\r\n         * create user subscription: N.B. places[_round] is the result proof\r\n         */</span>\r\n        h.size++;\r\n        h.rounds.push(_round);\r\n        h.places.push(_counter);\r\n        h.values.push(msg.value);\r\n        h.prices.push(<span class="code-digit">0</span>);\r\n\r\n        <strong>...... <span class="code-comment">//</span><span class="code-comment"> for briefing</strong></span>\r\n\r\n        _counter++;\r\n    }\r\n\r\n    <strong>...... <span class="code-comment">//</span><span class="code-comment"> for briefing</strong></span>\r\n     \r\n}</pre>\r\n\r\n\t
+                                                    <p>After reading/analysing the commented functions, let\'s focus on the
+                                                        <code>function() public payable whenNotPaused</code>
+                                                    </p>\r\n\r\n\t
+                                                    <p>
+                                                        <code>function()</code> is the function keyword
+                                                        <br>\r\n\tthis one is different from other functions, it has no name
+                                                        <br>\r\n\tit calls the
+                                                        <strong>fallback</strong> function of the contract
+                                                        <br>\r\n\tthat means when a contract is called with no point function,
+                                                        it will go to the fallback if found</p>\r\n\r\n\t
+                                                    <p>
+                                                        <code>public</code>
+                                                        <strong> </strong>means that a function can be executed from outside the contract
+                                                        via a transaction</p>\r\n\r\n\t
+                                                    <p>
+                                                        <code>payable</code> is a required keyword to make a function able to
+                                                        <strong>accept ethereum -&gt; to the contract balance</strong>
+                                                    </p>\r\n\t</li>\t
+                                                <li>Within the
+                                                    <code>fallback</code> function, you may notice many unassigned variable, please refer to the
+                                                    <strong>
+                                                        <a href="http://solidity.readthedocs.io/en/develop/units-and-global-variables.html?highlight=msg.value#block-and-transaction-properties">ethereum docs</a>
+                                                    </strong> to know about global variables and transaction properties...\r\n\t
+                                                    <ul>\r\n\t\t
+                                                        <li>
+                                                            <code>msg.value</code>
+                                                            <strong> </strong>contains the transaction ether sent amount (to the contract)</li>\t\t
+                                                        <li>
+                                                            <code>msg.sender</code>
+                                                            <strong> </strong>contains the sender address
+                                                            <strong> </strong>
+                                                        </li>\t</ul>\r\n\t</li>
+                                            </ul>\r\n\r\n
+                                            <pre lang="text">msg.data (bytes): complete calldata\r\nmsg.gas (uint): remaining gas - deprecated in version 0.4.21 and to be replaced by gasleft()\r\nmsg.sender (address): sender of the message (current call)\r\nmsg.sig (bytes4): first four bytes of the calldata (i.e. function identifier)\r\nmsg.value (uint): number of wei sent with the message</pre>\r\n\r\n
+                                            <p>
+                                                <code>_winner.transfer(_reward);</code>
+                                                <code>_winner</code> is a variable of type
+                                                <code>address</code>, so the function transfer applies to transferring the
+                                                <code>_reward</code> to the
+                                                <code>address</code>, where
+                                                <code>_reward</code> is a uint of size 256 bytes, in
+                                                <strong>WEI</strong> unit</p>\r\n\r\n
+                                            <p>So the EtherDrop contract will work as:</p>\r\n\r\n
+                                            <ol>\r\n\t
+                                                <li>In a same round, only one subscription per address is allowed, else transaction
+                                                    is reversed:\r\n\t
+                                                    <pre lang="jscript"><span class="code-comment">//</span><span class="code-comment"> checkout the history struct  { }</span>\r\n<span class="code-comment">//</span><span class="code-comment"> get user history, _history is a more like a hashmap&lt;address, history&gt;</span>\r\nh = _history[msg.sender];\r\n\r\n<span class="code-comment">//</span><span class="code-comment"> this is a double check is the address or user has enter the same round before</span>\r\nrequire(h.size == <span class="code-digit">0</span> || h.rounds[h.size - <span class="code-digit">1</span>] != _round, <span class="code-string">&#39;</span><span class="code-string">Already In Round&#39;</span>);\r\n</pre>\r\n\t</li>\t
+                                                <li>In a round, the subscription price is 0.02 Ether (or 2e16 wei)</li>\t
+                                                <li>When the queue is full, on the next round start the winner is picked</li>\t
+                                                <li>Picking a user is from the upcoming block</li>
+                                            </ol>\r\n\r\n
+                                            <p>Each block has a hash, the upcoming block hash will be used as source of randomness
+                                                <br>\r\nA number between 1 and 1000 will be derived.
+                                                <br>\r\nThe
+                                                <code>_queue[winpos]</code>
+                                                <strong> </strong>will pick the winner and send its reward</p>\r\n\r\n
+                                            <p>Compile the contract using truffle:</p>\r\n\r\n
+                                            <blockquote class="quote">\r\n
+                                                <div class="op">In the commnad line terminal [make sure you installed truffle ]</div>\r\n\r\n
+                                                <div>
+                                                    <strong>&gt;</strong> truffle compile (this will compile the contract and show
+                                                    errors / warnings...)</div>\r\n</blockquote>\r\n\r\n
+                                            <p>
+                                                <img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/compile.PNG"
+                                                    style="width: 551px; height: 99px">
+                                            </p>\r\n\r\n
+                                            <p>Notice \'writing artifacts to
+                                                <em>.\\build\\contracts</em>\', this will write output
+                                                <em>*.json</em> contract built specs used later on
+                                                <br>\r\nin the web client js, to interact with the contract on the blockchain...</p>\r\n\r\n
+                                            <h3>[ B ]</h3>\r\n\r\n
+                                            <p>To Deploy the
+                                                <code>SmartContract</code> using truffle, it should be added under
+                                                <em>./migrations./2_deploy_contracts.js</em>:</p>\r\n\r\n
+                                            <pre lang="jscript"><span class="code-keyword">let</span> EtherDrop = artifacts.require(<span class="code-string">"</span><span class="code-string">EtherDrop"</span>); <span class="code-comment">//</span><span class="code-comment"> read the contract EtherDrop.sol</span>\r\nmodule.exports = <span class="code-keyword">function</span> (deployer) {\r\n    deployer.deploy(EtherDrop);                 <span class="code-comment">//</span><span class="code-comment"> direct deployment instruction</span>\r\n};</pre>\r\n\r\n
+                                            <p>Now in the root folder, notice what\'s in the
+                                                <em>truffle.js</em> file:</p>\r\n\r\n
+                                            <pre lang="jscript">module.exports = {\r\n  networks: {\r\n    development: {\r\n      host: <span class="code-string">"</span><span class="code-string">127.0.0.1"</span>,    <span class="code-comment">//</span><span class="code-comment"> where (which node) to deploy the contract</span>\r\n      port: <span class="code-digit">7545</span>,           <span class="code-comment">//</span><span class="code-comment"> the node port</span>\r\n      gas: <span class="code-digit">20500000</span>,        <span class="code-comment">//</span><span class="code-comment"> if you want to set network gas block tx limit Current </span>\r\n                            <span class="code-comment">//</span><span class="code-comment"> Ropsten gas limit. See https://ropsten.etherscan.io/block/3141628</span>\r\n      gasPrice: <span class="code-digit">1100000000</span>, <span class="code-comment">//</span><span class="code-comment"> if you want to change default network gas price 1.1 GWei - based on </span>\r\n                            <span class="code-comment">//</span><span class="code-comment"> the lower end of current txs getting into blocks currently on Ropsten.</span>\r\n      network_id: <span class="code-string">"</span><span class="code-string">5777"</span>    <span class="code-comment">//</span><span class="code-comment"> this is the network id (in case of Ganache truffle it is 5777 </span>\r\n                            <span class="code-comment">//</span><span class="code-comment"> as in the screenshot)</span>\r\n    }\r\n  }\r\n};</pre>\r\n\r\n
+                                            <p>Let us now deploy the contract to the blockchain (test local ganache):</p>\r\n\r\n
+                                            <blockquote
+                                                class="quote">\r\n
+                                                <div class="op">in the command line go to the migrations folder :</div>\r\n\r\n
+                                                <pre lang="text">&gt; cd migrations\r\n\r\n&gt; truffle migrate</pre>\r\n</blockquote>\r\n\r\n
+                                            <p>
+                                                <img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/migrate.PNG"
+                                                    style="width: 500px; height: 269px">
+                                            </p>\r\n\r\n
+                                            <p>Please note the contract address (
+                                                <code>@ Deploying EtherDrop... 0x7ac26cc...</code>).</p>\r\n\r\n
+                                            <p>This is the Lottery Contract Address (on local test net of course).</p>\r\n\r\n
+                                            <p>It is where a participant will sent the 0.02 ETH to subscribe to a round (later
+                                                on in Web UI)</p>\r\n\r\n
+                                            <p>You see the contract deployment transaction in ganache logs:</p>\r\n\r\n
+                                            <p>
+                                                <img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/glogs.PNG"
+                                                    style="width: 640px; height: 100px">
+                                            </p>\r\n\r\n
+                                            <h3>[ C ]</h3>\r\n\r\n
+                                            <p>In this step, we will talk about the Web Client.</p>\r\n\r\n
+                                            <p>Since the name is EtherDrop, it is about a \'Drop\' that will be filled when
+                                                the round subscription is full.</p>\r\n\r\n
+                                            <p>I used
+                                                <strong>
+                                                    <a href="https://materializecss.com">Materializecss</a>
+                                                </strong>, a modern responsive front-end framework based on Material Design.</p>\r\n\r\n
+                                            <p>Please go there to learn more their layout, grids, columns, rows, container and
+                                                styling...</p>\r\n\r\n
+                                            <p>We won\'t focus on the HTML design, let\'s jump to the Web3 and Js section, mainly
+                                                where we interact with the smart contract and events.</p>\r\n\r\n
+                                            <p>Interacting with Blockchain needs a
+                                                <strong>web3 </strong>provider, that most of current browsers do not support.</p>\r\n\r\n
+                                            <p>
+                                                <img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/msk.PNG" style="width: 434px; height: 200px">
+                                            </p>\r\n\r\n
+                                            <p>For that, you may install
+                                                <strong>
+                                                    <a href="https://metamask.io/">Metamask on chrome</a>
+                                                </strong>and get it pointed to localhost:</p>\r\n\r\n
+                                            <p>
+                                                <img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/mnm.PNG" style="width: 250px; height: 128px">
+                                            </p>\r\n\r\n
+                                            <p>with ganache in networks settings, and import the wallet using the mnemonic phrase:</p>\r\n\r\n
+                                            <p>
+                                                <img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/ssd.PNG" style="width: 196px; height: 250px">
+                                            </p>\r\n\r\n
+                                            <p>provided by ganache (in accounts sections):</p>\r\n\r\n
+                                            <p>
+                                                <img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/ssdr.PNG"
+                                                    style="width: 259px; height: 250px">
+                                            </p>\r\n\r\n
+                                            <p>Now let us check the js side:</p>\r\n\r\n
+                                            <h4>Opening src/js/ed-client.js</h4>\r\n\r\n
+                                            <pre lang="text">    <strong>... // brief</strong>\r\n    \r\n    // check for web3 provider\r\n    initWeb3: () =&gt; {\r\n        if (typeof web3 !== &#39;undefined&#39;) {\r\n            BetClient.web3Provider = web3.currentProvider;\r\n        } else {\r\n            if (BetClient.onNoDefaultWeb3Provider) {\r\n                setTimeout(BetClient.onNoDefaultWeb3Provider, 3000);\r\n            }\r\n            // if no web3 found or metamask just use for the infura\r\n            let infura = &#39;https://mainnet.infura.io/plnAtKGtcoxBtY9UpS4b&#39;;\r\n            BetClient.web3Provider = new Web3.providers.HttpProvider(infura);\r\n        }\r\n        web3 = new Web3(BetClient.web3Provider);\r\n        return BetClient.initContract();\r\n    },\r\n\r\n    initContract: () =&gt; {\r\n        // <strong>load the generated in build.. EtherDrop.Json</strong>\r\n        dbg(`loading ${BetClient.jsonFile}`);\r\n        $.getJSON(BetClient.jsonFile, (data) =&gt; {\r\n            dbg(&#39;got abi&#39;);\r\n            BetClient.contracts.EtherDrop = TruffleContract(data);\r\n            BetClient.contracts.EtherDrop.setProvider(BetClient.web3Provider);\r\n            <strong>// watch out the address from the network id (1 on mainnet)</strong>\r\n            BetClient.address = data.networks[5777].address;\r\n            if (BetClient.onContractLoaded) {\r\n                BetClient.onContractLoaded();\r\n            }\r\n            BetClient.listen();\r\n        });\r\n    },\r\n\r\n    <strong>// example of read the EtherDrop Current Round details</strong>\r\n    loadRoundInfo: () =&gt; {\r\n        BetClient.contracts.EtherDrop\r\n            .deployed()\r\n            .then((instance) =&gt; {\r\n                <strong>// note that the instance is the contract EtherDrop itself\r\n                // having in (EtherDrop.sol) the function currentRound()\r\n                // that will return the round no, the counter, the price etc ...</strong>\r\n                return instance.currentRound.call();\r\n            })\r\n            .then(function (<strong>result</strong>) {\r\n                if (BetClient.onLoadRoundInfo)\r\n                    <strong>// here we got the result[] of BigNumber uint256\r\n                    // we may convert them to [] of Numbers\r\n                    // and load them to the UI Presenter on callback</strong>\r\n                    BetClient.onLoadRoundInfo($.map(result, (r) =&gt; {\r\n                        return r.toNumber();\r\n                    }));\r\n            })\r\n            .catch((e) =&gt; BetClient.raiseError(e, &#39;loadRoundInfo&#39;));\r\n    },\r\n\r\n    <strong>... // brief \r\n</strong>\r\n\r\n    <strong>// this is the payment part in case to be handler by Metamask or Web3 Browser</strong>\r\n    participate: (amount) =&gt; {\r\n        \r\n        <strong>// get a loaded account from Metamask, or trustwallet</strong> \r\n        web3.eth.getAccounts((error, accounts) =&gt; {\r\n            if (error) {\r\n                BetClient.raiseError(error, &#39;Participate&#39;);\r\n            } else {\r\n               \r\n                <strong>// use the account to do the transaction</strong>\r\n                dbg(`accounts: ${JSON.stringify(accounts)}`);\r\n                if (accounts.length === 0) {\r\n                    BetClient.raiseError(&#39;No Accounts&#39;, &#39;Participate&#39;);\r\n                } else {\r\n                    BetClient.contracts.EtherDrop\r\n                        .deployed()\r\n                        .then((instance) =&gt; {\r\n                            return <strong>instance.sendTransaction</strong>({\r\n                                from: <strong>accounts[0]</strong>,\r\n                                value: <strong>amount // 0.02 ETH</strong>\r\n                            }).then(function (result) {\r\n                                dbg(JSON.stringify(result));\r\n                            });\r\n                        })\r\n                        .catch((e) =&gt; BetClient.raiseError(e, &#39;Participate&#39;));\r\n                }\r\n            }\r\n        });\r\n    },\r\n\r\n    <strong>// listen to the contract events: New Winner, New Participation</strong>\r\n    listen: () =&gt; {\r\n        BetClient.contracts.EtherDrop\r\n            .deployed()\r\n            .then((instance) =&gt; {\r\n                return instance; <strong>// the contract instance</strong>\r\n            })\r\n            .then((result) =&gt; {\r\n\r\n                <strong>// blockchain read filtering from the latest to pending block</strong>\r\n                const options = {fromBlock: &#39;latest&#39;, toBlock: &#39;pending&#39;};\r\n\r\n                <strong>// register for the NewDropIn (new subscription)</strong>\r\n                result.NewDropIn({}, options).watch(function (error, result) {\r\n                    if (error)\r\n                        BetClient.raiseError(error, &#39;NewDropIn&#39;);\r\n                    else if (BetClient.onNewDropIn)\r\n                        BetClient.onNewDropIn(result);\r\n                });\r\n\r\n                <strong>// register for the NewWinner (and it is a new round start same time)</strong>\r\n                result.NewWinner({}, options).watch((error, result) =&gt; {\r\n                    if (error)\r\n                        BetClient.raiseError(error, &#39;NewWinner&#39;);\r\n                    else if (BetClient.onNewWinner)\r\n                        BetClient.onNewWinner(result);\r\n                });\r\n            })\r\n            <strong>// handle errors</strong>\r\n            .catch((e) =&gt; BetClient.raiseError(e, &#39;listen&#39;));\r\n    }\r\n};</pre>\r\n\r\n
+                                            <p>
+                                                <img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/etd.png" style="width: 500px; height: 290px">
+                                            </p>\r\n\r\n
+                                            <h3>[ D ]</h3>\r\n\r\n
+                                            <p>Now we have talked enough, let us run the webserver locally.</p>\r\n\r\n
+                                            <p>We are using nodeJs - lite server (defined in the
+                                                <em>package.json</em> dependency file) which uses bs plugin (browser sync).</p>\r\n\r\n
+                                            <p>I like this static pages serving server, it syncs the webpage on each file content
+                                                change.</p>\r\n\r\n
+                                            <p>Handy for light webapp development, note the
+                                                <em>bs-config.json</em>:</p>\r\n\r\n
+                                            <p>It tells the lite-server to watch and serve the files under
+                                                <em>./src</em> and
+                                                <em>./build/contracts</em> (where the
+                                                <em>EtherDrop.json</em> is there):</p>\r\n\r\n
+                                            <pre lang="jscript">{\r\n  <span class="code-string">"</span><span class="code-string">server"</span>: {\r\n    <span class="code-string">"</span><span class="code-string">baseDir"</span>: [<span class="code-string">"</span><span class="code-string">./src"</span>, <span class="code-string">"</span><span class="code-string">./build/contracts"</span>]\r\n  }\r\n} </pre>\r\n\r\n
+                                            <p>Yupp, now let\'s run the server:</p>\r\n\r\n
+                                            <blockquote class="quote">\r\n
+                                                <div class="op">in the command line terminal type:</div>\r\n\r\n
+                                                <p>&gt; npm run dev</p>\r\n</blockquote>\r\n\r\n
+                                            <p>
+                                                <img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/lite.PNG"
+                                                    style="width: 500px; height: 522px">
+                                            </p>\r\n\r\n
+                                            <p>TADA! The DApp will launch on your default browser, open it on Chrome.</p>\r\n\r\n
+                                            <p>Make sure metamask is well configured as mentioned before! Congrats!</p>\r\n\r\n
+                                            <p>
+                                                <img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/etdw.PNG"
+                                                    style="width: 640px; height: 337px">
+                                            </p>\r\n\r\n
+                                            <h3>[ E ]</h3>\r\n\r\n
+                                            <p>When it is deployed in the mainnet [Network Id is 1].</p>\r\n\r\n
+                                            <p>In the
+                                                <em>EtherDrop.Json</em> in the end of file, you will have to replace the network
+                                                id from 5777 to 1.
+                                                <br>\r\nAlso, replace the creation transaction hash and contract address by the
+                                                corresponding ones (deployed live contract, e.g., from
+                                                <strong>
+                                                    <a href="https://remix.ethereum.org">remix IDE</a>
+                                                </strong>).</p>\r\n\r\n
+                                            <p>Let\'s have a look at the deployed SmartContract on
+                                                <em>Etherscan.io</em>:</p>\r\n\r\n
+                                            <p>
+                                                <strong>
+                                                    <a href="https://etherscan.io/address/0x81b1ff50d5bca9150700e7265f7216e65c8936e6">https://etherscan.io/address/0x81b1ff50d5bca9150700e7265f7216e65c8936e6</a>
+                                                </strong>
+                                            </p>\r\n\r\n
+                                            <ul>\r\n\t
+                                                <li>Click on
+                                                    <strong>transactions</strong> to browser the transactions done on our EtherDrop
+                                                    Smart Contract.
+                                                    <br>\r\n\tWe can see a transaction that\'s failing because the sender did
+                                                    include enough amount of GAS :(</li>\t
+                                                <li>Click On
+                                                    <strong>Code </strong>to view the verified contract source code (binary compilation
+                                                    verification):</li>
+                                            </ul>\r\n\r\n
+                                            <p>
+                                                <strong>
+                                                    <a href="https://etherscan.io/address/0x81b1ff50d5bca9150700e7265f7216e65c8936e6">
+                                                        <img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/ets.PNG"
+                                                            style="width: 600px; height: 427px">
+                                                    </a>
+                                                </strong>
+                                            </p>\r\n\r\n
+                                            <h2>Points of Interest</h2>\r\n\r\n
+                                            <p>This contract is on its first release, on the next drop / round, the UI will
+                                                be updated, more features will be added and the contract will be migrated
+                                                and a new one will be deployed including optimization, performance enhancements
+                                                and a lot of upcoming precautions. ;)</p>\r\n\r\n
+                                            <p>Join in and keep yourself updated! Long Live Bitcoin, Long Live Ethereum!</p>\r\n\r\n
+                                            <p>
+                                                <strong>Thank you!</strong>
+                                            </p>\r\n\r\n
+                                            <h3>
+                                                <a href="https://www.etherdrop.app">
+                                                    <strong>
+                                                        <em>Etherdrop.app</em>
+                                                    </strong>
+                                                </a>
+                                                <img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/etherdrop.png"
+                                                    style="width: 32px; height: 32px; float: left">
+                                            </h3>\r\n\r\n\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\r\n\r\n\t\t\t\t\t\t
+                                        <div class="float-right"
+                                            style="margin:20px 0 0 10px;border:1px solid #ccc">\r\n\t\t\t\t\t\t
+                                            <div class="msg-300x250" data-format="300x250" data-type="ad" data-publisher="lqm.codeproject.site"
+                                                data-zone="General-Programming/Blockchain/General" data-loadOnView=\ 'true\'
+                                                data-tags=\
+                                                'Javascript, CSS, HTML, JSON, Web, NPM, Markdown, blockchain, Ethereum, Solidity, Truffle,rating4.5\'>
+                                                <noscript>
+                                                    <a href="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/General-Programming/Blockchain/General&sz=300x250&c=321501">
+                                                        <img src="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/General-Programming/Blockchain/General&sz=300x250&c=321501"
+                                                            width="300px" height="250px" target="_blank" />
+                                                    </a>
+                                                </noscript>
+                                            </div>\r\n\t\t\t\t\t\t</div>\r\n \r\n \r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t
+                                        <h2>License</h2>\r\n\t\t\t\t\t\t
+                                        <div id="LicenseTerms">
+                                            <p>This article, along with any associated source code and files, is licensed under
+                                                <a href="http://www.codeproject.com/info/cpol10.aspx" rel="license">The Code Project Open License (CPOL)</a>
+                                            </p>
+                                        </div>\r\n\t\t\t\t\t\t
+                                        <h2>Share</h2>\r\n\t\t\t\t
+                                        <div class="share-list">\r\n\t\t\t\t\t \r\n\r\n
+                                            <ul class="rrssb-buttons clearfix">\r\n \r\n
+                                                <li id="ctl00_SocialLike_Twitter" class="twitter">\r\n
+                                                    <!-- Replace href with your Meta and URL information  -->\r\n
+                                                    <a href="http://twitter.com/home?status=Etherdrop%3a+DAPP+Lottery+on+Ethereum+Blockchain+-+CodeProject+-+https%3a%2f%2fwww.codeproject.com%2fArticles%2f1256008%2fEtherdrop-DAPP-Lottery-on-Ethereum-Blockchain"
+                                                        class="popup">\r\n
+                                                        <span class="icon">\r\n
+                                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                                                xmlns:xlink="http://www.w3.org/1999/xlink" \r\n x="0px" y="0px"
+                                                                width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28"
+                                                                xml:space="preserve">\r\n
+                                                                <path d="M24.253,8.756C24.689,17.08,18.297,24.182,9.97,24.62c-3.122,0.162-6.219-0.646-8.861-2.32\r\n                    c2.703,0.179,5.376-0.648,7.508-2.321c-2.072-0.247-3.818-1.661-4.489-3.638c0.801,0.128,1.62,0.076,2.399-0.155\r\n                    C4.045,15.72,2.215,13.6,2.115,11.077c0.688,0.275,1.426,0.407,2.168,0.386c-2.135-1.65-2.729-4.621-1.394-6.965\r\n                    C5.575,7.816,9.54,9.84,13.803,10.071c-0.842-2.739,0.694-5.64,3.434-6.482c2.018-0.623,4.212,0.044,5.546,1.683\r\n                    c1.186-0.213,2.318-0.662,3.329-1.317c-0.385,1.256-1.247,2.312-2.399,2.942c1.048-0.106,2.069-0.394,3.019-0.851\r\n                    C26.275,7.229,25.39,8.196,24.253,8.756z"></path>\r\n </svg>\r\n </span>\r\n
+                                                        <span class="text">twitter</span>\r\n </a>\r\n </li>\r\n\r\n
+                                                <li id="ctl00_SocialLike_Facebook"
+                                                    class="facebook">\r\n
+                                                    <!-- Replace with your URL. For best results, make sure you page has the proper FB Open Graph tags in header: \r\n        https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content/ -->\r\n
+                                                    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.codeproject.com%2fArticles%2f1256008%2fEtherdrop-DAPP-Lottery-on-Ethereum-Blockchain"
+                                                        class="popup">\r\n
+                                                        <span class="icon">\r\n
+                                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                                                xmlns:xlink="http://www.w3.org/1999/xlink" \r\n x="0px" y="0px"
+                                                                width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28"
+                                                                xml:space="preserve">\r\n
+                                                                <path d="M27.825,4.783c0-2.427-2.182-4.608-4.608-4.608H4.783c-2.422,0-4.608,2.182-4.608,4.608v18.434\r\n                        c0,2.427,2.181,4.608,4.608,4.608H14V17.379h-3.379v-4.608H14v-1.795c0-3.089,2.335-5.885,5.192-5.885h3.718v4.608h-3.726\r\n                        c-0.408,0-0.884,0.492-0.884,1.236v1.836h4.609v4.608h-4.609v10.446h4.916c2.422,0,4.608-2.188,4.608-4.608V4.783z"></path>\r\n </svg>\r\n </span>\r\n
+                                                        <span class="text">facebook</span>\r\n </a>\r\n </li>\r\n\r\n \r\n\r\n
+                                                <li id="ctl00_SocialLike_LinkedIn"
+                                                    class="linkedin">\r\n
+                                                    <!-- Replace href with your meta and URL information -->\r\n
+                                                    <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.codeproject.com%2fArticles%2f1256008%2fEtherdrop-DAPP-Lottery-on-Ethereum-Blockchain&amp;title=Etherdrop%3a+DAPP+Lottery+on+Ethereum+Blockchain+-+CodeProject&amp;summary=&amp;source=codeproject.com"
+                                                        class="popup">\r\n
+                                                        <span class="icon">\r\n
+                                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                                                xmlns:xlink="http://www.w3.org/1999/xlink" \r\n x="0px" y="0px"
+                                                                width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28"
+                                                                xml:space="preserve">\r\n
+                                                                <path d="M25.424,15.887v8.447h-4.896v-7.882c0-1.979-0.709-3.331-2.48-3.331c-1.354,0-2.158,0.911-2.514,1.803\r\n                        c-0.129,0.315-0.162,0.753-0.162,1.194v8.216h-4.899c0,0,0.066-13.349,0-14.731h4.899v2.088c-0.01,0.016-0.023,0.032-0.033,0.048\r\n                        h0.033V11.69c0.65-1.002,1.812-2.435,4.414-2.435C23.008,9.254,25.424,11.361,25.424,15.887z M5.348,2.501\r\n                        c-1.676,0-2.772,1.092-2.772,2.539c0,1.421,1.066,2.538,2.717,2.546h0.032c1.709,0,2.771-1.132,2.771-2.546\r\n                        C8.054,3.593,7.019,2.501,5.343,2.501H5.348z M2.867,24.334h4.897V9.603H2.867V24.334z"></path>\r\n </svg>\r\n </span>\r\n
+                                                        <span class="text">linkedin</span>\r\n </a>\r\n </li>\r\n
+                                                <li id="ctl00_SocialLike_Reddit"
+                                                    class="reddit">\r\n
+                                                    <a href="http://www.reddit.com/submit?url=https%3a%2f%2fwww.codeproject.com%2fArticles%2f1256008%2fEtherdrop-DAPP-Lottery-on-Ethereum-Blockchain&amp;title=Etherdrop%3a+DAPP+Lottery+on+Ethereum+Blockchain+-+CodeProject">\r\n
+                                                        <span class="icon">\r\n
+                                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                version="1.1" \r\n x="0px" y="0px" width="28px" height="28px"
+                                                                viewBox="0 0 28 28" \r\n enable-background="new 0 0 28 28" xml:space="preserve">
+                                                                <g>\r\n
+                                                                    <path d="M11.794 15.316c0-1.029-0.835-1.895-1.866-1.895c-1.03 0-1.893 0.865-1.893 1.895s0.863 1.9 1.9 1.9 C10.958 17.2 11.8 16.3 11.8 15.316z"></path>\r\n
+                                                                    <path d="M18.1 13.422c-1.029 0-1.895 0.864-1.895 1.895c0 1 0.9 1.9 1.9 1.865c1.031 0 1.869-0.836 1.869-1.865 C19.969 14.3 19.1 13.4 18.1 13.422z"></path>\r\n
+                                                                    <path d="M17.527 19.791c-0.678 0.678-1.826 1.006-3.514 1.006c-0.004 0-0.009 0-0.014 0c-0.004 0-0.01 0-0.015 0 \r\n                c-1.686 0-2.834-0.328-3.51-1.005c-0.264-0.265-0.693-0.265-0.958 0c-0.264 0.265-0.264 0.7 0 1 c0.943 0.9 2.4 1.4 \r\n                4.5 1.402c0.005 0 0 0 0 0c0.005 0 0 0 0 0c2.066 0 3.527-0.459 4.47-1.402 c0.265-0.264 0.265-0.693 0.002-0.958C18.221 \r\n                19.5 17.8 19.5 17.5 19.791z"></path>
+                                                                    <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237c-0.793 0-1.518 0.287-2.082 \r\n                0.761c-2.039-1.295-4.646-2.069-7.438-2.219 l1.483-4.691l4.062 0.956c0.071 1.4 1.3 2.6 2.7 2.555c1.488 0 2.695-1.208 \r\n                2.695-2.695C25.881 3.2 24.7 2 23.2 2 c-1.059 0-1.979 0.616-2.42 1.508l-4.633-1.091c-0.344-0.081-0.693 0.118-0.803 \r\n                0.455l-1.793 5.7 C10.548 8.6 7.7 9.4 5.6 10.75C5.006 10.3 4.3 10 3.5 10.029c-1.785 0-3.237 1.452-3.237 3.2 c0 1.1 0.6 \r\n                2.1 1.4 2.69c-0.04 0.272-0.061 0.551-0.061 0.831c0 2.3 1.3 4.4 3.7 5.9 c2.299 1.5 5.3 2.3 8.6 2.325c3.228 0 6.271-0.825 \r\n                8.571-2.325c2.387-1.56 3.7-3.66 3.7-5.917 c0-0.26-0.016-0.514-0.051-0.768C27.088 15.5 27.7 14.4 27.7 13.267z M23.186 \r\n                3.355c0.74 0 1.3 0.6 1.3 1.3 c0 0.738-0.6 1.34-1.34 1.34s-1.342-0.602-1.342-1.34C21.844 4 22.4 3.4 23.2 3.355z M1.648 \r\n                13.3 c0-1.038 0.844-1.882 1.882-1.882c0.31 0 0.6 0.1 0.9 0.209c-1.049 0.868-1.813 1.861-2.26 2.9 C1.832 14.2 1.6 13.8 1.6 \r\n                13.267z M21.773 21.57c-2.082 1.357-4.863 2.105-7.831 2.105c-2.967 0-5.747-0.748-7.828-2.105 \r\n                c-1.991-1.301-3.088-3-3.088-4.782c0-1.784 1.097-3.484 3.088-4.784c2.081-1.358 4.861-2.106 7.828-2.106 c2.967 0 5.7 \r\n                0.7 7.8 2.106c1.99 1.3 3.1 3 3.1 4.784C24.859 18.6 23.8 20.3 21.8 21.57z M25.787 14.6 \r\n                c-0.432-1.084-1.191-2.095-2.244-2.977c0.273-0.156 0.59-0.245 0.928-0.245c1.035 0 1.9 0.8 1.9 1.9 \r\n                C26.354 13.8 26.1 14.3 25.8 14.605z"></path>
+                                                                </g>
+                                                            </svg>\r\n </span>\r\n
+                                                        <span class="text">reddit</span>\r\n </a>\r\n </li>\r\n
+                                                <li id="ctl00_SocialLike_GooglePlus"
+                                                    class="googleplus">\r\n
+                                                    <!-- Replace href with your meta and URL information.  -->\r\n
+                                                    <a href="https://plus.google.com/share?url=https%3a%2f%2fwww.codeproject.com%2fArticles%2f1256008%2fEtherdrop-DAPP-Lottery-on-Ethereum-Blockchain"
+                                                        class="popup">\r\n
+                                                        <span class="icon">\r\n
+                                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                                                xmlns:xlink="http://www.w3.org/1999/xlink" \r\n x="0px" y="0px"
+                                                                width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28"
+                                                                xml:space="preserve">\r\n
+                                                                <g>\r\n
+                                                                    <g>\r\n
+                                                                        <path d="M14.703,15.854l-1.219-0.948c-0.372-0.308-0.88-0.715-0.88-1.459c0-0.748,0.508-1.223,0.95-1.663\r\n                                c1.42-1.119,2.839-2.309,2.839-4.817c0-2.58-1.621-3.937-2.399-4.581h2.097l2.202-1.383h-6.67c-1.83,0-4.467,0.433-6.398,2.027\r\n                                C3.768,4.287,3.059,6.018,3.059,7.576c0,2.634,2.022,5.328,5.604,5.328c0.339,0,0.71-0.033,1.083-0.068\r\n                                c-0.167,0.408-0.336,0.748-0.336,1.324c0,1.04,0.551,1.685,1.011,2.297c-1.524,0.104-4.37,0.273-6.467,1.562\r\n                                c-1.998,1.188-2.605,2.916-2.605,4.137c0,2.512,2.358,4.84,7.289,4.84c5.822,0,8.904-3.223,8.904-6.41\r\n                                c0.008-2.327-1.359-3.489-2.829-4.731H14.703z M10.269,11.951c-2.912,0-4.231-3.765-4.231-6.037c0-0.884,0.168-1.797,0.744-2.511\r\n                                c0.543-0.679,1.489-1.12,2.372-1.12c2.807,0,4.256,3.798,4.256,6.242c0,0.612-0.067,1.694-0.845,2.478\r\n                                c-0.537,0.55-1.438,0.948-2.295,0.951V11.951z M10.302,25.609c-3.621,0-5.957-1.732-5.957-4.142c0-2.408,2.165-3.223,2.911-3.492\r\n                                c1.421-0.479,3.25-0.545,3.555-0.545c0.338,0,0.52,0,0.766,0.034c2.574,1.838,3.706,2.757,3.706,4.479\r\n                                c-0.002,2.073-1.736,3.665-4.982,3.649L10.302,25.609z"></path>\r\n
+                                                                        <polygon points="23.254,11.89 23.254,8.521 21.569,8.521 21.569,11.89 18.202,11.89 18.202,13.604 21.569,13.604 21.569,17.004\r\n                                23.254,17.004 23.254,13.604 26.653,13.604 26.653,11.89      "></polygon>\r\n </g>\r\n </g>\r\n </svg>\r\n </span>\r\n
+                                                        <span class="text">google+</span>\r\n </a>\r\n </li>\r\n\r\n \r\n\r\n \r\n\r\n</ul>\r\n
+                                            <!-- Buttons end here -->\r\n\r\n\t\t\t\t </div> \r\n \t\t\t \r\n
+                                        <h2 id="ctl00_AboutHeading">About the Author</h2>\r\n\t\t\t\t\t\t \r\n\r\n
+                                        <div class="author-wrapper">\r\n\r\n
+                                            <div class="pic-wrapper"> \r\n
+                                                <img id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberPhoto" class="profile-pic"
+                                                    src="https://www.codeproject.com/script/Membership/ProfileImages/{cf9eec9f-57ef-44e8-a45f-2c2b918c3b73}.png"
+                                                    style="border-width:0px;transform:rotate(0deg);" />\r\n </div>\r\n\r\n
+                                            <div class="container-member"> \r\n
+                                                <b>
+                                                    <a id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberProfileLink" class="author"
+                                                        href="/Members/FadyAro">Fady Aro</a>
+                                                </b>\r\n\r\n
+                                                <table>\r\n
+                                                    <tr>\r\n
+                                                        <td rowspan="2" nowrap valign="middle">\r\n
+                                                            <div id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_FollowOn" class="follow">\r\n\t
+                                                                <a href="http://www.twitter.com/FadyAro">
+                                                                    <img style="vertical-align:middle;border:0;height:24px;width:24px"
+                                                                        alt="Twitter" src="/images/twitter32.png" />
+                                                                </a> \r\n\t \r\n\t \r\n </div>\r\n </td>\r\n
+                                                        <td nowrap="nowrap">\r\n
+                                                            <div class="company">\r\n
+                                                                <span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberJobTitle">Engineer</span>\r\n\t
+                                                                <span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberCompany"></span>\r\n </div>\r\n </td>\r\n
+                                                        <td rowspan="2" style="padding-left:15px">\r\n \r\n </td>\r\n </tr>\r\n
+                                                    <tr>\r\n
+                                                        <td>\r\n
+                                                            <span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberLocation">Lebanon
+                                                                <img src="/script/Geo/Images/LB.gif" alt="Lebanon" width="16px"
+                                                                    height="11px" />
+                                                            </span>\r\n </td>\r\n </tr>\r\n </table>\r\n </div>\r\n\r\n
+                                            <div class="description">\r\n Electronics, Telecommunications, Development, Music!\r\n\r\n \r\n </div>\r\n\r\n</div>
+                                        <br
+                                        />\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\r\n\t\t\t\t\t\t
+                                        <div class="clearfix"></div>\r\n\r\n\t\t\t\t\t\t
+                                        <div style="padding-top:8px">\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\r\n\r\n\t\t\t\t \r\n\t\t\t\t\t</form>\r\n\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t\r\n\t\t\t\t
+                                <div
+                                    class="bottom-promo"> \r\n\t\t\t\t
+                                    <div class="msg-728x90" data-format="728x90" data-type="ad" data-publisher="lqm.codeproject.site"
+                                        data-zone="General-Programming/Blockchain/General" data-loadOnView=\ 'true\' data-tags=\
+                                        'Javascript, CSS, HTML, JSON, Web, NPM, Markdown, blockchain, Ethereum, Solidity, Truffle,rating4.5,pos_bottom\'>
+                                        <noscript>
+                                            <a href="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/General-Programming/Blockchain/General&sz=728x90&c=321501">
+                                                <img src="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/General-Programming/Blockchain/General&sz=728x90&c=321501"
+                                                    width="728px" height="90px" target="_blank" />
+                                            </a>
+                                        </noscript>
+                                    </div>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\r\n \r\n
+                                <h2 id="ctl00_AlsoRead_RelatedResults_ctl00_Header"
+                                    class="also-read">You may also be interested in...</h2>\r\n
+                                <table class="spaced content-list also-read">\r\n \r\n\t
+                                    <tr>\r\n
+                                        <td class="content-list-item" width="50%" valign="top">\r\n
+                                            <div id="ctl00_AlsoRead_RelatedResults_ctl01_ThumbnailContainer" class="thumbnail">\r\n
+                                                <a id="ctl00_AlsoRead_RelatedResults_ctl01_Thumbnail" href="//www.codeproject.com/Articles/1247306/Setting-up-Ethereum-Blockchain-on-Azure">
+                                                    <img src="/KB/blockchain/1247306/Thumbnail.png" alt="" style="border-width:0px;"
+                                                    />
+                                                </a>\r\n </div>\r\n
+                                            <div class="text">\r\n
+                                                <div class="title">
+                                                    <a id="ctl00_AlsoRead_RelatedResults_ctl01_Link" href="//www.codeproject.com/Articles/1247306/Setting-up-Ethereum-Blockchain-on-Azure">Setting up Ethereum Blockchain on Azure</a>
+                                                </div>\r\n \r\n </div>\r\n </td>\r\n\t\r\n
+                                        <td class="content-list-item" width="50%"
+                                            valign="top">\r\n
+                                            <div id="ctl00_AlsoRead_RelatedResults_ctl02_ThumbnailContainer" class="thumbnail">\r\n
+                                                <a id="ctl00_AlsoRead_RelatedResults_ctl02_Thumbnail" href="//www.codeproject.com/Articles/1266154/Data-Encryption-in-Azure">
+                                                    <img src="/KB/azure/1266154/Thumbnail.png" alt="" style="border-width:0px;"
+                                                    />
+                                                </a>\r\n </div>\r\n
+                                            <div class="text">\r\n
+                                                <div class="title">
+                                                    <a id="ctl00_AlsoRead_RelatedResults_ctl02_Link" href="//www.codeproject.com/Articles/1266154/Data-Encryption-in-Azure">Data Encryption in Azure</a>
+                                                </div>\r\n \r\n </div>\r\n </td>\r\n\t </tr>\r\n\t\r\n\t
+                                    <tr>\r\n
+                                        <td class="content-list-item" width="50%" valign="top">\r\n
+                                            <div id="ctl00_AlsoRead_RelatedResults_ctl03_ThumbnailContainer" class="thumbnail">\r\n
+                                                <a id="ctl00_AlsoRead_RelatedResults_ctl03_Thumbnail" href="//www.codeproject.com/Articles/1207351/Accepting-Bitcoin-BTC-payments-with-Csharp-ASP-NET">
+                                                    <img src="/KB/blockchain/1207351/Thumbnail.png" alt="" style="border-width:0px;"
+                                                    />
+                                                </a>\r\n </div>\r\n
+                                            <div class="text">\r\n
+                                                <div class="title">
+                                                    <a id="ctl00_AlsoRead_RelatedResults_ctl03_Link" href="//www.codeproject.com/Articles/1207351/Accepting-Bitcoin-BTC-payments-with-Csharp-ASP-NET">Accepting Bitcoin (BTC) payments with C# ASP.NET. Primer applicable to
+                                                        other crypto currencies: Litecoin (LTC), Ethereum (ETH), Ripple (XRP)...</a>
+                                                </div>\r\n \r\n </div>\r\n </td>\r\n\t\r\n
+                                        <td class="content-list-item" width="50%"
+                                            valign="top">\r\n
+                                            <div id="ctl00_AlsoRead_RelatedResults_ctl04_ThumbnailContainer" class="thumbnail">\r\n
+                                                <a id="ctl00_AlsoRead_RelatedResults_ctl04_Thumbnail" href="//www.codeproject.com/Articles/784519/NBitcoin-How-to-scan-the-Blockchain">
+                                                    <img src="/KB/blockchain/784519/Thumbnail.png" alt="" style="border-width:0px;"
+                                                    />
+                                                </a>\r\n </div>\r\n
+                                            <div class="text">\r\n
+                                                <div class="title">
+                                                    <a id="ctl00_AlsoRead_RelatedResults_ctl04_Link" href="//www.codeproject.com/Articles/784519/NBitcoin-How-to-scan-the-Blockchain">NBitcoin : How to scan the Blockchain ?</a>
+                                                </div>\r\n \r\n </div>\r\n </td>\r\n\t </tr>\r\n\t\r\n\t
+                                    <tr>\r\n
+                                        <td class="content-list-item" width="50%" valign="top">\r\n
+                                            <div id="ctl00_AlsoRead_RelatedResults_ctl05_ThumbnailContainer" class="thumbnail">\r\n
+                                                <a id="ctl00_AlsoRead_RelatedResults_ctl05_Thumbnail" href="//www.codeproject.com/Tips/1229909/Scaffolding-ASP-NET-Core-with-CatFactory">
+                                                    <img src="https://codeproject.global.ssl.fastly.net/script/Articles/Images/tip100x80.png"
+                                                        alt="" style="border-width:0px;" />
+                                                </a>\r\n </div>\r\n
+                                            <div class="text">\r\n
+                                                <div class="title">
+                                                    <a id="ctl00_AlsoRead_RelatedResults_ctl05_Link" href="//www.codeproject.com/Tips/1229909/Scaffolding-ASP-NET-Core-with-CatFactory">Scaffolding ASP.NET Core 2 with CatFactory</a>
+                                                </div>\r\n \r\n </div>\r\n </td>\r\n\t\r\n
+                                        <td class="content-list-item" width="50%"
+                                            valign="top">\r\n
+                                            <div id="ctl00_AlsoRead_RelatedResults_ctl06_ThumbnailContainer" class="thumbnail">\r\n
+                                                <a id="ctl00_AlsoRead_RelatedResults_ctl06_Thumbnail" href="//www.codeproject.com/Articles/1245896/Azure-Blockchain-Workbench-Guide">
+                                                    <img src="/KB/blockchain/1245896/Thumbnail.Jpeg" alt="" style="border-width:0px;"
+                                                    />
+                                                </a>\r\n </div>\r\n
+                                            <div class="text">\r\n
+                                                <div class="title">
+                                                    <a id="ctl00_AlsoRead_RelatedResults_ctl06_Link" href="//www.codeproject.com/Articles/1245896/Azure-Blockchain-Workbench-Guide">Azure Blockchain Workbench Guide</a>
+                                                </div>\r\n \r\n </div>\r\n </td>\r\n\t </tr>\r\n\t\r\n\t\t</table>\r\n\t\r\n\r\n\r\n\r\n\t\t\t\t\r\n\t\t\t\t\r\n\r\n\t\t\t\t\t
+                                <h2>Comments and Discussions</h2>\r\n\t\t\t\t\t
+                                <a class="float-left" name="_comments" id="_comments">&nbsp;</a>
+                                <div id="_MessageBoardctl00_MessageBoard" onclick="return forumControl64969824.SwitchMessage(event, null)">\r\n
+                                    <table id="ForumTable" class="forum relaxed" cellpadding="0" cellspacing="0">\r\n
+                                        <tr>\r\n
+                                            <td class="header1">
+                                                <div class="callout">\r\n\t
+                                                    <b>You must
+                                                        <a href="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f1256008%2fEtherdrop-DAPP-Lottery-on-Ethereum-Blockchain%3ffid%3d1939293%26df%3d90%26mpp%3d25%26prof%3dTrue%26sort%3dPosition%26view%3dNormal%26spc%3dRelaxed">Sign In</a> to use this message board.</b>\r\n</div>
+                                            </td>\r\n</tr>
+                                        <tr>\r\n
+                                            <td>
+                                                <table width="100%" border="0" cellpadding="3px" cellspacing="0">\r\n
+                                                    <tr class="header1">\r\n
+                                                        <td colspan="2" style="white-space:nowrap;">
+                                                            <div class="container">\r\n
+                                                                <div class="float-right">\r\n
+                                                                    <form action="/Search.aspx?sbo=fm" method="get" class="searchbar">\r\n
+                                                                        <input type="hidden" name="fid" value="1939293" />
+                                                                        <input type="hidden" name="sbo" value="fm" />
+                                                                        <input id="search_forumControl64969824" type="search"
+                                                                            class="search" name="qf" />
+                                                                        <input type="image" src="https://codeproject.global.ssl.fastly.net/images/search.gif"
+                                                                        />\r\n</form>\r\n</div>\r\n</div>
+                                                        </td>\r\n</tr>
+                                                    <tr class="header2">\r\n
+                                                        <td></td>
+                                                        <td style="width:100%;">
+                                                            <div style="text-align:right;">\r\n
+                                                                <form action="/script/Forums/SetOptions.aspx?fid=1939293&amp;df=90&amp;mpp=25&amp;prof=True&amp;sort=Position&amp;view=Normal&amp;spc=Relaxed&amp;floc=%2fArticles%2f1256008%2fEtherdrop-DAPP-Lottery-on-Ethereum-Blockchain"
+                                                                    method="get" style="margin:0;padding:0;">\r\n
+                                                                    <input type="hidden" name="fid" value="1939293" />
+                                                                    <input type="hidden" name="currentQS" value="fid=1939293&amp;df=90&amp;mpp=25&amp;prof=True&amp;sort=Position&amp;view=Normal&amp;spc=Relaxed&amp;floc=%2fArticles%2f1256008%2fEtherdrop-DAPP-Lottery-on-Ethereum-Blockchain"
+                                                                    />
+                                                                    <input type="hidden" name="floc" value="/Articles/1256008/Etherdrop-DAPP-Lottery-on-Ethereum-Blockchain"
+                                                                    />Spacing
+                                                                    <select size="1" class="dropdown" name="spc">\r\n
+                                                                        <option selected value="Relaxed">Relaxed</option>
+                                                                        <option value="Compact">Compact</option>
+                                                                        <option value="Tight">Tight</option>\r\n</select>&nbsp;&nbsp;Layout
+                                                                    <select
+                                                                        size="1" class="dropdown" name="view">\r\n
+                                                                        <option selected value="Normal">Normal</option>
+                                                                        <option value="Topic">Open Topics</option>
+                                                                        <option value="Expanded">Open All</option>
+                                                                        <option value="Thread">Thread View</option>\r\n</select>&nbsp;&nbsp;Per
+                                                                    page
+                                                                    <select size="1" class="dropdown" name="mpp">\r\n
+                                                                        <option value="10">10</option>
+                                                                        <option selected value="25">25</option>
+                                                                        <option value="50">50</option>\r\n</select>&nbsp;&nbsp;&nbsp;
+                                                                    <input
+                                                                        type="submit" value="Update" name="SetOpt" class="button"
+                                                                    />\r\n</form>\r\n</div>
+                                                        </td>\r\n</tr>\r\n</table>
+                                            </td>\r\n</tr>
+                                        <tr>\r\n
+                                            <td>
+                                                <a name="xx0xx"></a>
+                                                <table border="0" cellpadding="2px" cellspacing="0" width="100%">\r\n
+                                                    <tr class="navbar">\r\n
+                                                        <td></td>
+                                                        <td style="text-align:right;width:50%;"></td>
+                                                        <td style="text-align:right;white-space:nowrap;">
+                                                            <span class="nav-link disabled">First</span>
+                                                            <span class="nav-link disabled">Prev</span>
+                                                            <span class="nav-link disabled">Next</span>
+                                                        </td>\r\n</tr>\r\n</table>
+                                            </td>\r\n</tr>
+                                        <tr>\r\n
+                                            <td>
+                                                <table border="0" cellpadding="0" cellspacing="0" width="100%" class="fixed-layout blank-background">\r\n
+                                                    <tr id="F5545217_h0" class="header hover-row root">\r\n
+                                                        <td class="subject-line normal " width="100%">
+                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%">\r\n
+                                                                <tr>\r\n
+                                                                    <td width="20px" class="indent">
+                                                                        <a name="xx5545217xx"></a>
+                                                                        <img height="16px" width="16px" align="top" src="https://codeproject.global.ssl.fastly.net/script/Forums/Images/msg_question.gif"
+                                                                            alt="Question" title="Question" />
+                                                                    </td>
+                                                                    <td class="subject hover-container">
+                                                                        <a class="message-link" name="5545217" parent="0" thread="5545217"
+                                                                            href="/Messages/5545217/DApps-Development.aspx">DApps Development</a>
+                                                                        <a onclick="return forumControl64969824.Pin(this);"
+                                                                            rel="nofollow" href="#" title="Click to pin message">
+                                                                            <img src="https://codeproject.global.ssl.fastly.net/script/Forums/Images/pin.png"
+                                                                                border="0" align="top" alt="Pin" width="13px"
+                                                                                height="13px" />
+                                                                        </a>
+                                                                        <div class="mobile-only">\r\n\t
+                                                                            <span class="author">Roudy Khoury</span>
+                                                                            <span class="date">10-Aug-18 22:14</span>\r\n</div>
+                                                                    </td>
+                                                                    <td class="icon">
+                                                                        <img border="0" src="https://codeproject.global.ssl.fastly.net/App_Themes/CodeProject/Img/icn-member-16.gif"
+                                                                            title="member" alt="member" height="16px" />
+                                                                    </td>
+                                                                    <td class="author">
+                                                                        <span>
+                                                                            <a href="/script/Membership/View.aspx?mid=13945655">Roudy Khoury</a>
+                                                                        </span>
+                                                                    </td>
+                                                                    <td class="date">
+                                                                        <span>10-Aug-18 22:14&nbsp;</span>
+                                                                    </td>\r\n</tr>\r\n</table>
+                                                        </td>\r\n</tr>
+                                                    <tr id="F5545217_h1" class="content root selected" style="display:none;">\r\n
+                                                        <td class="normal" width="100%">
+                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%">\r\n
+                                                                <tr valign="top">\r\n
+                                                                    <td class="indent align-right" style="width:20px;">
+                                                                        <span class="voteform vertical" ownerid="13945655" msgid="5545217"
+                                                                            votingType="GoodOrBad"></span>
+                                                                    </td>
+                                                                    <td class="text">
+                                                                        <table border="0" cellpadding="0" cellspacing="5px" width="100%">\r\n
+                                                                            <tr>\r\n
+                                                                                <td>
+                                                                                    <table border="0" cellpadding="0" cellspacing="0"
+                                                                                        width="100%">\r\n
+                                                                                        <tr>\r\n
+                                                                                            <td colspan="2">Thank you for this real life
+                                                                                                project user guide, i should
+                                                                                                be able to start my own DApp!
+                                                                                                <img src="https://codeproject.global.ssl.fastly.net/script/Forums/Images/smiley_smile.gif"
+                                                                                                    align="top" alt="Smile | :)"
+                                                                                                />
+                                                                                                <br />
+                                                                                            </td>\r\n</tr>
+                                                                                        <tr class="footer" style="vertical-align:top;">\r\n
+                                                                                            <td>
+                                                                                                <a href="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=/Articles/1256008/Etherdrop-DAPP-Lottery-on-Ethereum-Blockchain">Sign In</a>·<wbr>
+                                                                                                <a href="/Articles/1256008/Etherdrop-DAPP-Lottery-on-Ethereum-Blockchain?fid=1939293&amp;df=90&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=5545217"
+                                                                                                    title="View&nbsp;Thread">View&nbsp;Thread</a>
+                                                                                            </td>
+                                                                                            <td style="text-align:right;">
+                                                                                                <span id="MVF5545217" data-ref="3_5545217"
+                                                                                                    class="rating-label" name="RateItem_5545217">
+                                                                                                    <span class="rating-result">
+                                                                                                        <span></span>
+                                                                                                    </span>
+                                                                                                </span>
+                                                                                                <a href="/Messages/5545217/DApps-Development.aspx"
+                                                                                                    title="Get permanent link"
+                                                                                                    style="border:0 !important">
+                                                                                                    <img src="https://codeproject.global.ssl.fastly.net/App_Themes/CodeProject/Img/link32.png"
+                                                                                                        style="width:14px;height:14px;border:0"
+                                                                                                    />
+                                                                                                </a>&nbsp;</td>\r\n</tr>\r\n</table>
+                                                                                </td>\r\n</tr>\r\n</table>
+                                                                    </td>\r\n</tr>\r\n</table>
+                                                        </td>\r\n</tr>\r\n</table>
+                                            </td>\r\n</tr>
+                                        <tr>\r\n
+                                            <td>
+                                                <table width="100%" cellpadding="2px" cellspacing="0">\r\n
+                                                    <tr class="footer">\r\n
+                                                        <td>
+                                                            <span class="last-visit desktop-only tablet-only">Last Visit: 31-Dec-99 19:00 &nbsp; &nbsp; Last Update: 8-Nov-18
+                                                                20:25</span>
+                                                        </td>
+                                                        <td>
+                                                            <a rel="nofollow" href="/Articles/1256008/Etherdrop-DAPP-Lottery-on-Ethereum-Blockchain?fid=1939293&amp;df=90&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;prof=True&amp;view=Normal">Refresh</a>
+                                                        </td>
+                                                        <td style="text-align:right;white-space:nowrap;">
+                                                            <input id="_mbnUrl" type="hidden" value="/Articles/1256008/Etherdrop-DAPP-Lottery-on-Ethereum-Blockchain?fid=1939293&amp;df=90&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;prof=True&amp;view=Normal&amp;fr=2"
+                                                            />
+                                                            <span class="nav-link selected">1</span>
+                                                        </td>\r\n</tr>\r\n</table>
+                                            </td>\r\n</tr>\r\n</table>\r\n</div>
+                                <p class="small-text">
+                                    <img align="top" src="https://codeproject.global.ssl.fastly.net/script/Forums/Images/msg_general.gif"
+                                        width="16px" height="16px" alt="General" /> General &nbsp;&nbsp;
+                                    <img align="top" src="https://codeproject.global.ssl.fastly.net/script/Forums/Images/msg_news.gif"
+                                        width="16px" height="16px" alt="News" /> News &nbsp;&nbsp;
+                                    <img align="top" src="https://codeproject.global.ssl.fastly.net/script/Forums/Images/msg_idea.gif"
+                                        width="16px" height="16px" alt="Suggestion" /> Suggestion &nbsp;&nbsp;
+                                    <img align="top" src="https://codeproject.global.ssl.fastly.net/script/Forums/Images/msg_question.gif"
+                                        width="16px" height="16px" alt="Question" /> Question &nbsp;&nbsp;
+                                    <img align="top" src="https://codeproject.global.ssl.fastly.net/script/Forums/Images/msg_bug.gif"
+                                        width="16px" height="16px" alt="Bug" /> Bug &nbsp;&nbsp;
+                                    <img align="top" src="https://codeproject.global.ssl.fastly.net/script/Forums/Images/msg_answer.gif"
+                                        width="16px" height="16px" alt="Answer" /> Answer &nbsp;&nbsp;
+                                    <img align="top" src="https://codeproject.global.ssl.fastly.net/script/Forums/Images/msg_joke.gif"
+                                        width="16px" height="16px" alt="Joke" /> Joke &nbsp;&nbsp;
+                                    <img align="top" src="https://codeproject.global.ssl.fastly.net/script/Forums/Images/msg_kudos.gif"
+                                        width="16px" height="16px" alt="Praise" /> Praise &nbsp;&nbsp;
+                                    <img align="top" src="https://codeproject.global.ssl.fastly.net/script/Forums/Images/msg_rant.gif"
+                                        width="16px" height="16px" alt="Rant" /> Rant &nbsp;&nbsp;
+                                    <img align="top" src="https://codeproject.global.ssl.fastly.net/script/Forums/Images/msg_admin.gif"
+                                        width="16px" height="16px" alt="Admin" /> Admin &nbsp;&nbsp; </p>
+                                <p class="small-text">Use Ctrl+Left/Right to switch messages, Ctrl+Up/Down to switch threads, Ctrl+Shift+Left/Right
+                                    to switch pages.</p>\r\n\t\t\t\t\r\n\r\n\t\t\t</div>\r\n\t\t\t\r\n\t\t</td>\r\n\t\t
+                        <td
+                            width="170px" class="article-wing-right">\r\n\t\t\t
+                            <div id="ctl00_RightSideBar" class="container-article-info">\r\n\r\n
+                                <div id="RHSticky" class="container-article-info-sticky">\r\n \t\t\t\r\n\r\n
+                                    <div class="article-summary">\r\n\r\n \r\n\r\n \r\n\r\n</div>\r\n\r\n\t\t\t\t
+                                    <div id="ctl00_SectionSponsor" class="padded-top"
+                                        style="width:160px;margin:10px auto">\r\n\t\t\t\t\t
+                                        <div class="msg-160x200" data-format="160x200" data-type="ad" data-publisher="lqm.codeproject.site"
+                                            data-zone="General-Programming/Blockchain/General" data-showindicator="true" data-tags=\
+                                            'Javascript, CSS, HTML, JSON, Web, NPM, Markdown, blockchain, Ethereum, Solidity, Truffle,rating4.5\'>
+                                            <noscript>
+                                                <a href="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/General-Programming/Blockchain/General&sz=160x200&c=321501">
+                                                    <img src="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/General-Programming/Blockchain/General&sz=160x200&c=321501"
+                                                        width="160px" height="200px" target="_blank" />
+                                                </a>
+                                            </noscript>
+                                        </div>\r\n\t\t\t\t </div>\r\n\r\n\t\t\t\t
+                                    <div style="width:160px;margin: 10px auto;">\r\n\t\t\t\t\t
+                                        <div class="msg-160x600" data-format="160x600" data-type="ad" data-publisher="lqm.codeproject.site"
+                                            data-zone="General-Programming/Blockchain/General" data-tags=\
+                                            'Javascript, CSS, HTML, JSON, Web, NPM, Markdown, blockchain, Ethereum, Solidity, Truffle,rating4.5\'>
+                                            <noscript>
+                                                <a href="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/General-Programming/Blockchain/General&sz=160x600&c=321501">
+                                                    <img src="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/General-Programming/Blockchain/General&sz=160x600&c=321501"
+                                                        width="160px" height="600px" target="_blank" />
+                                                </a>
+                                            </noscript>
+                                        </div>\r\n\t\t\t\t </div>\r\n\r\n \r\n\r\n\t\t\t\t \r\n\r\n\t\t\t\t \r\n\r\n
+                                    <div class="anchorLink gototop"
+                                        id="gototop">\r\n
+                                        <a id="ctl00_GoToTop" href="/Articles/1256008/Etherdrop-DAPP-Lottery-on-Ethereum-Blockchain#_articleTop">Go to top</a>\r\n </div>\r\n\r\n\t\t\t\t</div>\r\n\r\n\t\t\t</div>\r\n\t\t</td>\r\n\t\t</tr>
+                </table>\r\n\r\n\t\t\r\n\t\t
+                <div class="theme1-background" style="height:2px" id="stickyStop"></div>\r\n\r\n\t\t
+                <div class="extended tiny-text">\r\n\t\t\t
+                    <div class="row">\r\n\t\t\t\t
+                        <div class="float-left">\r\n\t\t\t\t\t
+                            <a id="ctl00_PermaLink" href="/Articles/1256008/Etherdrop-DAPP-Lottery-on-Ethereum-Blockchain">Permalink</a> | \r\n\t\t\t\t\t
+                            <a id="ctl00_AdvertiseLink" href="http://developermedia.com/">Advertise </a> |\r\n\t\t\t\t\t
+                            <a id="ctl00_PrivacyLink" href="/info/privacy.aspx">Privacy</a> |\r\n \t\t\t\t
+                            <a id="ctl00_CookiePolicyLink" href="/info/cookies.aspx">Cookies</a> |\r\n
+                            <a id="ctl00_TermsOfUseLink" href="/info/TermsOfUse.aspx">Terms of Use</a> |\r\n\t\t\t\t\t
+                            <a id="ctl00_Mobile">Mobile</a>\r\n\t\t\t\t\t
+                            <br />\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\r\n\t\t\t\t\tWeb04-2016 |\r\n\t\t\t\t\t2.8.180920.1 |\r\n\t\t\t\t\tLast
+                            Updated 10 Aug 2018\t\t\t\t\t\t\t\t\r\n\t\t\t\t</div>\r\n\r\n
+                        <div id="ctl00_GoogleTranslate"
+                            class="translate float-left"></div> \r\n\r\n\t\t\t\t
+                        <div class="float-right align-right">\r\n\t\t\t\t\tArticle Copyright 2018 by Fady Aro
+                            <br />Everything else\r\n\t\t\t\t\tCopyright &copy;
+                            <a href="mailto:webmaster@codeproject.com">CodeProject</a>, 1999-2018
+                            <br />\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t\r\n\r\n\r\n
+                        <div class="page-width">\r\nLayout:
+                            <a id="ctl00_PageWidth_FixedT" title="Fixed width layout" rel="nofollow" class=" active"
+                                href="/Articles/1256008/Etherdrop-DAPP-Lottery-on-Ethereum-Blockchain?PageFlow=FixedWidth">fixed</a>\r\n|\r\n
+                            <a id="ctl00_PageWidth_FluidT" title="Fluid layout" rel="nofollow" href="/Articles/1256008/Etherdrop-DAPP-Lottery-on-Ethereum-Blockchain?PageFlow=Fluid">fluid</a>\r\n</div>\r\n\r\n\r\n\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t\t\r\n\r\n\t\t
+                <br clear="all"
+                />\r\n\t\t\r\n\t\t\t\r\n\r\n\t</div> \r\n\t</div>\r\n</div>\r\n\r\n\r\n
+    <img id="ctl00_Audience" src="https://pubads.g.doubleclick.net/activity;dc_iu=/6839/DFPAudiencePixel;ord=&#39;636773235561633975&#39;;dc_seg=33706570?"
+        style="border-width:0px;height:1px;width:1px;" />\r\n\r\n\r\n\r\n
+    <script type="text/javascript" language="Javascript" src="https://codeproject.global.ssl.fastly.net/script/Articles/JS/article.min.js?dt=2.8.180920.1"></script>\r\n
+    <script type="text/javascript" language="Javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>\r\n
+    <script type="text/javascript" language="Javascript" src="/Script/Membership/JS/MemberProfilePopup.min.js?v=1.4"></script>\r\n
+    <script type="text/javascript" language="Javascript">//<![CDATA[\r\n$(document).ready(function () {\n   processCodeBlocks.Initialise(\'#contentdiv\');\n   thumbnailer.Initialise(\'#contentdiv\',700,600);\n});\r\ncookieconsent.initialise({\r\n                                enabled : true,\r\n                                cookie  : { domain: \'codeproject.com\' },\r\n                                palette : {\r\n                                    popup: { background: \'#ff9900\' },\r\n                                    button: { background: \'#f5d948\' }\r\n                                },\r\n                                law :  {\r\n                                    showForAllRegions : true, \r\n                                    countryCode : \'US\' \r\n                                },\r\n                                theme: \'edgeless\',\r\n                                type : \'opt-in\',\r\n                                content: {\r\n                                    message: \'Like every other website we use cookies. By using our site you acknowledge that you have read and understand our <a href=\\\'/info/cookie.aspx\\\'>Cookie Policy</a>, <a href=\\\'/info/privacy.aspx\\\'>Privacy Policy</a>, and our <a href=\\\'/info/TermsOfUse.aspx\\\'>Terms of Service</a>.\',\r\n                                    href:    \'https://www.codeproject.com/info/privacy.aspx\'\r\n                                },\r\n                                revokable:true,\r\n                                onStatusChange: function(status) {\r\n                                    $.ajax({\r\n                                \t\tdataType  : \'json\',\r\n                                        data: JSON.stringify({ allowCookies : this.hasConsented() }),\r\n                                        url: \'/script/Common/webservices/CommonServices.aspx/SetCookieConsent\',\r\n                                        cache: false,\r\n                                        type: \'POST\',\r\n                                        contentType: \'application/json\'\r\n                                    })\r\n                                    console.log(this.hasConsented() ? \'enable cookies\' : \'disable cookies\');\r\n                                    console.log(this.hasAnswered() ? \'has answered\' : \'did not answer\');\r\n                                },\r\n                            });\r\nfunction googleTranslateElementInit() {  new google.translate.TranslateElement({   pageLanguage: \'en\',   layout: google.translate.TranslateElement.InlineLayout.SIMPLE,   autoDisplay: false,   gaTrack: true,   gaId: \'UA-1735123-1\'},  \'ctl00_GoogleTranslate\');}\r\n$(document).ready(function() { anchorAnimate();\n$(\'#RHSticky\').sticky($(\'#stickyStop\'));\n$(\'#ctl00_Nav\').sticky($(\'#stickyStop\'));\n});\r\n$(document).ready(function(){\n    $(\'#__EVENTVALIDATION\').attr(\'autocomplete\', \'off\');\n});\r\n$(document).ready(function() {   $(\'.alert-bar\').fadeIn(\'slow\');   $(\'.alert-bar a.close-notify\').click(function() {      $(\'.alert-bar\').fadeOut(\'fast\');        return false;    });});\r\n$(function ()\r\n                {\r\n                    $(\'.oauth\').click(function () {\r\n                        $this = $(this);\r\n                        href = $this.attr(\'href\');\r\n                        var myWindow = window.open(href, \'popup\',\r\n                                    \'width=800,height=600,location=0,menubar=0,resizeable=0,scrollbars=0,toolbar=0\');\r\n                        myWindow.focus();\r\n                        var timer = setInterval(function () {\r\n                                        if (myWindow.closed) {\r\n                                            clearInterval(timer);\r\n                                            // window.location.reload(); // May do a POST reload, shows a warning\r\n                                            window.location = window.location; // force a GET reload\r\n                                        }\r\n                                    }, 200);\r\n                        return false;\r\n                    });\r\n                });\r\nvar retrievalService=function(n){var t=!1;n=n||{};var r=n.RetrievalServiceUrl||"/script/content/webservices/RetrieveContent.aspx/GetContent",u=n.RetrievalServiceRetries||3,f=n.RetrievalServiceTimeout||5e3,e=function(){t||(t=!0,$(window).bind("resize scroll",i),i())},i=function(){if(typeof DMAds=="undefined"){var n=$(\'[data-type="ad"]\');n.each(function(){var n=$(this),u=n.attr("data-format")||"",f=n.attr("data-publisher")||"",e=n.attr("data-zone")||"",t=n.attr("data-loadonview"),i=n.attr("data-noadx"),h=n.attr("data-tags")||"",c=n.find("iframe").length!==0||n.find("img").length!==0,r=n.attr("data-processed");t=typeof t=="string"&&t.toLowerCase()==="true";i=typeof i=="string"&&i.toLowerCase()==="true";r=typeof r=="string"&&r.toLowerCase()==="true";r||c||t&&!s(this)||(o(n,u,f,e,i,h),n.attr("data-processed","true"))})}},o=function(n,t,i,e,o,s){var h=new $.Deferred,c=JSON.stringify({format:t,publisherCode:i,zone:e,noAdX:o,keywords:s});$.ajax({url:r,cache:!1,type:"POST",data:c,contentType:"application/json; charset=utf-8",dataType:"json",tryCount:0,retryLimit:u,timeout:f}).done(function(t){var i=t?t.d:null;h.resolve(i); i && i.html && n.html(i.html)}).fail(function(n,t){h.reject(t)})},s=function(n){var t,f,e,o;if(!h(n))return!1;var u=!1,i=0,r=0;try{t=n.getBoundingClientRect();typeof innerWidth=="number"?(i=window.innerWidth,r=window.innerHeight):document.documentElement&&(document.documentElement.clientWidth||document.documentElement.clientHeight)?(i=document.documentElement.clientWidth,r=document.documentElement.clientHeight):document.body&&(document.body.clientWidth||document.body.clientHeight)&&(i=document.body.clientWidth,r=document.body.clientHeight);f=-200;t.top===t.bottom&&(f+=n.height*-1);e=t.top>=0&&t.top-200<=r||t.top<=0&&t.top>=f;o=i>t.left&&t.right>=0;u=e&&o}catch(s){u=!0}return u},h=function(n){var t=!1,i;return n&&n.style.position!=="fixed"&&n.offsetParent?t=!0:n&&n.style.position==="fixed"&&(i=window.getComputedStyle(n),t=i&&i.display!=="none"),t&&c()},c=function(){var t=!0,n="";return typeof document.hidden!="undefined"?n="hidden":typeof document.mozHidden!="undefined"?n="mozHidden":typeof document.msHidden!="undefined"?n="msHidden":typeof document.webkitHidden!="undefined"&&(n="webkitHidden"),n!==null&&document[n]&&(t=!1),t};return{init:e}};$(document).ready(function(){var n=window.XMLHttpRequest?new XMLHttpRequest:new ActiveXObject("MSXML2.XMLHTTP"),t;n.onreadystatechange=function(){try{if(n.readyState==4)if(n.status==200){var t=document.createElement("script");t.type="text/javascript";t.innerHTML=n.responseText;document.getElementsByTagName("body")[0].appendChild(t)}else(new retrievalService).init()}catch(i){(new retrievalService).init()}};try{t=(\'https:\' == document.location.protocol ? \'https://\' : \'http://\') + \'cdn2.developermedia.com/a.min.js\';n.open("GET",t,!0);n.send()}catch(i){(new retrievalService).init()}});(function() { \r\n    setTimeout(function(){ \r\n        $(\'div[data-type="ad"][data-showindicator="true"]\').each(function( index ) {\r\n            if ($(this).height() > 0) {\r\n                $(this).prepend(\'<div class="small-text muted">Advertisement</div>\');\r\n            }\r\n        });\r\n    }, 2000);\r\n})();\r\nvar oSrchFlt = false, oSrchBox=false,srchBoxFoc=false;\n$(document).ready(function() {\n if(InitWatermark)InitWatermark(\'sb_tb\', \'Search for articles, questions, tips\');\n var sbar = $(\'#sb_tb\'); \n var sfilter = $(\'#SearchFilter\');\n if (sbar && sfilter) {\n  sfilter.removeClass(\'popup\'); sfilter.hide(); sfilter.removeClass(\'open\');\n  sbar.blur(function() {\n if (!oSrchFlt) {sfilter.hide(); sfilter.removeClass(\'open\');}\n srchBoxFoc=false;\n });\n  sbar.focus(function() {\n oSrchFlt=false; srchBoxFoc=true;\n sfilter.show(); sfilter.addClass(\'open\');\n });\n  sbar.mouseleave(function() { oSrchBox=false; });\n  sbar.mouseover(function() { oSrchBox=true; });\n  sfilter.mouseleave(function() { oSrchFlt=false; if (!srchBoxFoc&&!oSrchBox) { sfilter.hide(); sfilter.removeClass(\'open\'); }});\n  sfilter.mouseover(function() { oSrchFlt=true; });\n }\n});\r\n\nvar bookmark;\n$(function() {\n   bookmark = new Bookmark(\'[data-type="bookmark"]\',\'https://codeproject.global.ssl.fastly.net/App_Themes/CodeProject/Img/\',\'/script/Bookmarks/Ajax/Add.aspx?obrfgd=%5bObjectRefGuid%5d&bis=medium\',false,false);\n   bookmark.Initialise();\n});\r\n$(\'#clear-rate_ctl00_RateArticle_RSU\').click(function () {    $(\'#ctl00_RateArticle_RSU\').hide(); return false;});$("#ctl00_RateArticle_RateItemWrapper")   .removeClass("container-rating")   .hover( function() { $(\'#ctl00_RateArticle_RSU\').fadeIn(\'fast\'); },            function() { $(\'#ctl00_RateArticle_RSU\').fadeOut(\'fast\'); } );\r\nfunction PostBack_ctl00_RateArticle_RateItemWrapper() {\n  return rateItem(null, 1256008,2,1,true,true,0,\'MediumStars\', null, 0);\n}\r\n\r\n                        function getVotesHistogram(objectId, objectTypeId, containerId, loadingId) {\r\n                            if (!$(\'#\' + containerId).attr(\'alreadyRequested\')){\r\n                                $.ajax({\r\n                                    url: \'/script/Ratings/Ajax/Histogram.aspx?obid=\' + objectId + \'&obtid=\'+objectTypeId,\r\n                                    success: function (data) {\r\n                                        $(\'#\' + containerId).html(data);\r\n                                        $(\'#\' + loadingId).hide();\r\n                                    }\r\n                                });\r\n                                $(\'#\' + containerId).attr(\'alreadyRequested\', \'true\');\r\n                            }\r\n                        }\r\n$(document).ready(function() {\n  new starRating(\'#ctl00_RateArticle_RateItemWrapper\', PostBack_ctl00_RateArticle_RateItemWrapper,\'ctl00_RateArticle\');\n  $(\'#ctl00_RateArticle_RB\').mouseenter(function() {     getVotesHistogram(1256008,2   ,\'ctl00_RateArticle_Histogram\',\'ctl00_RateArticle_Loading\');\n  });\n})\n\r\n$(document).ready(function() {\n  $(\'#ctl00_RateArticle_SubmitRateBtn\').hide();\n});\n\r\n$(document).ready(function() {\n  $(\'#ctl00_RateArticle_SubmitRateBtn\').hide();\n});\nfunction ChkRtctl00_RateArticle(){}\n\r\nvar config64969824 = {\r\n    objectName          : \'forumControl64969824\',\r\n    messageTypeId       : 3,\r\n    searchPrompt        : \'Search Comments\',\r\n    smoothScroll        : true,\r\n    allowReporting      : false,\r\n    allowRating         : false,\r\n    allowRatingDisplay  : true,\r\n    forumDir            : \'/script/Forums/\',\r\n    staticServer        : \'https://codeproject.global.ssl.fastly.net\',\r\n    switchMsgCallback   : null,\r\n    getVoteFormMethod   : getVoteFormHtml,\r\n    getReportFormMethod : getReportFormHtml,\r\n    voteHiThreshold     : 5 - 0.5,\r\n    getRatingUrl        : \'/script/Ratings/Ajax/GetRatings.aspx\',\r\n    getRatingRefKey     : \'obrs\',\r\n    reportOptions       : [\r\n       { reportTypeId : 19, name : \'Abusive / Trolling\'},\r\n       { reportTypeId : 20, name : \'Inappropriate\'},\r\n       { reportTypeId : 5, name : \'Spam\'},\r\n    ],\r\n};\r\nvar forumControl64969824 = new ForumControl(config64969824, -1);\r\n$(document).ready(function() {\r\n    forumControl64969824.Initialise();\r\n});\r\n\r\nvar subscriptionConfig = {\n ParentId      : \'ctl00_MessageBoard_SubscribeDiv\',\n NewId         : \'ctl00_MessageBoard_SubscribeNew\',\n ReplyId       : \'ctl00_MessageBoard_SubscribeReplies\',\n InstantId     : \'ctl00_MessageBoard_SubscribeInstant\',\n DailyId       : \'ctl00_MessageBoard_SubscribeDaily\',\n GetInfoUrl    : \'/script/Forums/WebServices/ForumSubscriptionServices.aspx/GetSubscriptions\',\n UpdateInfoUrl : \'/script/Forums/WebServices/ForumSubscriptionServices.aspx/UpdateSubscription\',\n ForumId       : 1939293,\n};\nvar subscriptions_ctl00_MessageBoard;\n$(function() {\n   subscriptions_ctl00_MessageBoard = new Subscriptions(subscriptionConfig);\n   subscriptions_ctl00_MessageBoard.initialise();\n});\n\r\n\r\n//]]>\r\n</script>\r\n\r\n\r\n\r\n\r\n</body>\r\n
+
+</html>

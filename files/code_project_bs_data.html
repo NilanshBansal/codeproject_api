@@ -1,0 +1,687 @@
+<!DOCTYPE HTML>
+<html> <head> <title>Etherdrop: DAPP Lottery on Ethereum Blockchain - CodeProject</title> <link href="https://codeproject.global.ssl.fastly.net/App_Themes/CodeProject/Css/Main.min.css?dt=2.8.180920.1" rel="stylesheet" type="text/css"/> <meta content="en-US" http-equiv="content-language"/> <meta charset="utf-8"/> <meta content="Your Ethereum Giveaway Smart Contract Lottery; Author: Fady Aro; Updated: 10 Aug 2018; Section: Blockchain; Chapter: General Programming; Updated: 10 Aug 2018" name="Description"/> <meta content="Javascript, CSS, HTML, JSON, Web, NPM, Markdown, blockchain, Ethereum, Solidity, Truffle,Blockchain,General Programming,Free source code, tutorials" name="Keywords"/> <meta content="Fady Aro" name="Author"/> <meta content="General" name="Rating"/> <meta content="1 days" name="Revisit-After"/> <meta content="CodeProject" name="application-name"/> <meta content="d908bb7ce7aff658-4c2f3a504525c916-g629383f736781a8a-13" name="google-translate-customization"/> <link href="//ajax.googleapis.com" rel="dns-prefetch"/> <link href="https://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=1" rel="alternate" title="CodeProject Latest articles - All Topics" type="application/rss+xml"/><link href="https://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=31" rel="alternate" title="CodeProject Latest articles - Artificial Intelligence" type="application/rss+xml"/><link href="https://www.codeproject.com/webservices/LoungeRSS.aspx" rel="alternate" title="CodeProject Lounge Postings" type="application/rss+xml"/> <meta content="index, follow" name="robots"/> <link href="https://www.codeproject.com/info/OpenSearch.xml" rel="search" title="CodeProject" type="application/opensearchdescription+xml"/> <meta content="width=device-width, initial-scale=1.0" name="viewport"/> <link href="/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="144x144"/> <link href="/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/> <link href="/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/> <link href="/favicon/manifest.json" rel="manifest"/> <link color="#ff9900" href="/favicon/safari-pinned-tab.svg" rel="mask-icon"/> <script type="application/ld+json">
+{  "@context": "http://schema.org",
+  "@type": "TechArticle",
+  "headline": "Etherdrop: DAPP Lottery on Ethereum Blockchain",
+  "url": "https://www.codeproject.com/Articles/1256008/Etherdrop-DAPP-Lottery-on-Ethereum-Blockchain",
+  "discussionUrl": "https://www.codeproject.com/Articles/1256008/Etherdrop-DAPP-Lottery-on-Ethereum-Blockchain",
+  "isFamilyFriendly": "true",
+  "image": "https://www.codeproject.com/KB/blockchain/1256008/Thumbnail.png",
+  "keywords": "Javascript, CSS, HTML, Markdown, JSON, Web, NPM, blockchain, Ethereum, Solidity, Truffle",
+  "commentCount": "1",
+  "editor" : {
+    "@type" : "Person",
+    "name" : "Deeksha Shenoy",
+    "url" : "https://www.codeproject.com/script/Membership/View.aspx?mid=3866010"
+  },
+  "license": "http://www.codeproject.com/info/cpol10.aspx",
+  "publisher" : {
+    "@type" : "Organization",
+    "name" : "CodeProject"
+  }
+  "description": "Your Ethereum Giveaway Smart Contract Lottery",
+  "upvoteCount": "3",
+  "articleSection": "Blockchain",
+  "author" : [{
+      "@type" : "Person",
+      "name" : "Fady Aro",
+      "url" : "https://www.codeproject.com/script/Membership/View.aspx?mid=7667955"
+    }],
+  "datePublished": "2018-08-10",
+  "dateCreated": "2018-08-10",
+  "dateModified": "2018-08-10",
+  "aggregateRating" : {
+    "@type" : "aggregateRating",
+    "ratingValue" : 4.82,
+    "ratingCount" : 3,
+    "bestRating" : 5,
+    "worstRating" : 1
+  },
+}
+</script> <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "item" : {
+      "@id" : "/Chapters/6/General-Programming.aspx",
+      "name" : "General Programming"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "item" : {
+      "@id" : "/KB/blockchain/",
+      "name" : "Blockchain"
+    }
+  }]
+}
+</script> <base target="_top"/> <script language="Javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" type="text/javascript"></script><script type="text/javascript">//<![CDATA[if (typeof jQuery == 'undefined') {    document.write(unescape("%3Cscript src='%2fscript%2fJS%2fjquery-2.2.4.min.js' type='text/javascript' %3E%3C/script%3E"));}//]]></script> <script language="Javascript" type="text/javascript">//<![CDATA[
+function defrm () { /* thanks twitter */ document.write = ''; window.top.location = window.self.location;  setTimeout(function() { document.body.innerHTML = ''; }, 0);  window.self.onload = function(evt) { document.body.innerHTML = ''; }; }if (window.top !== window.self) {  try {  if (window.top.location.host) { /* will throw */ } else { defrm(); /* chrome */ }  } catch (ex) { defrm(); /* everyone else */ } }if (typeof(DemoUrl)!='undefined')   document.write(unescape('%3Cme')+'ta http'+'-equiv="re'+'fresh"                  con'+'tent="1;url='+DemoUrl+unescape('"%3CE'));
+
+//]]>
+</script> <script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-1735123-1']);
+_gaq.push(['_trackPageview']);
+_gaq.push(['_setDomainName', 'www.codeproject.com']);
+_gaq.push(['_setSessionTimeout', '1200']); 
+
+(function () {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+})(); 
+</script> </head> <body class="mozilla mozilla5"> <a class="access-link" href="#Main"><img alt="Click here to Skip to main content" src="https://codeproject.global.ssl.fastly.net/images/t.gif"/></a> <div class="page-background"> <div class="alert-bar overlay " style="display: none;"> <a class="close-notify" href="#">×</a> <div>Sign up for our free weekly <a href="/feature/web-newsletter">Web Dev Newsletter</a>.</div> </div> <div class="site-top-menu fixed" id="ctl00_STM"> <div class="main-content"> <div class="container memberbar clearfix"> <div class="float-left" id="ctl00_MemberMenu_GenInfo">13,759,109 members</div> <div class="float-left"> </div> <div class="float-right"> <script type="text/javascript">//<!--
+function doSubmit(secure)
+{
+if (secure)
+document.subForm.action = "https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f1256008%2fEtherdrop-DAPP-Lottery-on-Ethereum-Blockchain"
+else
+document.subForm.action = "https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f1256008%2fEtherdrop-DAPP-Lottery-on-Ethereum-Blockchain"
+document.subForm.submit();
+return true;
+}//-->
+</script> <a name="SignUp"></a> <span class="member-signin tooltip openable"> <span><a href="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f1256008%2fEtherdrop-DAPP-Lottery-on-Ethereum-Blockchain">Sign in</a> <img height="16px" src="https://codeproject.global.ssl.fastly.net/App_Themes/CodeProject/Img/login32.png" style="vertical-align:middle;" width="16px"/> </span> <div class="tooltip-flyout"> <form action="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f1256008%2fEtherdrop-DAPP-Lottery-on-Ethereum-Blockchain" class="tight" id="subForm" method="post" name="subForm"> <input id="FormName" name="FormName" type="hidden" value="MenuBarForm"/> <div>Email</div> <div><input class="small-text" id="Email" name="Email" type="email"/></div> <div>Password</div> <div><input class="small-text" id="Password" name="Password" type="password"/></div> <div class="action"> <input class="create hidden" id="joinBtn" onclick="return Join();" type="button" value="Join"/> <input name="fld_quicksign" type="hidden" value="true"/> <script type="text/javascript">
+                                  function simpleMask(str, key) {
+                                      var result = '';
+                                      for (var i = 0; i < str.length; ++i)
+                                          result += String.fromCharCode(key ^ str.charCodeAt(i));
+                                      return result;
+                                  }
+                                  function Join() {
+                                      var url = 'https://www.codeproject.com/script/Membership/Modify.aspx';document.location.href=url;
+                                      return false;
+                                  }
+                                  $('#joinBtn').css('visibility', 'visible');
+                                  </script> <input class="signin" onclick="return doSubmit(false);" type="submit" value="Sign in"/> </div> <div class="container">
+
+ 
+<a class="forgot float-right" href="/script/Membership/SendPassword.aspx?rp=/Articles/1256008/Etherdrop-DAPP-Lottery-on-Ethereum-Blockchain" id="ctl00_MemberMenu_SendPassword">Forgot your password?</a> </div> </form> <hr class="divider-dark"/>
+
+Sign in with <a class="oauth" href="/script/Membership/OAuthLogOn.aspx?auth=GitHub" title="Sign in using Github"><img src="/script/Membership/Images/octicons_github.png" style="vertical-align:middle;padding-right:3px;border:0;"/></a> <a class="oauth" href="/script/Membership/OAuthLogOn.aspx?auth=LinkedIn" title="Sign in using Linkedin"><img src="/script/Membership/Images/linkedin.png" style="vertical-align:middle;padding-right:3px;border:0;"/></a> <a class="oauth" href="/script/Membership/OAuthLogOn.aspx?auth=Facebook" title="Sign in using Facebook"><img src="/script/Membership/Images/facebook.png" style="vertical-align:middle;padding-right:3px;border:0;"/></a> <a class="oauth" href="/script/Membership/OAuthLogOn.aspx?auth=Google" title="Sign in using Google"><img src="/script/Membership/Images/google-plus.png" style="vertical-align:middle;padding-right:3px;border:0;"/></a> <a class="oauth" href="/script/Membership/OAuthLogOn.aspx?auth=Microsoft" title="Sign in using Microsoft"><img src="/script/Membership/Images/microsoft.png" style="vertical-align:middle;padding-right:3px;border:0;"/></a> </div> </span> </div> </div> </div> </div> <div class="site-header fixed" id="ctl00_SH"> <div class="main-content"> <div class="logo"><a href="/"><img alt="Home" id="ctl00_Logo" src="https://codeproject.global.ssl.fastly.net/App_Themes/CodeProject/Img/logo250x135.gif" style="height:135px;width:250px;border-width:0px;" tabindex="1" title="CodeProject"/></a></div> <div class="promo"><div class="msg-728x90" data-format="728x90" data-publisher="lqm.codeproject.site" data-tags="Javascript, CSS, HTML, JSON, Web, NPM, Markdown, blockchain, Ethereum, Solidity, Truffle,rating4.5" data-type="ad" data-zone="General-Programming/Blockchain/General"><noscript><a href="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/General-Programming/Blockchain/General&amp;sz=728x90&amp;c=321501"><img height="90px" src="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/General-Programming/Blockchain/General&amp;sz=728x90&amp;c=321501" target="_blank" width="728px"/></a></noscript></div></div> </div> </div> <a href="#Main"><img alt="Click here to Skip to main content" class="access-link" src="https://codeproject.global.ssl.fastly.net/images/t.gif"/></a> <div class="sub-headerbar clearfix fixed" id="ctl00_TPR"> <div class="float-right"> <div class="searchbar"> <form action="/search.aspx?sbo=kw" class="tight" method="get" name="Search"> <table border="0" cellpadding="0" cellspacing="0" class="search"><tr><td><input class="search " id="sb_tb" name="q" tabindex="2" value=""/></td><td><input src="https://codeproject.global.ssl.fastly.net/images/search.gif" type="image"/></td></tr></table> <div class="hover-container"> <div class="search-advanced popup small-text align-left" id="SearchFilter"> <b>Search within:<br/></b> <input checked="true" id="sb_kw" name="sbo" type="radio" value="kw"/><label for="sb_kw">Articles</label><br/> <input id="sb_qa" name="sbo" type="radio" value="qa"/><label for="sb_qa">Quick Answers</label><br/> <input id="sb_fm" name="sbo" type="radio" value="fm"/><label for="sb_fm">Messages</label><br/> </div> </div> </form> </div> </div> <div class="float-left"> <div class="navbar clearfix"> <ul class="navmenu openable"> <li class="desktop-only"><a href="https://www.codeproject.com" id="ctl00_TopNavBar_Home">home</a> </li><li class="openable"><a class="down selected" href="/script/Articles/Latest.aspx" id="ctl00_TopNavBar_Art">articles</a> <ul> <li class="openable"><a class="fly" href="/script/Content/SiteMap.aspx" id="ctl00_TopNavBar_ArtTopicList" onmouseover="navBarMenu.ShowMap(this, 'ctl00_TopNavBar_MapFlyout');">Chapters and Sections<span class="has-submenu">&gt;</span></a><ul class="taxonomy" id="ctl00_TopNavBar_MapFlyout"> <li> <div id="siteMap"></div> </li> </ul> </li> <li><a class="fly" href="/script/Articles/Latest.aspx?at=1,3,7" id="ctl00_TopNavBar_ArtLatestArts">Latest Articles</a></li> <li><a class="fly" href="/script/Articles/TopArticles.aspx?ta_so=5" id="ctl00_TopNavBar_ArtTop">Top Articles</a></li> <li><a class="fly" href="/info/Submit.aspx" id="ctl00_TopNavBar_ArtGuide">Posting/Update Guidelines</a></li> <li><a class="fly" href="/Forums/1641/Article-Writing.aspx" id="ctl00_TopNavBar_ArtHelpForum">Article Help Forum</a></li> <li><a class="fly highlight1" href="/script/Articles/Submit.aspx" id="ctl00_TopNavBar_ArtPostArticle"> <img height="13px" src="https://codeproject.global.ssl.fastly.net/images/write13.png" width="13px"/> Submit an article or tip
+</a></li> <li><a class="fly highlight2" href="/script/Articles/BlogFeed.aspx" id="ctl00_TopNavBar_ArtPostBlog"> <img height="13px" src="https://codeproject.global.ssl.fastly.net/images/write13.png" width="13px"/> Post your Blog
+</a></li><li class="last"></li> </ul> </li> <li class="openable"> <a href="/script/Answers/List.aspx?tab=active" id="ctl00_TopNavBar_Answers"> <span class="desktop-only tablet-only">quick answers</span><span class="mobile-only">Q&amp;A</span> </a> <ul> <li id="ctl00_TopNavBar_AQL"><a class="fly highlight1" href="#_comments" id="ctl00_TopNavBar_ArticleQuestion"> <img height="13px" src="https://codeproject.global.ssl.fastly.net/images/write13.png" width="13px"/> Ask a Question about this 
+article</a> </li> <li><a class="fly highlight2" href="/Questions/ask.aspx" id="ctl00_TopNavBar_QAAsk"><img height="13px" src="https://codeproject.global.ssl.fastly.net/images/write13.png" width="13px"/> Ask a Question</a></li> <li><a class="fly" href="/script/Answers/List.aspx?tab=unanswered" id="ctl00_TopNavBar_QAUnanswered">View Unanswered Questions</a></li> <li><a class="fly" href="/script/Answers/List.aspx?tab=active" id="ctl00_TopNavBar_QALatest">View All Questions</a></li> <li><a class="fly" href="/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=81" id="ctl00_TopNavBar_QATR_ctl00_Tag" style="padding-left:30px">View C# questions</a></li> <li><a class="fly" href="/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=85" id="ctl00_TopNavBar_QATR_ctl01_Tag" style="padding-left:30px">View ASP.NET questions</a></li> <li><a class="fly" href="/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=842" id="ctl00_TopNavBar_QATR_ctl02_Tag" style="padding-left:30px">View VB.NET questions</a></li> <li><a class="fly" href="/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=91" id="ctl00_TopNavBar_QATR_ctl03_Tag" style="padding-left:30px">View Java questions</a></li> <li><a class="fly" href="/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=93" id="ctl00_TopNavBar_QATR_ctl04_Tag" style="padding-left:30px">View SQL questions</a></li> <li class="last"></li> </ul> </li> <li class="openable"><a href="/script/Forums/List.aspx" id="ctl00_TopNavBar_Forums"> <span class="desktop-only tablet-only">discussions</span><span class="mobile-only">forums</span> </a> <ul> <li><a class="fly" href="/script/Forums/List.aspx" id="ctl00_TopNavBar_MessageBoardsAll">All Message Boards...</a></li> <li class="openable"><a class="fly" href="/Forums/1580997/Application-Lifecycle.aspx" style="padding-left:30px">Application Lifecycle<span class="has-submenu">&gt;</span></a> <ul class="openable"><li><a class="fly" href="/Forums/1533717/Running-a-Business.aspx">Running a Business</a></li> <li><a class="fly" href="/Forums/1533716/Sales-Marketing.aspx">Sales / Marketing</a></li> <li><a class="fly" href="/Forums/1651/Collaboration-Beta-Testing.aspx">Collaboration / Beta Testing</a></li> <li><a class="fly" href="/Forums/3304/Work-Issues.aspx">Work  Issues</a></li> </ul></li> <li><a class="fly" href="/Forums/369270/Design-and-Architecture.aspx" style="padding-left:30px">Design and Architecture</a> </li> <li><a class="fly" href="/Forums/12076/ASP-NET.aspx" style="padding-left:30px">ASP.NET</a> </li> <li><a class="fly" href="/Forums/1580226/JavaScript.aspx" style="padding-left:30px">JavaScript</a> </li> <li class="openable"><a class="fly" href="/Forums/1647/C-Cplusplus-MFC.aspx" style="padding-left:30px">C / C++ / MFC<span class="has-submenu">&gt;</span></a> <ul class="openable"><li><a class="fly" href="/Forums/4486/ATL-WTL-STL.aspx">ATL /  WTL / STL</a></li> <li><a class="fly" href="/Forums/3785/Managed-Cplusplus-CLI.aspx">Managed C++/CLI</a></li> </ul></li> <li><a class="fly" href="/Forums/1649/Csharp.aspx" style="padding-left:30px">C#</a> </li> <li><a class="fly" href="/Forums/1627782/Free-Tools.aspx" style="padding-left:30px">Free Tools</a> </li> <li><a class="fly" href="/Forums/1827460/Objective-C-and-Swift.aspx" style="padding-left:30px">Objective-C and Swift</a> </li> <li><a class="fly" href="/Forums/1725/Database.aspx" style="padding-left:30px">Database</a> </li> <li class="openable"><a class="fly" href="/Forums/186301/Hardware-Devices.aspx" style="padding-left:30px">Hardware &amp; Devices<span class="has-submenu">&gt;</span></a> <ul class="openable"><li><a class="fly" href="/Forums/1644/System-Admin.aspx">System Admin</a></li> </ul></li> <li><a class="fly" href="/Forums/1606152/Hosting-and-Servers.aspx" style="padding-left:30px">Hosting and Servers</a> </li> <li><a class="fly" href="/Forums/1643/Java.aspx" style="padding-left:30px">Java</a> </li> <li><a class="fly" href="/Forums/1650/NET-Framework.aspx" style="padding-left:30px">.NET Framework</a> </li> <li><a class="fly" href="/Forums/1848626/Android.aspx" style="padding-left:30px">Android</a> </li> <li><a class="fly" href="/Forums/1876716/iOS.aspx" style="padding-left:30px">iOS</a> </li> <li><a class="fly" href="/Forums/13695/Mobile.aspx" style="padding-left:30px">Mobile</a> </li> <li><a class="fly" href="/Forums/1540733/SharePoint.aspx" style="padding-left:30px">SharePoint</a> </li> <li><a class="fly" href="/Forums/1004257/Silverlight-WPF.aspx" style="padding-left:30px">Silverlight / WPF</a> </li> <li><a class="fly" href="/Forums/1646/Visual-Basic.aspx" style="padding-left:30px">Visual Basic</a> </li> <li><a class="fly" href="/Forums/1640/Web-Development.aspx" style="padding-left:30px">Web Development</a> </li> <li><a class="fly" href="/suggestions.aspx" style="padding-left:30px">Site Bugs / Suggestions</a> </li> <li><a class="fly" href="/Forums/1652005/Spam-and-Abuse-Watch.aspx" style="padding-left:30px">Spam and Abuse Watch</a> </li> <li class="last"></li> </ul> </li> <li class="openable"><a href="/Feature/" id="ctl00_TopNavBar_Features"> <span class="desktop-only tablet-only">features</span><span class="mobile-only">stuff</span> </a> <ul> <li><a class="fly" href="/script/Contests/CurrentCompetitions.aspx?cmpTpId=3&amp;awsac=true" id="ctl00_TopNavBar_Comps">Competitions</a></li> <li><a class="fly" href="/script/News/List.aspx" id="ctl00_TopNavBar_News">News</a></li> <li><a class="fly" href="/Feature/Insider/" id="ctl00_TopNavBar_Insider">The Insider Newsletter</a></li> <li><a class="fly" href="/Feature/DailyBuild" id="ctl00_TopNavBar_DailyBuild">The Daily Build Newsletter</a></li> <li><a class="fly" href="/script/Mailouts/Archive.aspx?mtpid=1" id="ctl00_TopNavBar_Newsletters">Newsletter archive</a></li> <li><a class="fly" href="/script/Surveys/List.aspx" id="ctl00_TopNavBar_Surveys">Surveys</a></li> <li><a class="fly" href="/KB/showcase/" id="ctl00_TopNavBar_Showcase">Product Showcase</a></li> <li><a class="fly" href="/script/ResearchLibrary/Index.aspx" id="ctl00_TopNavBar_Research">Research Library</a></li> <li><a class="fly" href="/Info/Stuff.aspx" id="ctl00_TopNavBar_Stuff">CodeProject Stuff</a></li> <li class="last"></li> </ul> </li> <li class="openable"><a href="/Lounge.aspx" id="ctl00_TopNavBar_Lounge"> <span class="desktop-only tablet-only">community</span><span class="mobile-only">lounge</span> </a> <ul> <li><a class="fly" href="/script/Membership/Profiles.aspx" id="ctl00_TopNavBar_WhosWho">Who's Who</a></li> <li><a class="fly break" href="/script/Contests/Winners.aspx?obtid=1&amp;cmpTpId=2&amp;cid=0" id="ctl00_TopNavBar_MVPs">Most Valuable Professionals</a></li> <li><a class="fly highlight2" href="/Lounge.aspx" id="ctl00_TopNavBar_LoungeLnk">The Lounge  </a></li> <li><a class="fly" href="/Forums/1939564/Where-I-am-Member-Photos.aspx" id="ctl00_TopNavBar_WhereAmILink">Where I Am: Member Photos</a></li> <li><a class="fly" href="/Insider.aspx" id="ctl00_TopNavBar_InsiderLnk">The Insider News</a></li> <li><a class="fly" href="/Feature/WeirdAndWonderful.aspx" id="ctl00_TopNavBar_WeirdWonderful">The Weird &amp; The Wonderful</a></li> <li><a class="fly" href="/Forums/1536756/The-Soapbox.aspx" id="ctl00_TopNavBar_SoapBoxLnk">The Soapbox</a></li> <li><a class="fly break" href="/Forums/1738007/Press-Releases.aspx" id="ctl00_TopNavBar_PRLnk">Press Releases</a></li> <li class="openable"><a class="fly" href="/Forums/1580229/Hindi.aspx">Non-English Language
+<span class="has-submenu">&gt;</span></a> <ul> <li><a class="fly" href="/Forums/1580229/Hindi.aspx">General Indian Topics</a></li> <li><a class="fly" href="/Forums/1580230/Chinese.aspx">General Chinese Topics</a></li> </ul> </li><li class="last"></li> </ul> </li> <li class="openable" style="margin-left:20px"><a href="/KB/FAQs/" id="ctl00_TopNavBar_Help"> <span class="desktop-only tablet-only">help</span><span class="mobile-only">?</span> </a> <ul> <li><a class="fly" href="/info/guide.aspx" id="ctl00_TopNavBar_HelpWhatIs">What is 'CodeProject'?</a></li> <li><a class="fly break" href="/KB/FAQs/" id="ctl00_TopNavBar_HelpGeneral">General FAQ</a></li> <li><a class="fly break highlight2" href="/Questions/ask.aspx" id="ctl00_TopNavBar_HelpPostQuestion">Ask a Question</a></li> <li><a class="fly" href="/suggestions.aspx" id="ctl00_TopNavBar_HelpBugs">Bugs and Suggestions</a></li> <li><a class="fly" href="/Forums/1641/Article-Writing.aspx" id="ctl00_TopNavBar_HelpArticles">Article Help Forum</a></li> <li><a class="fly" href="/script/Content/SiteMap.aspx" id="ctl00_TopNavBar_HelpSiteMap">Site Map</a></li> <li><a class="fly" href="http://developermedia.com/" id="ctl00_TopNavBar_HelpAdvertise">Advertise with us</a></li> <li><a class="fly" href="/info/AboutOurAds.aspx" id="ctl00_TopNavBar_HelpAboutAds">About our Advertising</a></li> <li><a class="fly" href="/info/Jobs/" id="ctl00_TopNavBar_HelpJobs">Employment Opportunities</a></li> <li><a class="fly" href="/info/about.aspx" id="ctl00_TopNavBar_HelpAboutUs">About Us</a></li> <li class="last"></li> </ul> </li> </ul> </div> </div> <div class="sub-headerbar-divider"></div> </div> <div class="container-content-wrap fixed" id="A"> <div class="container-content"> <div class="clearfix"> <div class="container-breadcrumb float-left "> <div><a href="/script/Content/SiteMap.aspx">Articles</a> » <a href="/Chapters/6/General-Programming.aspx">General Programming</a> » <a href="/KB/blockchain/">Blockchain</a> » <a href="/KB/blockchain/#General">General</a></div> </div> <div class="float-left"> </div> <div class="edit-links float-right">
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+</div> <div class="article-nav float-right"> <div style="display:inline-block;position:relative;top:-5px;margin-right:20px"> </div> <span data-mode="bookmark" data-ref="2_1256008_9" data-size="medium" data-type="bookmark" id="ctl00_ActionLinks_BookmarkMd_bookmark"></span><a data-enabletooltip="true" data-tooltip="Print" data-width="auto" href="/Articles/1256008/Etherdrop-DAPP-Lottery-on-Ethereum-Blockchain?display=Print" id="ctl00_ActionLinks_PrintMd"> <img height="24px" src="/App_Themes/CodeProject/Img/print48.png" style="border:0" width="24px"/> </a> </div> </div> <table cellpadding="0" cellspacing="0" class="extended container-article-parts"> <tr valign="top"> <td class="article-wing-left" width="117px"> <div class="container-article-tabs" id="ctl00_Nav"> <div class="tabs"> <div class="selected">Article</div><div class="unselected"><a href="/script/Articles/ViewDownloads.aspx?aid=1256008">Browse Code</a></div><div class="unselected"><a href="/script/Articles/Statistics.aspx?aid=1256008">Stats</a></div><div class="unselected"><a href="/script/Articles/ListVersions.aspx?aid=1256008">Revisions (9)</a></div><div class="unselected"><a href="/script/Articles/ListAlternatives.aspx?aid=1256008">Alternatives</a></div> <div class="unselected"><a class="anchorLink" href="WebControls/#_comments" id="ctl00_ArticleTabs_CommentLink">Comments 
+        <span id="ctl00_ArticleTabs_CmtCnt">(1)</span></a> </div> </div> <a class="add-item" href="/script/Articles/SubmissionWizard.aspx?at=1&amp;apid=1256008" id="ctl00_AddAlternative" title="Write a related article about upgrades or translate this into a different language.">Add your own<br/>alternative version</a> <div> <h4>Tagged as</h4> <span class="tags vertical" id="ctl00_TagList_TagWrp"> <span id="ctl00_TagList_VisibleTags"><div class="t"><a data-id="87" href="/Tags/Javascript" rel="tag">Javascript</a></div><div class="t"><a data-id="90" href="/Tags/CSS" rel="tag">CSS</a></div><div class="t"><a data-id="104" href="/Tags/HTML" rel="tag">HTML</a></div><div class="t"><a data-id="997" href="/Tags/JSON" rel="tag">JSON</a></div><div class="t"><a data-id="1147" href="/Tags/Web" rel="tag">Web</a></div><div class="t"><a data-id="3812" href="/Tags/NPM" rel="tag">NPM</a></div><div class="t"><a data-id="3875" href="/Tags/Markdown" rel="tag">Markdown</a></div><div class="t"><a data-id="4415" href="/Tags/blockchain" rel="tag">blockchain</a></div><div class="t"><a data-id="4512" href="/Tags/Ethereum" rel="tag">Ethereum</a></div><div class="t"><a data-id="4667" href="/Tags/Solidity" rel="tag">Solidity</a></div><div class="t"><a data-id="4668" href="/Tags/Truffle" rel="tag">Truffle</a></div></span> </span> </div> <div class="stats"> <h4>Stats</h4> <div id="ctl00_ArtStats"><div class="stats"><div>3K views</div><div>40 downloads</div><div>5 bookmarked</div></div></div> </div> <div class="subdue padded-top" title="Date First posted">Posted 
+                    10 Aug 2018</div> <div title="Licence">
+                    Licenced <a class="license" href="http://www.codeproject.com/info/cpol10.aspx" id="ctl00_LicenseLink" title="The Code Project Open License (CPOL)">CPOL</a> </div> </div> </td> <td> <div class="container-article fixed" id="AT"> <div class="article"> <form action="/Articles/1256008/Etherdrop-DAPP-Lottery-on-Ethereum-Blockchain" id="aspnetForm" method="post" name="aspnetForm" style="margin:0;padding:0"> <div> <input id="__VIEWSTATE" name="__VIEWSTATE" type="hidden" value="t4lmN+P8iZx82guzCLvTME6SuSvuP3ewuWGbl65G8pNl5Wsn9bVhv8AyYhM7qgsJrUPio13IgRHq/TgsllNSuKNVNEClheztWJy1EQCoygYT1GIDflaSPhNFt4UXgMNeEJK17H1vo/+5bCR3Be4OHjhsS5pYRlQrc9fDzBhbsYsEnefxYYVy3V7xT6ngmcTDYmeZw9k7mk476dVEGl5TNfrOLhZn7fiflNrtpwpM5p9HSP5nUsRYiB7euKtMw+NBqRPnvF7+t0C/FKVTsI0Y46qNEgNqrsDNqJG1S+Kk+dhVnALTZ13z8Vk3HzC2ALOtbiuA3g4y4E+Ml5RhtAsgnlN95epgscEubmLTRm6MxImGHOKYI5BpIhVCBAHoisNSRy+SNT3gDCzcRAjBqos86HqW8AvMOYOXn06mmswwFFCuM87T5AsHwtLuL8xHf1mnr+dRfuBivQWrfELGJ1QrBlOcvDcz/rzA32sEjFAO3PbE3TwUSaQklZfR+jXem70cg78Op22e8Dp0S/zSSP/sgIDJrSvF+ZfV+foGk0UxvY4fRy1i5KSOxyTPDvKJOPv3qtkAWhP0KODDLyLXFb/BDomgk27p8+9QQapfRBBrq+0G+dw4j2SMHkYAK3RGNXlLSZFG1ENnqUyuu6yvsj5qjuiKTBcCf0KXrNNRVUc/hZS2t+Krk5QmMQ94vnMGvDPtamKfvhueS6clJBndZXopf/Iz+DJI9mNEp9SL11fcsXhWcdOGil0t7fBzdXjQf3kNShkl/k9QVECAApRI6okXXC5I8hc/kbbvC3d3q7bs5poInD7v3HEQfGgkepDzPAUGloHd5rsJ5ALVVyAUUSODLQAkrZR14jjvdlOM2nfNMJ8yi43gsuaPw9YsQh5ZK7j5szsbu6dQVJUfHKzwofDQrxk3z9sMXuxeRtiGROzwAhTYYWnf2s2YaNlWvGfTlwpbowKdEg0OVLV26+tMUJhgxaZWbuJRhdRuPLyooakN9S7hUqsgc//+vRWxLPboC8sMx7UNni1+hGrDBChqoGz1ejLW3XDuQPHFRbQgLR9j7V+iE54VTH9bInmTFEmEaShk3NqIrX9Ujuo4o0E4eJ6GgOT9YQZrs/RLUx8Or3E2n567Etsfn0ESI86qnYFDLAhEO/xUSWkZLf2JnupafEKKXfR8Ma/HuTAnUnOVust94SprP6Sfn+vM1Yk1/wXD4lVM4mtjoaPUvyx5I/BYa9Z0jFV20OoBHQUMRmk4lyk0ChkSJNUW0Y7SvF2RNL0m0PIf88bYtarEG345Ilq7mIm9E3/5TS9FdW9thQsPDEWTXc84S50DKz8e1dJ3CSjWqGff+LX4spEPHGf8+hOv++SvJaDRHmLFcqTGuiajUsKeX87xUFmyqlSPg6+KaBn6o9wOh9y0EGYOgg6oAjQQeqRxoijWjxq50ud7gu25HiU5gKBD5Bx8LocEPM22mJtA+x5tJXa/BTZoUmZWFi1nM/cGYzcbmY4Y6xGlawlLiAP5hw1nlB09mJSq1YRNWxw8Eth02kWHuMh2iuq4/LWhURPV7pJrb19JbJX4qViqpNzuHvcOO04mCqjbonGAAcV6BaqUmA+YwvUzqQBjJQ2XqLpzMcND3Go0AJr9kQtAyCczGFvugz4PfQuq74JkXKf4L8nXg4QBoZw82vGZoPRfYTiVC714hvz7hMOmtUE9t7P5hzj1/WjqykeTy77lNMaylH+cRzmlGDfZPDMq2WRxNBrU2P5qh263GcCD0xD1x4TRGwVGnsPvKe0LUuoMY8csMWWcHm5/lL5VQUA4MXsTHQU7HQJk/ZENvUr5sQCxau2BNbgX7cJ1hmDOD7EXUr3+ATDSqyf8cP2R67h6wd98XhlQaiBjO3dLX74xHf9iHK6IAPdNc3pSFzMg6buTphbb8YfEMzCK2PfaqeP6he/3/5YPgskafqLqj/wKKOS3kwSlXOgN88Avs82pscTGP+woloJEwEJeGxoXF/OcyM05OizwczjzoEgAgUjgyxd1xKx63QIn0lGoovCwAPaBgz0PfmZjGgPPtXo1/NTHsWfugbMPBzj0NWjaMdWklm8AJBmbOWZfcXI7m/PJRtUt8VlrxfkGDcf4ZUg0C/lRm5RNQASY0gzOVbSy+k9MqrKubnO56ovCTANsh4HfICrA+QCJvoLblORJr2SUyQHBeOeNR0SYshS/cK5QlS6ArivvkcdCpRkn+2+r/ABb0VpG/Weox7Ao0Ze5xfNL/kghB8WhZ2PCtLaCX6fyTthJXKuruW5aWXVcP0kHd04aec/YV/E8Yu96J12+ZE9c7ZxjYDKHvUvcimfbJws="/> </div> <div> <input id="__VIEWSTATEGENERATOR" name="__VIEWSTATEGENERATOR" type="hidden" value="10C1FD69"/> </div> <div class="header"> <a name="Main"></a> <a id="_articleTop" name="_articleTop"></a> <div class="title"> <h1 id="ctl00_ArticleTitle">Etherdrop: DAPP Lottery on Ethereum Blockchain</h1> </div> <div style="height:34px"> <div class="entry float-left"> <img class="float-left avatar" id="ctl00_avatar" src="https://www.codeproject.com/script/Membership/ProfileImages/{cf9eec9f-57ef-44e8-a45f-2c2b918c3b73}.png"/> <div class="float-left"> <div> <span class="author"><a href="/script/Membership/View.aspx?mid=7667955" rel="author">Fady Aro</a></span>, 
+                <span class="date" title="Date last updated">
+            10 Aug 2018</span> </div> <div class="float-left align-right" id="ctl00_RateArticleRow" style="margin-top:5px"> <div class="tooltip anchorLink column" id="ctl00_CurRat" name="CurRat_1256008" style="cursor:pointer;margin:2px 20px 0 0"> <table cellpadding="0" cellspacing="0" class="small-text" id="ctl00_ArticleRating_RatingTable"> <tr> <td class="nowrap"> <span id="ctl00_ArticleRating_VI"> <div class="nowrap rating-stars-medium" style="height:18px;width:80px;position:relative;"> <div class="clipped align-left float-left" style="height:16px;width:77px;"> <img src="https://codeproject.global.ssl.fastly.net/script/Ratings/Images/stars-fill-md.png" style="border-width:0px;"/> </div><div class="clipped" style="height:16px;width:3px;position:relative;"> <img src="https://codeproject.global.ssl.fastly.net/script/Ratings/Images/stars-empty-md.png" style="border-width:0px;position:absolute;top:0;right:0;"/> </div> </div> </span> </td> <td class="nowrap" id="ctl00_ArticleRating_VR">
+ 
+<span id="ctl00_ArticleRating_VotesR"> 4.82 (3 votes)</span> </td> </tr> </table> <span id="ctl00_ArticleRating_RatingText"></span> <div class="speech-bubble-container-up" id="ctl00_RB"> <div class="speech-bubble-up" style="width:150px !important"> <div> <table cellpadding="0" cellspacing="0" class="feature" height="50px" title="Voting Distribution. Recent data only" width="100%"><tr class="chart-row"><td class="chart-column"><span title="0 votes">1</span></td> <td class="chart-column"><span title="0 votes">2</span></td> <td class="chart-column"><span title="0 votes">3</span></td> <td class="chart-column"><div><img alt="1 vote, 33.3%" border="0px" height="25px" src="https://codeproject.global.ssl.fastly.net/script/Ratings/Images/pollcol.gif" title="1 vote, 33.3%" width="20pxpx"/></div><span title="1 vote">4</span></td> <td class="chart-column"><div><img alt="2 votes, 66.7%" border="0px" height="50px" src="https://codeproject.global.ssl.fastly.net/script/Ratings/Images/pollcol.gif" title="2 votes, 66.7%" width="20pxpx"/></div><span title="2 votes">5</span></td> </tr></table><div class="small-text align-center">4.82/5 - 3 votes</div><div class="small-text align-center subdue">μ 4.82, σ<sub>a</sub> 0.92 [<a href="/KB/FAQs/RatingReputationFAQ.aspx#noisefilter">?</a>]</div> </div> </div> <div class="speech-bubble-pointer-up"> <div class="speech-bubble-pointer-up-inner"></div> </div> </div> </div> <div class="column"> <div class="container-rating tooltip small-text" id="ctl00_RateArticle_RateItemWrapper" name="RateItem_1256008"> <table cellpadding="0" cellspacing="0" class="small-text" width="100%"> <tr> <td class="rating-result align-right" id="ctl00_RateArticle_VoteResultDiv"> <span class="align-right"></span> <img alt="loading..." class="loading invisible" height="16px" src="/images/loading16.gif" width="16px"/> </td> <td align="right" class="voteTbl" style="white-space:nowrap"> <table class="small-text"> <tr> <td class="rating-prompt" id="ctl00_RateArticle_RateText">
+Rate this:
+</td> <td class="nowrap rating-stars-voter-medium" id="ctl00_RateArticle_VoteFormDiv"> <span class="tooltip ajaxHist radio voting" id="ctl00_RateArticle_RB"> <span id="ctl00_RateArticle_VoteRBL"><input id="ctl00_RateArticle_VoteRBL_0" name="ctl00$RateArticle$VoteRBL" type="radio" value="1"/><input id="ctl00_RateArticle_VoteRBL_1" name="ctl00$RateArticle$VoteRBL" type="radio" value="2"/><input id="ctl00_RateArticle_VoteRBL_2" name="ctl00$RateArticle$VoteRBL" type="radio" value="3"/><input id="ctl00_RateArticle_VoteRBL_3" name="ctl00$RateArticle$VoteRBL" type="radio" value="4"/><input id="ctl00_RateArticle_VoteRBL_4" name="ctl00$RateArticle$VoteRBL" type="radio" value="5"/></span> </span> </td> <td style="padding-left:5px"> <input class="button" id="ctl00_RateArticle_SubmitRateBtn" name="ctl00$RateArticle$SubmitRateBtn" type="submit" value="Vote!"/> </td> </tr> </table> </td> </tr> </table> <div class="hover-container"> </div> <div class="speech-bubble-container-down" id="ctl00_RateArticle_RSU"> <div class="speech-bubble-down">
+            Please <a href="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f1256008%2fEtherdrop-DAPP-Lottery-on-Ethereum-Blockchain" id="ctl00_RateArticle_SignUp">Sign up or sign in</a> to vote.
+</div> <div class="speech-bubble-pointer-down"> <div class="speech-bubble-pointer-down-inner"></div> </div> </div> </div> </div> </div> </div> <div class="float-left" style="margin: 25px 0 0 10px;"> </div> </div> </div> <div class="summary" id="ctl00_description">Your Ethereum Giveaway Smart Contract Lottery</div><span class="date" content="https://www.codeproject.com/KB/blockchain/1256008/Thumbnail.png" id="ctl00_thumbnailUrl"></span> </div> <div class="text" id="contentdiv"> <ul class="download"> <li><a href="/KB/blockchain/1256008/etherdrop.zip">Download source code - 1 MB</a></li></ul> <h2>Introduction</h2> <h1><a href="https://www.etherdrop.app"><strong><em>Etherdrop.app</em></strong></a><img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/etherdrop.png" style="width: 42px; height: 42px; float: left"/></h1> <p>Of course, we have all heard about 'Bitcoin' and the famous blockchain technology brought by Satoshi Nakamoto.</p> <p>While Bitcoin is the first form of the real internet of money, Ethereum is the first form of 'the internet of decentralized computing trustless platform'!</p> <p><img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/unst.PNG" style="width: 500px; height: 173px"/></p> <p>The Blockchain technology allowed us to communicate over a network of trust, where there is a consensus enforced by cryptography, algorithm and power of the nodes / miners.</p> <p><img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/decent.PNG" style="width: 500px; height: 224px"/></p> <p>I won't go a lot into explaining bitcoin, ethereum or other form of cryptocurrencies. [Thanks to <strong><a href="https://www.google.com/search?q=bitcoin+ethereum">Google</a></strong>].</p> <p>A well said sentence by the creator genius of Ethereum:</p> <p><img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/vtb.PNG" style="width: 500px; height: 148px"/></p> <p>So well, Ethereum is about a decentralized computing platform that allows users to interact with others,<br/>
+using a form of digital contract, the 'Smart Contract' that enforces specific behaviors between parties<br/>
+given a decentralized contract well defined on the blockchain and immutable behavior once deployed there!</p> <p>On Ethereum, we have 2 types of accounts (addresses):</p> <ol> <li>Users and Parties will have their 'user' accounts (wallet addresses) holding the <strong>ETH</strong> ether balance.</li><li>Smart Contracts ('the immutable transparent behavior programs') address holding <strong>ETH </strong>and additional binary (EVM instruction - Contract OPCODE) structure and data (the contract state variables).</li></ol> <p><img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/truffle.PNG" style="width: 450px; height: 340px"/></p> <h2>Background</h2> <p>Let us take an example of a 'Smart Contract' of a Lottery Entertainment Service:</p> <ol> <li>A number of people who will pay a ticket to subscribe</li><li>Wait till the round closes</li><li>A winner will be randomly picked from the pool!</li></ol> <p>You can see the <strong>Etherdrop</strong> live on <a href="http://www.etherdrop.app"><strong>etherdrop.app</strong></a>.</p> <p>The old classic way is that you will never have access to centralized authority (server) behind the service to know or verify how this random user is picked, and what is happening behind the scenes, even in the presence of a human monitoring / regulations.</p> <p><strong>In this article, you will learn how to</strong>:</p> <ol type="A"> <li>Develop The Lottery Service Logic [Smart Contract] using <strong>Solidity </strong>language</li><li>Deploy The SmartContract using NodeJs and <strong><a href="https://truffleframework.com">Truffle</a> </strong>on the Local Blockchain (<a href="https://truffleframework.com/ganache"><strong>Ganache</strong></a>) / or Mainnet Ethereum Blockchain</li><li>Develop the Web<br/> <strong>FrontEnd - UI - Materialized, JS, Jquery, Web3Js, TruffleJs </strong><br/>
+that supports <strong>Web3 (the next web generation) </strong>to interact with <strong>Ethereum Blockchain</strong></li><li>Develop the Web <strong>Backend - NodeJS</strong></li><li>Analyse and read the Blockchain Data On <a href="http://etherscan.io"><strong>Etherscan</strong></a></li></ol> <h2>Project Structure</h2> <p><img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/tree.PNG" style="width: 180px; height: 402px"/></p> <h2>Using the Code</h2> <p>We will go section by section <strong>[ A . B . C . D . E ]</strong></p> <h3>[ A ]</h3> <ul> <li>Starting our Smart Contract Development, the SmartContract is a kind of a <strong>class (in Java, C#, OOP) </strong>holding state variables (e.g., global variables) as well as functions.</li><li>Please note that any execution of a smart contract function requires an onchain transaction from a user account address to the smart contract address pointing to the specific function (with its data arguments)</li><li>A transaction to be executed and confirmed needs to be added to a block, which should be added to the blockchain (confirmed), e.g., 3 confirmations means 3 blocks after the transaction's block are added to the blockchain and so on (a block contains many transactions, given the block size...)</li><li>While reading or calling a passive function (view) that does not change state variables or contract data is free and near instant.</li><li>The miner (or node) that will pick your transaction will broadcast it for other nodes, and will pick it to be executed and added into the next block (so in the blockchain).</li><li>The execution will take place on the miner node hardware(s) (gpu, cpu ... ) where the data of the contracts and its variables are on the blockchain which is a kind of distributed decentralized (raw file or db) including the whole network of users, contracts data</li><li>The execution is not free as the miner is running its hardware and consuming electricity, energy, internet etc...</li><li>The execution price in ethereum is about a '<strong>GAS</strong>' consumption, where each <strong>OPCODE </strong>on the <strong>EVM </strong>will cost a specific amount of GAS</li><li>The GAS price is in <strong>WEI</strong> ( <strong>1 Ether</strong> = <strong>10^18 Wei</strong>)</li><li>A transaction will always include:
+<ul> <li>GAS Limit (which is about how much GAS Maximum you are willing to spend)</li><li>GAS Price (which is about how much you want to pay for the miner of each GAS spent)</li></ul> </li><li>Please note that the GAS Limit will guarantee that no transaction (code execution) will hand or take time more than it is priced, and no bad infinite loops may live there.</li><li>In case the miner GAS consumption reached the limit set by the transacting account, the transaction however will be mined, but will not be executed, Ethereum Amount will be reversed, but the GAS spent will not, and the contract state is rolled back! transaction status is Failed - Out Of Gas!
+<p><strong>*</strong> Prepare your environment by installing <a href="https://git-scm.com/downloads"><strong>GIT</strong></a> distributed version control system<br/> <strong>*</strong> Install <strong><a href="https://nodejs.org/en/download/">nodejs </a></strong> and <a href="https://nodejs.org/en/download/package-manager"><strong>node package manager</strong></a></p> <p><em>Notepad++ or any text editor is basically enough next on...</em></p> <blockquote class="quote"> <div class="op">Open a commnad line terminal [make sure git, npm are installed and set as in the system path (environment variable) ]</div> <p><strong>&gt;</strong> git clone git@bitbucket.org:braingerm/cp-etherdrop.git</p> <p><strong>&gt;</strong> cd &lt;project_root_folder_path&gt;</p> <p><strong>&gt;</strong> npm install (this will install the dependencies and truffle into node_modules from the packages.json)</p> </blockquote> <p><img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/git.PNG" style="width: 640px; height: 173px"/></p> <p><strong>*</strong> Install the local blockchain emulation node <a href="https://truffleframework.com/ganache"><strong>Ganache</strong></a></p> <p><strong>*</strong> Run Ganache:</p> </li><li>It will listen by default on localhost port 7545</li><li>It will create 10 accounts by default with menmonic phrase (with 100 ETH each)</li><li>The mnemonic phrase can be imported in Metamask or other supporting wallet.<br/>
+It is more like your account password (private keys)
+<p><img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/ganache.PNG" style="width: 500px; height: 350px"/></p> <p>Now most of the tools are ready, it is time to explain, compile and deploy the EtherDrop SmartContract,<br/>
+Given the project structure, the EtherDrop smartcontract relies under <em>./contracts/EtherDrop.sol</em>.</p> <p><strong><em>*.sol</em> </strong>extension<strong> </strong>stands for solidity.</p> <pre lang="jscript">pragma solidity ^0.<span class="code-digit">4</span>.<span class="code-digit">20</span>; <span class="code-comment">//</span><span class="code-comment"> This is the Solidity Used Compiler Version</span>
+
+<span class="code-comment">/*</span><span class="code-comment">*
+ * @author FadyAro
+ *
+ * 22.07.2018
+ *
+
+/**
+ * This contract is inherited later, to manage the owner, and use restriction for 
+ * on some functions later in next contract(s)
+ */</span>
+contract Ownable {
+
+    <span class="code-comment">//</span><span class="code-comment"> the contract state variable as mentioned before</span>
+    address <span class="code-keyword">public</span> owner;
+
+    <span class="code-comment">//</span><span class="code-comment"> whenever the ownership has been transferred log and event for auditing on the blockchain</span>
+    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
+
+    <span class="code-keyword">constructor</span>() <span class="code-keyword">public</span> {
+        owner = msg.sender;
+    }
+
+    <span class="code-comment">//</span><span class="code-comment"> this modifier when added to a function will make sure that the caller the owner</span>
+    <span class="code-comment">//</span><span class="code-comment"> of the deployed contract</span>
+    modifier onlyOwner() {
+        require(msg.sender == owner);
+        _;
+    }
+
+    <span class="code-comment">//</span><span class="code-comment"> a function to transfer the ownership to another account (address)</span>
+    <span class="code-comment">//</span><span class="code-comment"> trigger the event later on (emit ...)</span>
+    <span class="code-keyword">function</span> transferOwnership(address newOwner) <span class="code-keyword">public</span> onlyOwner {
+        require(newOwner != address(<span class="code-digit">0</span>));
+        emit OwnershipTransferred(owner, newOwner);
+        owner = newOwner;
+    }
+}
+
+<strong>...... <span class="code-comment">//</span><span class="code-comment"> for briefing</span></strong>
+
+<span class="code-comment">/*</span><span class="code-comment">*
+ * This contract will run the EtherDrop logic
+ */</span>
+contract EtherDrop is Pausable {
+
+    <span class="code-comment">/*</span><span class="code-comment">
+     * lotto ticket price is 2e16 = 0.02 ETH
+     */</span>
+    uint constant PRICE_WEI = 2e16;
+
+<strong>    ...... <span class="code-comment">//</span><span class="code-comment"> for briefing</span></strong>
+
+    <span class="code-comment">/*</span><span class="code-comment">
+     * this event is when we have a new winner
+     * it is as well a new round start =&gt; (round + 1)
+     */</span>
+    event NewWinner(address addr, uint round, uint place, uint value, uint price);
+
+    struct <span class="code-sdkkeyword">history</span> {
+
+        <span class="code-comment">/*</span><span class="code-comment">
+         * user black listed comment
+         */</span>
+        uint blacklist;
+
+        <span class="code-comment">/*</span><span class="code-comment">
+         * user rounds subscriptions number
+         */</span>
+        uint size;
+
+        <span class="code-comment">/*</span><span class="code-comment">
+         * array of subscribed rounds indexes
+         */</span>
+        uint[] rounds;
+
+        <strong>...... <span class="code-comment">//</span><span class="code-comment"> for briefing</span></strong>
+    }
+
+    <span class="code-comment">/*</span><span class="code-comment">
+     * active subscription queue
+     */</span>
+    address[] <span class="code-keyword">private</span> _queue;
+
+    <span class="code-comment">/*</span><span class="code-comment">
+     * winners history
+     */</span>
+    address[] <span class="code-keyword">private</span> _winners;
+
+<strong>    ...... <span class="code-comment">//</span><span class="code-comment"> for briefing</span></strong>
+
+    <span class="code-comment">/*</span><span class="code-comment">
+     * active round queue pointer
+     */</span>
+    uint <span class="code-keyword">public</span> _counter;
+
+    <span class="code-comment">/*</span><span class="code-comment">
+     * allowed collectibles
+     */</span>
+    uint <span class="code-keyword">private</span> _collectibles = <span class="code-digit">0</span>;
+
+    <span class="code-comment">/*</span><span class="code-comment">
+     * users history mapping
+     */</span>
+    mapping(address =&gt; <span class="code-sdkkeyword">history</span>) <span class="code-keyword">private</span> _history;
+
+    <span class="code-comment">/*</span><span class="code-comment">*
+     * get current round details
+     */</span>
+    <span class="code-keyword">function</span> currentRound() <span class="code-keyword">public</span> view returns 
+             (uint round, uint counter, uint round_users, uint price) {
+        <span class="code-keyword">return</span> (_round, _counter, QMAX, PRICE_WEI);
+    }
+
+    <span class="code-comment">/*</span><span class="code-comment">*
+     * get round stats by index
+     */</span>
+    <span class="code-keyword">function</span> roundStats(uint index) <span class="code-keyword">public</span> view returns 
+             (uint round, address winner, uint position, uint block_no) {
+        <span class="code-keyword">return</span> (index, _winners[index], _positions[index], _blocks[index]);
+    }
+
+<strong>   ...... <span class="code-comment">//</span><span class="code-comment"> for briefing</span></strong>
+
+    <span class="code-comment">/*</span><span class="code-comment">*
+     * round user subscription
+     */</span>
+    <span class="code-keyword">function</span>() <span class="code-keyword">public</span> payable whenNotPaused {
+        <span class="code-comment">/*</span><span class="code-comment">
+         * check subscription price
+         */</span>
+        require(msg.value &gt;= PRICE_WEI, <span class="code-string">'</span><span class="code-string">Insufficient Ether'</span>);
+
+        <span class="code-comment">/*</span><span class="code-comment">
+         * start round ahead: on QUEUE_MAX + 1
+         * draw result
+         */</span>
+        <span class="code-keyword">if</span> (_counter == QMAX) {
+
+            uint r = DMAX;
+
+            uint winpos = <span class="code-digit">0</span>;
+
+            _blocks.push(block.number);
+
+            <strong><span class="code-comment">//</span><span class="code-comment"> derive a random winning position</span></strong>
+            bytes32 _a = blockhash(block.number - <span class="code-digit">1</span>);
+
+            <span class="code-keyword">for</span> (uint i = <span class="code-digit">31</span>; i &gt;= <span class="code-digit">1</span>; i--) {
+                <span class="code-keyword">if</span> (uint8(_a[i]) &gt;= <span class="code-digit">48</span> &amp;&amp; uint8(_a[i]) &lt;= <span class="code-digit">57</span>) {
+                    winpos = <span class="code-digit">10</span> * winpos + (uint8(_a[i]) - <span class="code-digit">48</span>);
+                    <span class="code-keyword">if</span> (--r == <span class="code-digit">0</span>) <span class="code-keyword">break</span>;
+                }
+            }
+
+            _positions.push(winpos);
+
+            <span class="code-comment">/*</span><span class="code-comment">
+             * post out winner rewards
+             */</span>
+            uint _reward = (QMAX * PRICE_WEI * <span class="code-digit">90</span>) / <span class="code-digit">100</span>;
+            address _winner = _queue[winpos];
+
+            _winners.push(_winner);
+            _winner.transfer(_reward);
+
+            <strong>...... <span class="code-comment">//</span><span class="code-comment"> for briefing</span></strong>
+
+            <span class="code-comment">/*</span><span class="code-comment">
+             * log the win event: winpos is the proof, history trackable
+             */</span>
+            emit NewWinner(_winner, _round, winpos, h.values[h.size - <span class="code-digit">1</span>], _reward);
+
+<strong>            ...... <span class="code-comment">//</span><span class="code-comment"> for briefing</span></strong>
+
+            <span class="code-comment">/*</span><span class="code-comment">
+             * reset counter
+             */</span>
+            _counter = <span class="code-digit">0</span>;
+
+            <span class="code-comment">/*</span><span class="code-comment">
+             * increment round
+             */</span>
+            _round++;
+        }
+
+        h = _history[msg.sender];
+
+        <span class="code-comment">/*</span><span class="code-comment">
+         * user is not allowed to subscribe twice
+         */</span>
+        require(h.size == <span class="code-digit">0</span> || h.rounds[h.size - <span class="code-digit">1</span>] != _round, <span class="code-string">'</span><span class="code-string">Already In Round'</span>);
+
+        <span class="code-comment">/*</span><span class="code-comment">
+         * create user subscription: N.B. places[_round] is the result proof
+         */</span>
+        h.size++;
+        h.rounds.push(_round);
+        h.places.push(_counter);
+        h.values.push(msg.value);
+        h.prices.push(<span class="code-digit">0</span>);
+
+        <strong>...... <span class="code-comment">//</span><span class="code-comment"> for briefing</span></strong>
+
+        _counter++;
+    }
+
+    <strong>...... <span class="code-comment">//</span><span class="code-comment"> for briefing</span></strong>
+     
+}</pre> <p>After reading/analysing the commented functions, let's focus on the <code>function() public payable whenNotPaused</code></p> <p><code>function()</code> is the function keyword<br/>
+this one is different from other functions, it has no name<br/>
+it calls the <strong>fallback</strong> function of the contract<br/>
+that means when a contract is called with no point function, it will go to the fallback if found</p> <p><code>public</code><strong> </strong>means that a function can be executed from outside the contract via a transaction</p> <p><code>payable</code> is a required keyword to make a function able to <strong>accept ethereum -&gt; to the contract balance</strong></p> </li><li>Within the <code>fallback</code> function, you may notice many unassigned variable, please refer to the <strong><a href="http://solidity.readthedocs.io/en/develop/units-and-global-variables.html?highlight=msg.value#block-and-transaction-properties">ethereum docs</a></strong> to know about global variables and transaction properties...
+<ul> <li><code>msg.value</code><strong> </strong>contains the transaction ether sent amount (to the contract)</li><li><code>msg.sender</code><strong> </strong>contains the sender address<strong> </strong></li></ul> </li></ul> <pre lang="text">msg.data (bytes): complete calldata
+msg.gas (uint): remaining gas - deprecated in version 0.4.21 and to be replaced by gasleft()
+msg.sender (address): sender of the message (current call)
+msg.sig (bytes4): first four bytes of the calldata (i.e. function identifier)
+msg.value (uint): number of wei sent with the message</pre> <p><code>_winner.transfer(_reward);</code> <code>_winner</code> is a variable of type <code>address</code>, so the function transfer applies to transferring the <code>_reward</code> to the <code>address</code>, where <code>_reward</code> is a uint of size 256 bytes, in <strong>WEI</strong> unit</p> <p>So the EtherDrop contract will work as:</p> <ol> <li>In a same round, only one subscription per address is allowed, else transaction is reversed:
+<pre lang="jscript"><span class="code-comment">//</span><span class="code-comment"> checkout the history struct  { }</span>
+<span class="code-comment">//</span><span class="code-comment"> get user history, _history is a more like a hashmap&lt;address, history&gt;</span>
+h = _history[msg.sender];
+
+<span class="code-comment">//</span><span class="code-comment"> this is a double check is the address or user has enter the same round before</span>
+require(h.size == <span class="code-digit">0</span> || h.rounds[h.size - <span class="code-digit">1</span>] != _round, <span class="code-string">'</span><span class="code-string">Already In Round'</span>);
+</pre> </li><li>In a round, the subscription price is 0.02 Ether (or 2e16 wei)</li><li>When the queue is full, on the next round start the winner is picked</li><li>Picking a user is from the upcoming block</li></ol> <p>Each block has a hash, the upcoming block hash will be used as source of randomness<br/>
+A number between 1 and 1000 will be derived.<br/>
+The <code>_queue[winpos]</code><strong> </strong>will pick the winner and send its reward</p> <p>Compile the contract using truffle:</p> <blockquote class="quote"> <div class="op">In the commnad line terminal [make sure you installed truffle ]</div> <div><strong>&gt;</strong> truffle compile (this will compile the contract and show errors / warnings...)</div> </blockquote> <p><img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/compile.PNG" style="width: 551px; height: 99px"/></p> <p>Notice 'writing artifacts to <em>.\build\contracts</em>', this will write output <em>*.json</em> contract built specs used later on<br/>
+in the web client js, to interact with the contract on the blockchain...</p> <h3>[ B ]</h3> <p>To Deploy the <code>SmartContract</code> using truffle, it should be added under <em>./migrations./2_deploy_contracts.js</em>:</p> <pre lang="jscript"><span class="code-keyword">let</span> EtherDrop = artifacts.require(<span class="code-string">"</span><span class="code-string">EtherDrop"</span>); <span class="code-comment">//</span><span class="code-comment"> read the contract EtherDrop.sol</span>
+module.exports = <span class="code-keyword">function</span> (deployer) {
+    deployer.deploy(EtherDrop);                 <span class="code-comment">//</span><span class="code-comment"> direct deployment instruction</span>
+};</pre> <p>Now in the root folder, notice what's in the <em>truffle.js</em> file:</p> <pre lang="jscript">module.exports = {
+  networks: {
+    development: {
+      host: <span class="code-string">"</span><span class="code-string">127.0.0.1"</span>,    <span class="code-comment">//</span><span class="code-comment"> where (which node) to deploy the contract</span>
+      port: <span class="code-digit">7545</span>,           <span class="code-comment">//</span><span class="code-comment"> the node port</span>
+      gas: <span class="code-digit">20500000</span>,        <span class="code-comment">//</span><span class="code-comment"> if you want to set network gas block tx limit Current </span>
+                            <span class="code-comment">//</span><span class="code-comment"> Ropsten gas limit. See https://ropsten.etherscan.io/block/3141628</span>
+      gasPrice: <span class="code-digit">1100000000</span>, <span class="code-comment">//</span><span class="code-comment"> if you want to change default network gas price 1.1 GWei - based on </span>
+                            <span class="code-comment">//</span><span class="code-comment"> the lower end of current txs getting into blocks currently on Ropsten.</span>
+      network_id: <span class="code-string">"</span><span class="code-string">5777"</span>    <span class="code-comment">//</span><span class="code-comment"> this is the network id (in case of Ganache truffle it is 5777 </span>
+                            <span class="code-comment">//</span><span class="code-comment"> as in the screenshot)</span>
+    }
+  }
+};</pre> <p>Let us now deploy the contract to the blockchain (test local ganache):</p> <blockquote class="quote"> <div class="op">in the command line go to the migrations folder :</div> <pre lang="text">&gt; cd migrations
+
+&gt; truffle migrate</pre> </blockquote> <p><img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/migrate.PNG" style="width: 500px; height: 269px"/></p> <p>Please note the contract address (<code>@ Deploying EtherDrop... 0x7ac26cc...</code>).</p> <p>This is the Lottery Contract Address (on local test net of course).</p> <p>It is where a participant will sent the 0.02 ETH to subscribe to a round (later on in Web UI)</p> <p>You see the contract deployment transaction in ganache logs:</p> <p><img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/glogs.PNG" style="width: 640px; height: 100px"/></p> <h3>[ C ]</h3> <p>In this step, we will talk about the Web Client.</p> <p>Since the name is EtherDrop, it is about a 'Drop' that will be filled when the round subscription is full.</p> <p>I used <strong><a href="https://materializecss.com">Materializecss</a></strong>, a modern responsive front-end framework based on Material Design.</p> <p>Please go there to learn more their layout, grids, columns, rows, container and styling...</p> <p>We won't focus on the HTML design, let's jump to the Web3 and Js section, mainly where we interact with the smart contract and events.</p> <p>Interacting with Blockchain needs a <strong>web3 </strong>provider, that most of current browsers do not support.</p> <p><img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/msk.PNG" style="width: 434px; height: 200px"/></p> <p>For that, you may install <strong><a href="https://metamask.io/">Metamask on chrome</a> </strong>and get it pointed to localhost:</p> <p><img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/mnm.PNG" style="width: 250px; height: 128px"/></p> <p>with ganache in networks settings, and import the wallet using the mnemonic phrase:</p> <p><img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/ssd.PNG" style="width: 196px; height: 250px"/></p> <p>provided by ganache (in accounts sections):</p> <p><img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/ssdr.PNG" style="width: 259px; height: 250px"/></p> <p>Now let us check the js side:</p> <h4>Opening src/js/ed-client.js</h4> <pre lang="text">    <strong>... // brief</strong>
+    
+    // check for web3 provider
+    initWeb3: () =&gt; {
+        if (typeof web3 !== 'undefined') {
+            BetClient.web3Provider = web3.currentProvider;
+        } else {
+            if (BetClient.onNoDefaultWeb3Provider) {
+                setTimeout(BetClient.onNoDefaultWeb3Provider, 3000);
+            }
+            // if no web3 found or metamask just use for the infura
+            let infura = 'https://mainnet.infura.io/plnAtKGtcoxBtY9UpS4b';
+            BetClient.web3Provider = new Web3.providers.HttpProvider(infura);
+        }
+        web3 = new Web3(BetClient.web3Provider);
+        return BetClient.initContract();
+    },
+
+    initContract: () =&gt; {
+        // <strong>load the generated in build.. EtherDrop.Json</strong>
+        dbg(`loading ${BetClient.jsonFile}`);
+        $.getJSON(BetClient.jsonFile, (data) =&gt; {
+            dbg('got abi');
+            BetClient.contracts.EtherDrop = TruffleContract(data);
+            BetClient.contracts.EtherDrop.setProvider(BetClient.web3Provider);
+            <strong>// watch out the address from the network id (1 on mainnet)</strong>
+            BetClient.address = data.networks[5777].address;
+            if (BetClient.onContractLoaded) {
+                BetClient.onContractLoaded();
+            }
+            BetClient.listen();
+        });
+    },
+
+    <strong>// example of read the EtherDrop Current Round details</strong>
+    loadRoundInfo: () =&gt; {
+        BetClient.contracts.EtherDrop
+            .deployed()
+            .then((instance) =&gt; {
+                <strong>// note that the instance is the contract EtherDrop itself
+                // having in (EtherDrop.sol) the function currentRound()
+                // that will return the round no, the counter, the price etc ...</strong>
+                return instance.currentRound.call();
+            })
+            .then(function (<strong>result</strong>) {
+                if (BetClient.onLoadRoundInfo)
+                    <strong>// here we got the result[] of BigNumber uint256
+                    // we may convert them to [] of Numbers
+                    // and load them to the UI Presenter on callback</strong>
+                    BetClient.onLoadRoundInfo($.map(result, (r) =&gt; {
+                        return r.toNumber();
+                    }));
+            })
+            .catch((e) =&gt; BetClient.raiseError(e, 'loadRoundInfo'));
+    },
+
+    <strong>... // brief 
+</strong>
+
+    <strong>// this is the payment part in case to be handler by Metamask or Web3 Browser</strong>
+    participate: (amount) =&gt; {
+        
+        <strong>// get a loaded account from Metamask, or trustwallet</strong> 
+        web3.eth.getAccounts((error, accounts) =&gt; {
+            if (error) {
+                BetClient.raiseError(error, 'Participate');
+            } else {
+               
+                <strong>// use the account to do the transaction</strong>
+                dbg(`accounts: ${JSON.stringify(accounts)}`);
+                if (accounts.length === 0) {
+                    BetClient.raiseError('No Accounts', 'Participate');
+                } else {
+                    BetClient.contracts.EtherDrop
+                        .deployed()
+                        .then((instance) =&gt; {
+                            return <strong>instance.sendTransaction</strong>({
+                                from: <strong>accounts[0]</strong>,
+                                value: <strong>amount // 0.02 ETH</strong>
+                            }).then(function (result) {
+                                dbg(JSON.stringify(result));
+                            });
+                        })
+                        .catch((e) =&gt; BetClient.raiseError(e, 'Participate'));
+                }
+            }
+        });
+    },
+
+    <strong>// listen to the contract events: New Winner, New Participation</strong>
+    listen: () =&gt; {
+        BetClient.contracts.EtherDrop
+            .deployed()
+            .then((instance) =&gt; {
+                return instance; <strong>// the contract instance</strong>
+            })
+            .then((result) =&gt; {
+
+                <strong>// blockchain read filtering from the latest to pending block</strong>
+                const options = {fromBlock: 'latest', toBlock: 'pending'};
+
+                <strong>// register for the NewDropIn (new subscription)</strong>
+                result.NewDropIn({}, options).watch(function (error, result) {
+                    if (error)
+                        BetClient.raiseError(error, 'NewDropIn');
+                    else if (BetClient.onNewDropIn)
+                        BetClient.onNewDropIn(result);
+                });
+
+                <strong>// register for the NewWinner (and it is a new round start same time)</strong>
+                result.NewWinner({}, options).watch((error, result) =&gt; {
+                    if (error)
+                        BetClient.raiseError(error, 'NewWinner');
+                    else if (BetClient.onNewWinner)
+                        BetClient.onNewWinner(result);
+                });
+            })
+            <strong>// handle errors</strong>
+            .catch((e) =&gt; BetClient.raiseError(e, 'listen'));
+    }
+};</pre> <p><img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/etd.png" style="width: 500px; height: 290px"/></p> <h3>[ D ]</h3> <p>Now we have talked enough, let us run the webserver locally.</p> <p>We are using nodeJs - lite server (defined in the <em>package.json</em> dependency file) which uses bs plugin (browser sync).</p> <p>I like this static pages serving server, it syncs the webpage on each file content change.</p> <p>Handy for light webapp development, note the <em>bs-config.json</em>:</p> <p>It tells the lite-server to watch and serve the files under <em>./src</em> and <em>./build/contracts</em> (where the <em>EtherDrop.json</em> is there):</p> <pre lang="jscript">{
+  <span class="code-string">"</span><span class="code-string">server"</span>: {
+    <span class="code-string">"</span><span class="code-string">baseDir"</span>: [<span class="code-string">"</span><span class="code-string">./src"</span>, <span class="code-string">"</span><span class="code-string">./build/contracts"</span>]
+  }
+} </pre> <p>Yupp, now let's run the server:</p> <blockquote class="quote"> <div class="op">in the command line terminal type:</div> <p>&gt; npm run dev</p> </blockquote> <p><img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/lite.PNG" style="width: 500px; height: 522px"/></p> <p>TADA! The DApp will launch on your default browser, open it on Chrome.</p> <p>Make sure metamask is well configured as mentioned before! Congrats!</p> <p><img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/etdw.PNG" style="width: 640px; height: 337px"/></p> <h3>[ E ]</h3> <p>When it is deployed in the mainnet [Network Id is 1].</p> <p>In the <em>EtherDrop.Json</em> in the end of file, you will have to replace the network id from 5777 to 1.<br/>
+Also, replace the creation transaction hash and contract address by the corresponding ones (deployed live contract, e.g., from <strong><a href="https://remix.ethereum.org">remix IDE</a></strong>).</p> <p>Let's have a look at the deployed SmartContract on <em>Etherscan.io</em>:</p> <p><strong><a href="https://etherscan.io/address/0x81b1ff50d5bca9150700e7265f7216e65c8936e6">https://etherscan.io/address/0x81b1ff50d5bca9150700e7265f7216e65c8936e6</a></strong></p> <ul> <li>Click on <strong>transactions</strong> to browser the transactions done on our EtherDrop Smart Contract.<br/>
+We can see a transaction that's failing because the sender did include enough amount of GAS :(</li><li>Click On <strong>Code </strong>to view the verified contract source code (binary compilation verification):</li></ul> <p><strong><a href="https://etherscan.io/address/0x81b1ff50d5bca9150700e7265f7216e65c8936e6"><img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/ets.PNG" style="width: 600px; height: 427px"/></a></strong></p> <h2>Points of Interest</h2> <p>This contract is on its first release, on the next drop / round, the UI will be updated, more features will be added and the contract will be migrated and a new one will be deployed including optimization, performance enhancements and a lot of upcoming precautions. ;)</p> <p>Join in and keep yourself updated! Long Live Bitcoin, Long Live Ethereum!</p> <p><strong>Thank you!</strong></p> <h3><a href="https://www.etherdrop.app"><strong><em>Etherdrop.app</em></strong></a><img alt="" src="https://www.codeproject.com/KB/blockchain/1256008/etherdrop.png" style="width: 32px; height: 32px; float: left"/></h3> </div> <div class="float-right" style="margin:20px 0 0 10px;border:1px solid #ccc"> <div class="msg-300x250" data-format="300x250" data-loadonview="true" data-publisher="lqm.codeproject.site" data-tags="Javascript, CSS, HTML, JSON, Web, NPM, Markdown, blockchain, Ethereum, Solidity, Truffle,rating4.5" data-type="ad" data-zone="General-Programming/Blockchain/General"><noscript><a href="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/General-Programming/Blockchain/General&amp;sz=300x250&amp;c=321501"><img height="250px" src="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/General-Programming/Blockchain/General&amp;sz=300x250&amp;c=321501" target="_blank" width="300px"/></a></noscript></div> </div> <h2>License</h2> <div id="LicenseTerms"><p>This article, along with any associated source code and files, is licensed under <a href="http://www.codeproject.com/info/cpol10.aspx" rel="license">The Code Project Open License (CPOL)</a></p></div> <h2>Share</h2> <div class="share-list"> <ul class="rrssb-buttons clearfix"> <li class="twitter" id="ctl00_SocialLike_Twitter"> <!-- Replace href with your Meta and URL information  --> <a class="popup" href="http://twitter.com/home?status=Etherdrop%3a+DAPP+Lottery+on+Ethereum+Blockchain+-+CodeProject+-+https%3a%2f%2fwww.codeproject.com%2fArticles%2f1256008%2fEtherdrop-DAPP-Lottery-on-Ethereum-Blockchain"> <span class="icon"> <svg enable-background="new 0 0 28 28" height="28px" id="Layer_1" version="1.1" viewbox="0 0 28 28" width="28px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"> <path d="M24.253,8.756C24.689,17.08,18.297,24.182,9.97,24.62c-3.122,0.162-6.219-0.646-8.861-2.32
+                    c2.703,0.179,5.376-0.648,7.508-2.321c-2.072-0.247-3.818-1.661-4.489-3.638c0.801,0.128,1.62,0.076,2.399-0.155
+                    C4.045,15.72,2.215,13.6,2.115,11.077c0.688,0.275,1.426,0.407,2.168,0.386c-2.135-1.65-2.729-4.621-1.394-6.965
+                    C5.575,7.816,9.54,9.84,13.803,10.071c-0.842-2.739,0.694-5.64,3.434-6.482c2.018-0.623,4.212,0.044,5.546,1.683
+                    c1.186-0.213,2.318-0.662,3.329-1.317c-0.385,1.256-1.247,2.312-2.399,2.942c1.048-0.106,2.069-0.394,3.019-0.851
+                    C26.275,7.229,25.39,8.196,24.253,8.756z"></path> </svg> </span> <span class="text">twitter</span> </a> </li> <li class="facebook" id="ctl00_SocialLike_Facebook"> <!-- Replace with your URL. For best results, make sure you page has the proper FB Open Graph tags in header: 
+        https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content/ --> <a class="popup" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.codeproject.com%2fArticles%2f1256008%2fEtherdrop-DAPP-Lottery-on-Ethereum-Blockchain"> <span class="icon"> <svg enable-background="new 0 0 28 28" height="28px" id="Layer_1" version="1.1" viewbox="0 0 28 28" width="28px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"> <path d="M27.825,4.783c0-2.427-2.182-4.608-4.608-4.608H4.783c-2.422,0-4.608,2.182-4.608,4.608v18.434
+                        c0,2.427,2.181,4.608,4.608,4.608H14V17.379h-3.379v-4.608H14v-1.795c0-3.089,2.335-5.885,5.192-5.885h3.718v4.608h-3.726
+                        c-0.408,0-0.884,0.492-0.884,1.236v1.836h4.609v4.608h-4.609v10.446h4.916c2.422,0,4.608-2.188,4.608-4.608V4.783z"></path> </svg> </span> <span class="text">facebook</span> </a> </li> <li class="linkedin" id="ctl00_SocialLike_LinkedIn"> <!-- Replace href with your meta and URL information --> <a class="popup" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.codeproject.com%2fArticles%2f1256008%2fEtherdrop-DAPP-Lottery-on-Ethereum-Blockchain&amp;title=Etherdrop%3a+DAPP+Lottery+on+Ethereum+Blockchain+-+CodeProject&amp;summary=&amp;source=codeproject.com"> <span class="icon"> <svg enable-background="new 0 0 28 28" height="28px" id="Layer_1" version="1.1" viewbox="0 0 28 28" width="28px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"> <path d="M25.424,15.887v8.447h-4.896v-7.882c0-1.979-0.709-3.331-2.48-3.331c-1.354,0-2.158,0.911-2.514,1.803
+                        c-0.129,0.315-0.162,0.753-0.162,1.194v8.216h-4.899c0,0,0.066-13.349,0-14.731h4.899v2.088c-0.01,0.016-0.023,0.032-0.033,0.048
+                        h0.033V11.69c0.65-1.002,1.812-2.435,4.414-2.435C23.008,9.254,25.424,11.361,25.424,15.887z M5.348,2.501
+                        c-1.676,0-2.772,1.092-2.772,2.539c0,1.421,1.066,2.538,2.717,2.546h0.032c1.709,0,2.771-1.132,2.771-2.546
+                        C8.054,3.593,7.019,2.501,5.343,2.501H5.348z M2.867,24.334h4.897V9.603H2.867V24.334z"></path> </svg> </span> <span class="text">linkedin</span> </a> </li> <li class="reddit" id="ctl00_SocialLike_Reddit"> <a href="http://www.reddit.com/submit?url=https%3a%2f%2fwww.codeproject.com%2fArticles%2f1256008%2fEtherdrop-DAPP-Lottery-on-Ethereum-Blockchain&amp;title=Etherdrop%3a+DAPP+Lottery+on+Ethereum+Blockchain+-+CodeProject"> <span class="icon"> <svg enable-background="new 0 0 28 28" height="28px" version="1.1" viewbox="0 0 28 28" width="28px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"><g> <path d="M11.794 15.316c0-1.029-0.835-1.895-1.866-1.895c-1.03 0-1.893 0.865-1.893 1.895s0.863 1.9 1.9 1.9 C10.958 17.2 11.8 16.3 11.8 15.316z"></path> <path d="M18.1 13.422c-1.029 0-1.895 0.864-1.895 1.895c0 1 0.9 1.9 1.9 1.865c1.031 0 1.869-0.836 1.869-1.865 C19.969 14.3 19.1 13.4 18.1 13.422z"></path> <path d="M17.527 19.791c-0.678 0.678-1.826 1.006-3.514 1.006c-0.004 0-0.009 0-0.014 0c-0.004 0-0.01 0-0.015 0 
+                c-1.686 0-2.834-0.328-3.51-1.005c-0.264-0.265-0.693-0.265-0.958 0c-0.264 0.265-0.264 0.7 0 1 c0.943 0.9 2.4 1.4 
+                4.5 1.402c0.005 0 0 0 0 0c0.005 0 0 0 0 0c2.066 0 3.527-0.459 4.47-1.402 c0.265-0.264 0.265-0.693 0.002-0.958C18.221 
+                19.5 17.8 19.5 17.5 19.791z"></path><path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237c-0.793 0-1.518 0.287-2.082 
+                0.761c-2.039-1.295-4.646-2.069-7.438-2.219 l1.483-4.691l4.062 0.956c0.071 1.4 1.3 2.6 2.7 2.555c1.488 0 2.695-1.208 
+                2.695-2.695C25.881 3.2 24.7 2 23.2 2 c-1.059 0-1.979 0.616-2.42 1.508l-4.633-1.091c-0.344-0.081-0.693 0.118-0.803 
+                0.455l-1.793 5.7 C10.548 8.6 7.7 9.4 5.6 10.75C5.006 10.3 4.3 10 3.5 10.029c-1.785 0-3.237 1.452-3.237 3.2 c0 1.1 0.6 
+                2.1 1.4 2.69c-0.04 0.272-0.061 0.551-0.061 0.831c0 2.3 1.3 4.4 3.7 5.9 c2.299 1.5 5.3 2.3 8.6 2.325c3.228 0 6.271-0.825 
+                8.571-2.325c2.387-1.56 3.7-3.66 3.7-5.917 c0-0.26-0.016-0.514-0.051-0.768C27.088 15.5 27.7 14.4 27.7 13.267z M23.186 
+                3.355c0.74 0 1.3 0.6 1.3 1.3 c0 0.738-0.6 1.34-1.34 1.34s-1.342-0.602-1.342-1.34C21.844 4 22.4 3.4 23.2 3.355z M1.648 
+                13.3 c0-1.038 0.844-1.882 1.882-1.882c0.31 0 0.6 0.1 0.9 0.209c-1.049 0.868-1.813 1.861-2.26 2.9 C1.832 14.2 1.6 13.8 1.6 
+                13.267z M21.773 21.57c-2.082 1.357-4.863 2.105-7.831 2.105c-2.967 0-5.747-0.748-7.828-2.105 
+                c-1.991-1.301-3.088-3-3.088-4.782c0-1.784 1.097-3.484 3.088-4.784c2.081-1.358 4.861-2.106 7.828-2.106 c2.967 0 5.7 
+                0.7 7.8 2.106c1.99 1.3 3.1 3 3.1 4.784C24.859 18.6 23.8 20.3 21.8 21.57z M25.787 14.6 
+                c-0.432-1.084-1.191-2.095-2.244-2.977c0.273-0.156 0.59-0.245 0.928-0.245c1.035 0 1.9 0.8 1.9 1.9 
+                C26.354 13.8 26.1 14.3 25.8 14.605z"></path></g></svg> </span> <span class="text">reddit</span> </a> </li> <li class="googleplus" id="ctl00_SocialLike_GooglePlus"> <!-- Replace href with your meta and URL information.  --> <a class="popup" href="https://plus.google.com/share?url=https%3a%2f%2fwww.codeproject.com%2fArticles%2f1256008%2fEtherdrop-DAPP-Lottery-on-Ethereum-Blockchain"> <span class="icon"> <svg enable-background="new 0 0 28 28" height="28px" id="Layer_1" version="1.1" viewbox="0 0 28 28" width="28px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"> <g> <g> <path d="M14.703,15.854l-1.219-0.948c-0.372-0.308-0.88-0.715-0.88-1.459c0-0.748,0.508-1.223,0.95-1.663
+                                c1.42-1.119,2.839-2.309,2.839-4.817c0-2.58-1.621-3.937-2.399-4.581h2.097l2.202-1.383h-6.67c-1.83,0-4.467,0.433-6.398,2.027
+                                C3.768,4.287,3.059,6.018,3.059,7.576c0,2.634,2.022,5.328,5.604,5.328c0.339,0,0.71-0.033,1.083-0.068
+                                c-0.167,0.408-0.336,0.748-0.336,1.324c0,1.04,0.551,1.685,1.011,2.297c-1.524,0.104-4.37,0.273-6.467,1.562
+                                c-1.998,1.188-2.605,2.916-2.605,4.137c0,2.512,2.358,4.84,7.289,4.84c5.822,0,8.904-3.223,8.904-6.41
+                                c0.008-2.327-1.359-3.489-2.829-4.731H14.703z M10.269,11.951c-2.912,0-4.231-3.765-4.231-6.037c0-0.884,0.168-1.797,0.744-2.511
+                                c0.543-0.679,1.489-1.12,2.372-1.12c2.807,0,4.256,3.798,4.256,6.242c0,0.612-0.067,1.694-0.845,2.478
+                                c-0.537,0.55-1.438,0.948-2.295,0.951V11.951z M10.302,25.609c-3.621,0-5.957-1.732-5.957-4.142c0-2.408,2.165-3.223,2.911-3.492
+                                c1.421-0.479,3.25-0.545,3.555-0.545c0.338,0,0.52,0,0.766,0.034c2.574,1.838,3.706,2.757,3.706,4.479
+                                c-0.002,2.073-1.736,3.665-4.982,3.649L10.302,25.609z"></path> <polygon points="23.254,11.89 23.254,8.521 21.569,8.521 21.569,11.89 18.202,11.89 18.202,13.604 21.569,13.604 21.569,17.004
+                                23.254,17.004 23.254,13.604 26.653,13.604 26.653,11.89      "></polygon> </g> </g> </svg> </span> <span class="text">google+</span> </a> </li> </ul> <!-- Buttons end here --> </div> <h2 id="ctl00_AboutHeading">About the Author</h2> <div class="author-wrapper"> <div class="pic-wrapper"> <img class="profile-pic" id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberPhoto" src="https://www.codeproject.com/script/Membership/ProfileImages/{cf9eec9f-57ef-44e8-a45f-2c2b918c3b73}.png" style="border-width:0px;transform:rotate(0deg);"/> </div> <div class="container-member"> <b><a class="author" href="/Members/FadyAro" id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberProfileLink">Fady Aro</a></b> <table> <tr> <td nowrap="" rowspan="2" valign="middle"> <div class="follow" id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_FollowOn"> <a href="http://www.twitter.com/FadyAro"><img alt="Twitter" src="/images/twitter32.png" style="vertical-align:middle;border:0;height:24px;width:24px"/></a> </div> </td> <td nowrap="nowrap"> <div class="company"> <span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberJobTitle">Engineer</span> <span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberCompany"></span> </div> </td> <td rowspan="2" style="padding-left:15px"> </td> </tr> <tr> <td> <span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberLocation">Lebanon <img alt="Lebanon" height="11px" src="/script/Geo/Images/LB.gif" width="16px"/></span> </td> </tr> </table> </div> <div class="description">
+        Electronics, Telecommunications, Development, Music!
+
+        
+    </div> </div><br/> <div class="clearfix"></div> <div style="padding-top:8px"> </div> </form> </div> <div class="bottom-promo"> <div class="msg-728x90" data-format="728x90" data-loadonview="true" data-publisher="lqm.codeproject.site" data-tags="Javascript, CSS, HTML, JSON, Web, NPM, Markdown, blockchain, Ethereum, Solidity, Truffle,rating4.5,pos_bottom" data-type="ad" data-zone="General-Programming/Blockchain/General"><noscript><a href="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/General-Programming/Blockchain/General&amp;sz=728x90&amp;c=321501"><img height="90px" src="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/General-Programming/Blockchain/General&amp;sz=728x90&amp;c=321501" target="_blank" width="728px"/></a></noscript></div> </div> <h2 class="also-read" id="ctl00_AlsoRead_RelatedResults_ctl00_Header">You may also be interested in...</h2> <table class="spaced content-list also-read"> <tr> <td class="content-list-item" valign="top" width="50%"> <div class="thumbnail" id="ctl00_AlsoRead_RelatedResults_ctl01_ThumbnailContainer"> <a href="//www.codeproject.com/Articles/1247306/Setting-up-Ethereum-Blockchain-on-Azure" id="ctl00_AlsoRead_RelatedResults_ctl01_Thumbnail"><img alt="" src="/KB/blockchain/1247306/Thumbnail.png" style="border-width:0px;"/></a> </div> <div class="text"> <div class="title"><a href="//www.codeproject.com/Articles/1247306/Setting-up-Ethereum-Blockchain-on-Azure" id="ctl00_AlsoRead_RelatedResults_ctl01_Link">Setting up Ethereum Blockchain on Azure</a></div> </div> </td> <td class="content-list-item" valign="top" width="50%"> <div class="thumbnail" id="ctl00_AlsoRead_RelatedResults_ctl02_ThumbnailContainer"> <a href="//www.codeproject.com/Articles/1266154/Data-Encryption-in-Azure" id="ctl00_AlsoRead_RelatedResults_ctl02_Thumbnail"><img alt="" src="/KB/azure/1266154/Thumbnail.png" style="border-width:0px;"/></a> </div> <div class="text"> <div class="title"><a href="//www.codeproject.com/Articles/1266154/Data-Encryption-in-Azure" id="ctl00_AlsoRead_RelatedResults_ctl02_Link">Data Encryption in Azure</a></div> </div> </td> </tr> <tr> <td class="content-list-item" valign="top" width="50%"> <div class="thumbnail" id="ctl00_AlsoRead_RelatedResults_ctl03_ThumbnailContainer"> <a href="//www.codeproject.com/Articles/1207351/Accepting-Bitcoin-BTC-payments-with-Csharp-ASP-NET" id="ctl00_AlsoRead_RelatedResults_ctl03_Thumbnail"><img alt="" src="/KB/blockchain/1207351/Thumbnail.png" style="border-width:0px;"/></a> </div> <div class="text"> <div class="title"><a href="//www.codeproject.com/Articles/1207351/Accepting-Bitcoin-BTC-payments-with-Csharp-ASP-NET" id="ctl00_AlsoRead_RelatedResults_ctl03_Link">Accepting Bitcoin (BTC) payments with C# ASP.NET. Primer applicable to other crypto currencies: Litecoin (LTC), Ethereum (ETH), Ripple (XRP)...</a></div> </div> </td> <td class="content-list-item" valign="top" width="50%"> <div class="thumbnail" id="ctl00_AlsoRead_RelatedResults_ctl04_ThumbnailContainer"> <a href="//www.codeproject.com/Articles/784519/NBitcoin-How-to-scan-the-Blockchain" id="ctl00_AlsoRead_RelatedResults_ctl04_Thumbnail"><img alt="" src="/KB/blockchain/784519/Thumbnail.png" style="border-width:0px;"/></a> </div> <div class="text"> <div class="title"><a href="//www.codeproject.com/Articles/784519/NBitcoin-How-to-scan-the-Blockchain" id="ctl00_AlsoRead_RelatedResults_ctl04_Link">NBitcoin : How to scan the Blockchain ?</a></div> </div> </td> </tr> <tr> <td class="content-list-item" valign="top" width="50%"> <div class="thumbnail" id="ctl00_AlsoRead_RelatedResults_ctl05_ThumbnailContainer"> <a href="//www.codeproject.com/Tips/1229909/Scaffolding-ASP-NET-Core-with-CatFactory" id="ctl00_AlsoRead_RelatedResults_ctl05_Thumbnail"><img alt="" src="https://codeproject.global.ssl.fastly.net/script/Articles/Images/tip100x80.png" style="border-width:0px;"/></a> </div> <div class="text"> <div class="title"><a href="//www.codeproject.com/Tips/1229909/Scaffolding-ASP-NET-Core-with-CatFactory" id="ctl00_AlsoRead_RelatedResults_ctl05_Link">Scaffolding ASP.NET Core 2 with CatFactory</a></div> </div> </td> <td class="content-list-item" valign="top" width="50%"> <div class="thumbnail" id="ctl00_AlsoRead_RelatedResults_ctl06_ThumbnailContainer"> <a href="//www.codeproject.com/Articles/1245896/Azure-Blockchain-Workbench-Guide" id="ctl00_AlsoRead_RelatedResults_ctl06_Thumbnail"><img alt="" src="/KB/blockchain/1245896/Thumbnail.Jpeg" style="border-width:0px;"/></a> </div> <div class="text"> <div class="title"><a href="//www.codeproject.com/Articles/1245896/Azure-Blockchain-Workbench-Guide" id="ctl00_AlsoRead_RelatedResults_ctl06_Link">Azure Blockchain Workbench Guide</a></div> </div> </td> </tr> </table> <h2>Comments and Discussions</h2> <a class="float-left" id="_comments" name="_comments"> </a><div id="_MessageBoardctl00_MessageBoard" onclick="return forumControl64969824.SwitchMessage(event, null)"> <table cellpadding="0" cellspacing="0" class="forum relaxed" id="ForumTable"> <tr> <td class="header1"><div class="callout"> <b>You must <a href="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f1256008%2fEtherdrop-DAPP-Lottery-on-Ethereum-Blockchain%3ffid%3d1939293%26df%3d90%26mpp%3d25%26prof%3dTrue%26sort%3dPosition%26view%3dNormal%26spc%3dRelaxed">Sign In</a> to use this message board.</b> </div></td> </tr><tr> <td><table border="0" cellpadding="3px" cellspacing="0" width="100%"> <tr class="header1"> <td colspan="2" style="white-space:nowrap;"><div class="container"> <div class="float-right"> <form action="/Search.aspx?sbo=fm" class="searchbar" method="get"> <input name="fid" type="hidden" value="1939293"/><input name="sbo" type="hidden" value="fm"/><input class="search" id="search_forumControl64969824" name="qf" type="search"/><input src="https://codeproject.global.ssl.fastly.net/images/search.gif" type="image"/> </form> </div> </div></td> </tr><tr class="header2"> <td></td><td style="width:100%;"><div style="text-align:right;"> <form action="/script/Forums/SetOptions.aspx?fid=1939293&amp;df=90&amp;mpp=25&amp;prof=True&amp;sort=Position&amp;view=Normal&amp;spc=Relaxed&amp;floc=%2fArticles%2f1256008%2fEtherdrop-DAPP-Lottery-on-Ethereum-Blockchain" method="get" style="margin:0;padding:0;"> <input name="fid" type="hidden" value="1939293"/><input name="currentQS" type="hidden" value="fid=1939293&amp;df=90&amp;mpp=25&amp;prof=True&amp;sort=Position&amp;view=Normal&amp;spc=Relaxed&amp;floc=%2fArticles%2f1256008%2fEtherdrop-DAPP-Lottery-on-Ethereum-Blockchain"/><input name="floc" type="hidden" value="/Articles/1256008/Etherdrop-DAPP-Lottery-on-Ethereum-Blockchain"/>Spacing<select class="dropdown" name="spc" size="1"> <option selected="" value="Relaxed">Relaxed</option><option value="Compact">Compact</option><option value="Tight">Tight</option> </select>  Layout<select class="dropdown" name="view" size="1"> <option selected="" value="Normal">Normal</option><option value="Topic">Open Topics</option><option value="Expanded">Open All</option><option value="Thread">Thread View</option> </select>  Per page<select class="dropdown" name="mpp" size="1"> <option value="10">10</option><option selected="" value="25">25</option><option value="50">50</option> </select>   <input class="button" name="SetOpt" type="submit" value="Update"/> </form> </div></td> </tr> </table></td> </tr><tr> <td><a name="xx0xx"></a><table border="0" cellpadding="2px" cellspacing="0" width="100%"> <tr class="navbar"> <td></td><td style="text-align:right;width:50%;"></td><td style="text-align:right;white-space:nowrap;"><span class="nav-link disabled">First</span> <span class="nav-link disabled">Prev</span> <span class="nav-link disabled">Next</span></td> </tr> </table></td> </tr><tr> <td><table border="0" cellpadding="0" cellspacing="0" class="fixed-layout blank-background" width="100%"> <tr class="header hover-row root" id="F5545217_h0"> <td class="subject-line normal " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%"> <tr> <td class="indent" width="20px"><a name="xx5545217xx"></a><img align="top" alt="Question" height="16px" src="https://codeproject.global.ssl.fastly.net/script/Forums/Images/msg_question.gif" title="Question" width="16px"/></td><td class="subject hover-container"><a class="message-link" href="/Messages/5545217/DApps-Development.aspx" name="5545217" parent="0" thread="5545217">DApps Development</a> <a href="#" onclick="return forumControl64969824.Pin(this);" rel="nofollow" title="Click to pin message"><img align="top" alt="Pin" border="0" height="13px" src="https://codeproject.global.ssl.fastly.net/script/Forums/Images/pin.png" width="13px"/></a><div class="mobile-only"> <span class="author">Roudy Khoury</span><span class="date">10-Aug-18  22:14</span> </div></td><td class="icon"><img alt="member" border="0" height="16px" src="https://codeproject.global.ssl.fastly.net/App_Themes/CodeProject/Img/icn-member-16.gif" title="member"/></td><td class="author"><span><a href="/script/Membership/View.aspx?mid=13945655">Roudy Khoury</a></span></td><td class="date"><span>10-Aug-18  22:14 </span></td> </tr> </table></td> </tr><tr class="content root selected" id="F5545217_h1" style="display:none;"> <td class="normal" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%"> <tr valign="top"> <td class="indent align-right" style="width:20px;"><span class="voteform vertical" msgid="5545217" ownerid="13945655" votingtype="GoodOrBad"></span></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%"> <tr> <td><table border="0" cellpadding="0" cellspacing="0" width="100%"> <tr> <td colspan="2">Thank you for this real life project user guide, i should be able to start my own DApp!  <img align="top" alt="Smile | :)" src="https://codeproject.global.ssl.fastly.net/script/Forums/Images/smiley_smile.gif"/><br/></td> </tr><tr class="footer" style="vertical-align:top;"> <td><a href="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=/Articles/1256008/Etherdrop-DAPP-Lottery-on-Ethereum-Blockchain">Sign In</a>·<wbr><a href="/Articles/1256008/Etherdrop-DAPP-Lottery-on-Ethereum-Blockchain?fid=1939293&amp;df=90&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=5545217" title="View Thread">View Thread</a></wbr></td><td style="text-align:right;"><span class="rating-label" data-ref="3_5545217" id="MVF5545217" name="RateItem_5545217"><span class="rating-result"><span></span></span></span><a href="/Messages/5545217/DApps-Development.aspx" style="border:0 !important" title="Get permanent link"><img src="https://codeproject.global.ssl.fastly.net/App_Themes/CodeProject/Img/link32.png" style="width:14px;height:14px;border:0"/></a> </td> </tr> </table></td> </tr> </table></td> </tr> </table></td> </tr> </table></td> </tr><tr> <td><table cellpadding="2px" cellspacing="0" width="100%"> <tr class="footer"> <td><span class="last-visit desktop-only tablet-only">Last Visit: 31-Dec-99  19:00     Last Update: 8-Nov-18  20:25</span></td><td><a href="/Articles/1256008/Etherdrop-DAPP-Lottery-on-Ethereum-Blockchain?fid=1939293&amp;df=90&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;prof=True&amp;view=Normal" rel="nofollow">Refresh</a></td><td style="text-align:right;white-space:nowrap;"><input id="_mbnUrl" type="hidden" value="/Articles/1256008/Etherdrop-DAPP-Lottery-on-Ethereum-Blockchain?fid=1939293&amp;df=90&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;prof=True&amp;view=Normal&amp;fr=2"/><span class="nav-link selected">1</span></td> </tr> </table></td> </tr> </table> </div><p class="small-text"><img align="top" alt="General" height="16px" src="https://codeproject.global.ssl.fastly.net/script/Forums/Images/msg_general.gif" width="16px"/> General    <img align="top" alt="News" height="16px" src="https://codeproject.global.ssl.fastly.net/script/Forums/Images/msg_news.gif" width="16px"/> News    <img align="top" alt="Suggestion" height="16px" src="https://codeproject.global.ssl.fastly.net/script/Forums/Images/msg_idea.gif" width="16px"/> Suggestion    <img align="top" alt="Question" height="16px" src="https://codeproject.global.ssl.fastly.net/script/Forums/Images/msg_question.gif" width="16px"/> Question    <img align="top" alt="Bug" height="16px" src="https://codeproject.global.ssl.fastly.net/script/Forums/Images/msg_bug.gif" width="16px"/> Bug    <img align="top" alt="Answer" height="16px" src="https://codeproject.global.ssl.fastly.net/script/Forums/Images/msg_answer.gif" width="16px"/> Answer    <img align="top" alt="Joke" height="16px" src="https://codeproject.global.ssl.fastly.net/script/Forums/Images/msg_joke.gif" width="16px"/> Joke    <img align="top" alt="Praise" height="16px" src="https://codeproject.global.ssl.fastly.net/script/Forums/Images/msg_kudos.gif" width="16px"/> Praise    <img align="top" alt="Rant" height="16px" src="https://codeproject.global.ssl.fastly.net/script/Forums/Images/msg_rant.gif" width="16px"/> Rant    <img align="top" alt="Admin" height="16px" src="https://codeproject.global.ssl.fastly.net/script/Forums/Images/msg_admin.gif" width="16px"/> Admin    </p><p class="small-text">Use Ctrl+Left/Right to switch messages, Ctrl+Up/Down to switch threads, Ctrl+Shift+Left/Right to switch pages.</p> </div> </td> <td class="article-wing-right" width="170px"> <div class="container-article-info" id="ctl00_RightSideBar"> <div class="container-article-info-sticky" id="RHSticky"> <div class="article-summary"> </div> <div class="padded-top" id="ctl00_SectionSponsor" style="width:160px;margin:10px auto"> <div class="msg-160x200" data-format="160x200" data-publisher="lqm.codeproject.site" data-showindicator="true" data-tags="Javascript, CSS, HTML, JSON, Web, NPM, Markdown, blockchain, Ethereum, Solidity, Truffle,rating4.5" data-type="ad" data-zone="General-Programming/Blockchain/General"><noscript><a href="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/General-Programming/Blockchain/General&amp;sz=160x200&amp;c=321501"><img height="200px" src="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/General-Programming/Blockchain/General&amp;sz=160x200&amp;c=321501" target="_blank" width="160px"/></a></noscript></div> </div> <div style="width:160px;margin: 10px auto;"> <div class="msg-160x600" data-format="160x600" data-publisher="lqm.codeproject.site" data-tags="Javascript, CSS, HTML, JSON, Web, NPM, Markdown, blockchain, Ethereum, Solidity, Truffle,rating4.5" data-type="ad" data-zone="General-Programming/Blockchain/General"><noscript><a href="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/General-Programming/Blockchain/General&amp;sz=160x600&amp;c=321501"><img height="600px" src="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/General-Programming/Blockchain/General&amp;sz=160x600&amp;c=321501" target="_blank" width="160px"/></a></noscript></div> </div> <div class="anchorLink gototop" id="gototop"> <a href="/Articles/1256008/Etherdrop-DAPP-Lottery-on-Ethereum-Blockchain#_articleTop" id="ctl00_GoToTop">Go to top</a> </div> </div> </div> </td> </tr></table> <div class="theme1-background" id="stickyStop" style="height:2px"></div> <div class="extended tiny-text"> <div class="row"> <div class="float-left"> <a href="/Articles/1256008/Etherdrop-DAPP-Lottery-on-Ethereum-Blockchain" id="ctl00_PermaLink">Permalink</a> | 
+<a href="http://developermedia.com/" id="ctl00_AdvertiseLink">Advertise </a> |
+<a href="/info/privacy.aspx" id="ctl00_PrivacyLink">Privacy</a> |
+    <a href="/info/cookies.aspx" id="ctl00_CookiePolicyLink">Cookies</a> |
+                    <a href="/info/TermsOfUse.aspx" id="ctl00_TermsOfUseLink">Terms of Use</a> |
+<a id="ctl00_Mobile">Mobile</a> <br/>
+
+
+Web04-2016 |
+2.8.180920.1 |
+Last Updated 10 Aug 2018
+</div> <div class="translate float-left" id="ctl00_GoogleTranslate"></div> <div class="float-right align-right">
+Article Copyright 2018 by Fady Aro<br/>Everything else
+Copyright © <a href="mailto:webmaster@codeproject.com">CodeProject</a>, 1999-2018 <br/> </div> <div class="page-width">
+Layout: <a class=" active" href="/Articles/1256008/Etherdrop-DAPP-Lottery-on-Ethereum-Blockchain?PageFlow=FixedWidth" id="ctl00_PageWidth_FixedT" rel="nofollow" title="Fixed width layout">fixed</a>
+|
+<a href="/Articles/1256008/Etherdrop-DAPP-Lottery-on-Ethereum-Blockchain?PageFlow=Fluid" id="ctl00_PageWidth_FluidT" rel="nofollow" title="Fluid layout">fluid</a> </div> </div> </div> <br clear="all"/> </div> </div> </div> <img id="ctl00_Audience" src="https://pubads.g.doubleclick.net/activity;dc_iu=/6839/DFPAudiencePixel;ord='636773235561633975';dc_seg=33706570?" style="border-width:0px;height:1px;width:1px;"/> <script language="Javascript" src="https://codeproject.global.ssl.fastly.net/script/Articles/JS/article.min.js?dt=2.8.180920.1" type="text/javascript"></script> <script language="Javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script> <script language="Javascript" src="/Script/Membership/JS/MemberProfilePopup.min.js?v=1.4" type="text/javascript"></script> <script language="Javascript" type="text/javascript">//<![CDATA[
+$(document).ready(function () {   processCodeBlocks.Initialise('#contentdiv');   thumbnailer.Initialise('#contentdiv',700,600);});
+cookieconsent.initialise({
+                                enabled : true,
+                                cookie  : { domain: 'codeproject.com' },
+                                palette : {
+                                    popup: { background: '#ff9900' },
+                                    button: { background: '#f5d948' }
+                                },
+                                law :  {
+                                    showForAllRegions : true, 
+                                    countryCode : 'US' 
+                                },
+                                theme: 'edgeless',
+                                type : 'opt-in',
+                                content: {
+                                    message: 'Like every other website we use cookies. By using our site you acknowledge that you have read and understand our <a href=\'/info/cookie.aspx\'>Cookie Policy</a>, <a href=\'/info/privacy.aspx\'>Privacy Policy</a>, and our <a href=\'/info/TermsOfUse.aspx\'>Terms of Service</a>.',
+                                    href:    'https://www.codeproject.com/info/privacy.aspx'
+                                },
+                                revokable:true,
+                                onStatusChange: function(status) {
+                                    $.ajax({
+                                dataType  : 'json',
+                                        data: JSON.stringify({ allowCookies : this.hasConsented() }),
+                                        url: '/script/Common/webservices/CommonServices.aspx/SetCookieConsent',
+                                        cache: false,
+                                        type: 'POST',
+                                        contentType: 'application/json'
+                                    })
+                                    console.log(this.hasConsented() ? 'enable cookies' : 'disable cookies');
+                                    console.log(this.hasAnswered() ? 'has answered' : 'did not answer');
+                                },
+                            });
+function googleTranslateElementInit() {  new google.translate.TranslateElement({   pageLanguage: 'en',   layout: google.translate.TranslateElement.InlineLayout.SIMPLE,   autoDisplay: false,   gaTrack: true,   gaId: 'UA-1735123-1'},  'ctl00_GoogleTranslate');}
+$(document).ready(function() { anchorAnimate();$('#RHSticky').sticky($('#stickyStop'));$('#ctl00_Nav').sticky($('#stickyStop'));});
+$(document).ready(function(){    $('#__EVENTVALIDATION').attr('autocomplete', 'off');});
+$(document).ready(function() {   $('.alert-bar').fadeIn('slow');   $('.alert-bar a.close-notify').click(function() {      $('.alert-bar').fadeOut('fast');        return false;    });});
+$(function ()
+                {
+                    $('.oauth').click(function () {
+                        $this = $(this);
+                        href = $this.attr('href');
+                        var myWindow = window.open(href, 'popup',
+                                    'width=800,height=600,location=0,menubar=0,resizeable=0,scrollbars=0,toolbar=0');
+                        myWindow.focus();
+                        var timer = setInterval(function () {
+                                        if (myWindow.closed) {
+                                            clearInterval(timer);
+                                            // window.location.reload(); // May do a POST reload, shows a warning
+                                            window.location = window.location; // force a GET reload
+                                        }
+                                    }, 200);
+                        return false;
+                    });
+                });
+var retrievalService=function(n){var t=!1;n=n||{};var r=n.RetrievalServiceUrl||"/script/content/webservices/RetrieveContent.aspx/GetContent",u=n.RetrievalServiceRetries||3,f=n.RetrievalServiceTimeout||5e3,e=function(){t||(t=!0,$(window).bind("resize scroll",i),i())},i=function(){if(typeof DMAds=="undefined"){var n=$('[data-type="ad"]');n.each(function(){var n=$(this),u=n.attr("data-format")||"",f=n.attr("data-publisher")||"",e=n.attr("data-zone")||"",t=n.attr("data-loadonview"),i=n.attr("data-noadx"),h=n.attr("data-tags")||"",c=n.find("iframe").length!==0||n.find("img").length!==0,r=n.attr("data-processed");t=typeof t=="string"&&t.toLowerCase()==="true";i=typeof i=="string"&&i.toLowerCase()==="true";r=typeof r=="string"&&r.toLowerCase()==="true";r||c||t&&!s(this)||(o(n,u,f,e,i,h),n.attr("data-processed","true"))})}},o=function(n,t,i,e,o,s){var h=new $.Deferred,c=JSON.stringify({format:t,publisherCode:i,zone:e,noAdX:o,keywords:s});$.ajax({url:r,cache:!1,type:"POST",data:c,contentType:"application/json; charset=utf-8",dataType:"json",tryCount:0,retryLimit:u,timeout:f}).done(function(t){var i=t?t.d:null;h.resolve(i); i && i.html && n.html(i.html)}).fail(function(n,t){h.reject(t)})},s=function(n){var t,f,e,o;if(!h(n))return!1;var u=!1,i=0,r=0;try{t=n.getBoundingClientRect();typeof innerWidth=="number"?(i=window.innerWidth,r=window.innerHeight):document.documentElement&&(document.documentElement.clientWidth||document.documentElement.clientHeight)?(i=document.documentElement.clientWidth,r=document.documentElement.clientHeight):document.body&&(document.body.clientWidth||document.body.clientHeight)&&(i=document.body.clientWidth,r=document.body.clientHeight);f=-200;t.top===t.bottom&&(f+=n.height*-1);e=t.top>=0&&t.top-200<=r||t.top<=0&&t.top>=f;o=i>t.left&&t.right>=0;u=e&&o}catch(s){u=!0}return u},h=function(n){var t=!1,i;return n&&n.style.position!=="fixed"&&n.offsetParent?t=!0:n&&n.style.position==="fixed"&&(i=window.getComputedStyle(n),t=i&&i.display!=="none"),t&&c()},c=function(){var t=!0,n="";return typeof document.hidden!="undefined"?n="hidden":typeof document.mozHidden!="undefined"?n="mozHidden":typeof document.msHidden!="undefined"?n="msHidden":typeof document.webkitHidden!="undefined"&&(n="webkitHidden"),n!==null&&document[n]&&(t=!1),t};return{init:e}};$(document).ready(function(){var n=window.XMLHttpRequest?new XMLHttpRequest:new ActiveXObject("MSXML2.XMLHTTP"),t;n.onreadystatechange=function(){try{if(n.readyState==4)if(n.status==200){var t=document.createElement("script");t.type="text/javascript";t.innerHTML=n.responseText;document.getElementsByTagName("body")[0].appendChild(t)}else(new retrievalService).init()}catch(i){(new retrievalService).init()}};try{t=('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn2.developermedia.com/a.min.js';n.open("GET",t,!0);n.send()}catch(i){(new retrievalService).init()}});(function() { 
+    setTimeout(function(){ 
+        $('div[data-type="ad"][data-showindicator="true"]').each(function( index ) {
+            if ($(this).height() > 0) {
+                $(this).prepend('<div class="small-text muted">Advertisement</div>');
+            }
+        });
+    }, 2000);
+})();
+var oSrchFlt = false, oSrchBox=false,srchBoxFoc=false;$(document).ready(function() { if(InitWatermark)InitWatermark('sb_tb', 'Search for articles, questions, tips'); var sbar = $('#sb_tb');  var sfilter = $('#SearchFilter'); if (sbar && sfilter) {  sfilter.removeClass('popup'); sfilter.hide(); sfilter.removeClass('open');  sbar.blur(function() { if (!oSrchFlt) {sfilter.hide(); sfilter.removeClass('open');} srchBoxFoc=false; });  sbar.focus(function() { oSrchFlt=false; srchBoxFoc=true; sfilter.show(); sfilter.addClass('open'); });  sbar.mouseleave(function() { oSrchBox=false; });  sbar.mouseover(function() { oSrchBox=true; });  sfilter.mouseleave(function() { oSrchFlt=false; if (!srchBoxFoc&&!oSrchBox) { sfilter.hide(); sfilter.removeClass('open'); }});  sfilter.mouseover(function() { oSrchFlt=true; }); }});
+var bookmark;$(function() {   bookmark = new Bookmark('[data-type="bookmark"]','https://codeproject.global.ssl.fastly.net/App_Themes/CodeProject/Img/','/script/Bookmarks/Ajax/Add.aspx?obrfgd=%5bObjectRefGuid%5d&bis=medium',false,false);   bookmark.Initialise();});
+$('#clear-rate_ctl00_RateArticle_RSU').click(function () {    $('#ctl00_RateArticle_RSU').hide(); return false;});$("#ctl00_RateArticle_RateItemWrapper")   .removeClass("container-rating")   .hover( function() { $('#ctl00_RateArticle_RSU').fadeIn('fast'); },            function() { $('#ctl00_RateArticle_RSU').fadeOut('fast'); } );
+function PostBack_ctl00_RateArticle_RateItemWrapper() {  return rateItem(null, 1256008,2,1,true,true,0,'MediumStars', null, 0);}
+
+                        function getVotesHistogram(objectId, objectTypeId, containerId, loadingId) {
+                            if (!$('#' + containerId).attr('alreadyRequested')){
+                                $.ajax({
+                                    url: '/script/Ratings/Ajax/Histogram.aspx?obid=' + objectId + '&obtid='+objectTypeId,
+                                    success: function (data) {
+                                        $('#' + containerId).html(data);
+                                        $('#' + loadingId).hide();
+                                    }
+                                });
+                                $('#' + containerId).attr('alreadyRequested', 'true');
+                            }
+                        }
+$(document).ready(function() {  new starRating('#ctl00_RateArticle_RateItemWrapper', PostBack_ctl00_RateArticle_RateItemWrapper,'ctl00_RateArticle');  $('#ctl00_RateArticle_RB').mouseenter(function() {     getVotesHistogram(1256008,2   ,'ctl00_RateArticle_Histogram','ctl00_RateArticle_Loading');  });})
+$(document).ready(function() {  $('#ctl00_RateArticle_SubmitRateBtn').hide();});
+$(document).ready(function() {  $('#ctl00_RateArticle_SubmitRateBtn').hide();});function ChkRtctl00_RateArticle(){}
+var config64969824 = {
+    objectName          : 'forumControl64969824',
+    messageTypeId       : 3,
+    searchPrompt        : 'Search Comments',
+    smoothScroll        : true,
+    allowReporting      : false,
+    allowRating         : false,
+    allowRatingDisplay  : true,
+    forumDir            : '/script/Forums/',
+    staticServer        : 'https://codeproject.global.ssl.fastly.net',
+    switchMsgCallback   : null,
+    getVoteFormMethod   : getVoteFormHtml,
+    getReportFormMethod : getReportFormHtml,
+    voteHiThreshold     : 5 - 0.5,
+    getRatingUrl        : '/script/Ratings/Ajax/GetRatings.aspx',
+    getRatingRefKey     : 'obrs',
+    reportOptions       : [
+       { reportTypeId : 19, name : 'Abusive / Trolling'},
+       { reportTypeId : 20, name : 'Inappropriate'},
+       { reportTypeId : 5, name : 'Spam'},
+    ],
+};
+var forumControl64969824 = new ForumControl(config64969824, -1);
+$(document).ready(function() {
+    forumControl64969824.Initialise();
+});
+
+var subscriptionConfig = { ParentId      : 'ctl00_MessageBoard_SubscribeDiv', NewId         : 'ctl00_MessageBoard_SubscribeNew', ReplyId       : 'ctl00_MessageBoard_SubscribeReplies', InstantId     : 'ctl00_MessageBoard_SubscribeInstant', DailyId       : 'ctl00_MessageBoard_SubscribeDaily', GetInfoUrl    : '/script/Forums/WebServices/ForumSubscriptionServices.aspx/GetSubscriptions', UpdateInfoUrl : '/script/Forums/WebServices/ForumSubscriptionServices.aspx/UpdateSubscription', ForumId       : 1939293,};var subscriptions_ctl00_MessageBoard;$(function() {   subscriptions_ctl00_MessageBoard = new Subscriptions(subscriptionConfig);   subscriptions_ctl00_MessageBoard.initialise();});
+
+//]]>
+</script> </body> </html>
